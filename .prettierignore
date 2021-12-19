@@ -1,0 +1,6 @@
+.git
+README.md
+.prettierrc
+.eslintcache
+.prettierignore
+node_modules/**

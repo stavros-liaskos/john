@@ -1,4 +1,4 @@
-import { ListProps, ListEl } from "./List.types";
+import { ListProps, ListEl } from './List.types';
 
 const List = ({ list }: ListProps) => {
   if (!list) {
