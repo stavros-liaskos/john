@@ -1,8 +1,8 @@
 export interface FooterI18n {
-    powered: string;
+  powered: string;
 }
 
 export interface FooterProps {
-    i18n: FooterI18n;
-    className: string;
+  i18n: FooterI18n;
+  className: string;
 }

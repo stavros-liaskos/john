@@ -1,8 +1,8 @@
 export interface MainI18n {
-    todo: string;
+  todo: string;
 }
 
 export interface MainProps {
-    i18n: MainI18n;
-    className: string;
+  i18n: MainI18n;
+  className: string;
 }
