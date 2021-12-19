@@ -1,3 +1,7 @@
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import Home from '../../pages/index'
+
 const sum = (a: number, b: number) => a + b
 
 describe('sum()', () => {
@@ -7,20 +11,13 @@ describe('sum()', () => {
 })
 
 
-/**
- * @jest-environment jsdom
- */
-
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import Home from '../pages/index'
-
 describe('Home', () => {
     it('renders a heading', () => {
-        render(<Home />)
+        const component = render(<Home />)
 
         const heading = screen.getByText('Next.js!')
 
         expect(heading).toBeInTheDocument()
+        expect(component).toMatchSnapshot()
     })
 })
