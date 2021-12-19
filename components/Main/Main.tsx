@@ -1,7 +1,7 @@
 import {MainProps} from "./Main.types";
 import List from "../List/List";
 
-const Main = ({i18n}: MainProps) => {
+const Main = ({i18n, className}: MainProps) => {
     if (!i18n || !i18n.todo) {
         return null
     }
@@ -16,7 +16,7 @@ const Main = ({i18n}: MainProps) => {
         }]
 
     return (
-        <main>
+        <main className={className}>
             <h1 className="text-3xl font-bold underline">
                 {i18n.todo} to <a href="https://nextjs.org">Next.js!</a>
             </h1>

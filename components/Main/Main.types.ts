@@ -3,5 +3,6 @@ export interface MainI18n {
 }
 
 export interface MainProps {
-    i18n: MainI18n
+    i18n: MainI18n;
+    className: string;
 }

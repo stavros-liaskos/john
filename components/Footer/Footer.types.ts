@@ -3,5 +3,6 @@ export interface FooterI18n {
 }
 
 export interface FooterProps {
-    i18n: FooterI18n
+    i18n: FooterI18n;
+    className: string;
 }
