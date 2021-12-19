@@ -1,19 +1,19 @@
-import React from "react";
-import { getAllByTestId, render } from "@testing-library/react";
-import List from "../../components/List/List";
-import { listData } from "../../components/List/List.data";
+import React from 'react';
+import { getAllByRole, getAllByTestId, render } from '@testing-library/react';
+import List from '../../components/List/List';
+import { listData } from '../../components/List/List.data';
 
-describe("List", () => {
-  it("renders without data without crashing", () => {
+describe('List', () => {
+  it('renders without data without crashing', () => {
     // @ts-ignore
     render(<List />);
   });
 
-  it("renders with data", () => {
+  it('lists 2 artists', () => {
     const component = render(<List list={listData} />);
-    const listEls = getAllByTestId(component.container, "list-el");
+    const artistLogos = getAllByRole(component.container, 'img');
 
-    expect(listEls.length).toEqual(2);
+    expect(artistLogos.length).toEqual(2);
     expect(component).toMatchSnapshot();
   });
 });

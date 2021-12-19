@@ -5,47 +5,51 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="flex justify-center items-center h-48 bg-red-300"
+      >
+        <form
+          class="flex justify-center items-stretch h-10"
+          novalidate=""
+        >
+          <input
+            class="rounded mr-4 px-2 max-w-md"
+            name="search"
+            placeholder="Here goes the artist..."
+            type="text"
+          />
+          <button
+            class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex justify-center items-center h-48 bg-red-300"
+    >
       <form
-        class="border border-indigo-600"
+        class="flex justify-center items-stretch h-10"
         novalidate=""
       >
-        <label
-          for="search"
-        >
-          Here goes the artist...
-        </label>
         <input
+          class="rounded mr-4 px-2 max-w-md"
           name="search"
+          placeholder="Here goes the artist..."
           type="text"
         />
         <button
-          data-testid="search-button"
+          class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          type="submit"
         >
           Search
         </button>
       </form>
     </div>
-  </body>,
-  "container": <div>
-    <form
-      class="border border-indigo-600"
-      novalidate=""
-    >
-      <label
-        for="search"
-      >
-        Here goes the artist...
-      </label>
-      <input
-        name="search"
-        type="text"
-      />
-      <button
-        data-testid="search-button"
-      >
-        Search
-      </button>
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -12,64 +12,141 @@ Object {
           class="flex flex-col h-screen justify-between"
         >
           <main
-            class="mb-auto h-10 bg-green-500"
+            class="mb-auto"
           >
-            <h1
-              class="text-3xl font-bold underline"
-            >
-              toso
-               to 
-              <a
-                href="https://nextjs.org"
-              >
-                Next.js!
-              </a>
-            </h1>
-            <form
-              class="border border-indigo-600"
-              novalidate=""
-            >
-              <label
-                for="search"
-              >
-                Here goes the artist...
-              </label>
-              <input
-                name="search"
-                type="text"
-              />
-              <button
-                data-testid="search-button"
-              >
-                Search
-              </button>
-            </form>
             <div
-              class="border border-indigo-600"
+              class="flex justify-center items-center h-48 bg-red-300"
+            >
+              <form
+                class="flex justify-center items-stretch h-10"
+                novalidate=""
+              >
+                <input
+                  class="rounded mr-4 px-2 max-w-md"
+                  name="search"
+                  placeholder="Here goes the artist..."
+                  type="text"
+                />
+                <button
+                  class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+            <div
+              class="border border-indigo-100"
             >
               <div
-                data-testid="list-el"
+                class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
               >
-                <p>
-                  Led Zeppeling
-                </p>
-                <a
-                  href="www.google.com"
+                <div
+                  class="md:flex"
                 >
-                  Led Zeppeling
-                </a>
+                  <div
+                    class="md:shrink-0"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE3MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="Logo of Led Zeppeling"
+                        class="h-48 w-full object-cover md:h-full md:w-48"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="p-8"
+                  >
+                    <div
+                      class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+                    >
+                      Case study
+                    </div>
+                    <a
+                      class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                      href="#"
+                    >
+                      Led Zeppeling
+                    </a>
+                    <p
+                      class="mt-2 text-gray-500"
+                    >
+                      Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div
-                data-testid="list-el"
+                class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
               >
-                <p>
-                  YOYOO
-                </p>
-                <a
-                  href="www.google.com"
+                <div
+                  class="md:flex"
                 >
-                  YOYOO
-                </a>
+                  <div
+                    class="md:shrink-0"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE3MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="Logo of YOYOO"
+                        class="h-48 w-full object-cover md:h-full md:w-48"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="p-8"
+                  >
+                    <div
+                      class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+                    >
+                      Case study
+                    </div>
+                    <a
+                      class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                      href="#"
+                    >
+                      YOYOO
+                    </a>
+                    <p
+                      class="mt-2 text-gray-500"
+                    >
+                      Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </main>
@@ -119,64 +196,141 @@ Object {
         class="flex flex-col h-screen justify-between"
       >
         <main
-          class="mb-auto h-10 bg-green-500"
+          class="mb-auto"
         >
-          <h1
-            class="text-3xl font-bold underline"
-          >
-            toso
-             to 
-            <a
-              href="https://nextjs.org"
-            >
-              Next.js!
-            </a>
-          </h1>
-          <form
-            class="border border-indigo-600"
-            novalidate=""
-          >
-            <label
-              for="search"
-            >
-              Here goes the artist...
-            </label>
-            <input
-              name="search"
-              type="text"
-            />
-            <button
-              data-testid="search-button"
-            >
-              Search
-            </button>
-          </form>
           <div
-            class="border border-indigo-600"
+            class="flex justify-center items-center h-48 bg-red-300"
+          >
+            <form
+              class="flex justify-center items-stretch h-10"
+              novalidate=""
+            >
+              <input
+                class="rounded mr-4 px-2 max-w-md"
+                name="search"
+                placeholder="Here goes the artist..."
+                type="text"
+              />
+              <button
+                class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          <div
+            class="border border-indigo-100"
           >
             <div
-              data-testid="list-el"
+              class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
             >
-              <p>
-                Led Zeppeling
-              </p>
-              <a
-                href="www.google.com"
+              <div
+                class="md:flex"
               >
-                Led Zeppeling
-              </a>
+                <div
+                  class="md:shrink-0"
+                >
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE3MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Logo of Led Zeppeling"
+                      class="h-48 w-full object-cover md:h-full md:w-48"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="p-8"
+                >
+                  <div
+                    class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+                  >
+                    Case study
+                  </div>
+                  <a
+                    class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                    href="#"
+                  >
+                    Led Zeppeling
+                  </a>
+                  <p
+                    class="mt-2 text-gray-500"
+                  >
+                    Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              data-testid="list-el"
+              class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
             >
-              <p>
-                YOYOO
-              </p>
-              <a
-                href="www.google.com"
+              <div
+                class="md:flex"
               >
-                YOYOO
-              </a>
+                <div
+                  class="md:shrink-0"
+                >
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE3MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Logo of YOYOO"
+                      class="h-48 w-full object-cover md:h-full md:w-48"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="p-8"
+                >
+                  <div
+                    class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+                  >
+                    Case study
+                  </div>
+                  <a
+                    class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                    href="#"
+                  >
+                    YOYOO
+                  </a>
+                  <p
+                    class="mt-2 text-gray-500"
+                  >
+                    Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </main>

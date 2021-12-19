@@ -4,5 +4,5 @@ export interface ListEl {
 }
 
 export interface ListProps {
-  list: ListEl[];
+  list?: ListEl[];
 }
