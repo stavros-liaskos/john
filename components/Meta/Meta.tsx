@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const HeadMeta = () => {
+const Meta = () => {
   return (
     <Head>
       <title>Johnny</title>
@@ -10,4 +10,4 @@ const HeadMeta = () => {
   );
 };
 
-export default HeadMeta;
+export default Meta;

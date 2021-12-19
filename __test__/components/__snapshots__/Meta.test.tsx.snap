@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeadMeta renders without data without crashing 1`] = `
+exports[`Meta renders without data without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

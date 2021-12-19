@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import HeadMeta from '../../components/HeadMeta/HeadMeta';
+import Meta from '../../components/Meta/Meta';
 
-describe('HeadMeta', () => {
+describe('Meta', () => {
   it('renders without data without crashing', () => {
-    const component = render(<HeadMeta />);
+    const component = render(<Meta />);
     expect(component).toMatchSnapshot();
   });
 });

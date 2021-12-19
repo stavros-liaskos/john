@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import Footer from '../components/Footer/Footer';
 import Main from '../components/Main/Main';
-import Head from '../components/HeadMeta/HeadMeta';
+import Meta from '../components/Meta/Meta';
 
 const Home: NextPage = () => {
   return (
     <div className="container max-auto">
       <div className="flex flex-col h-screen justify-between">
-        <Head />
+        <Meta />
 
         <Main className={'mb-auto h-10 bg-green-500'} i18n={{ todo: 'toso' }} />
 
