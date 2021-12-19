@@ -1,6 +1,6 @@
 import { MainProps } from './Main.types';
 import List from '../List/List';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ListEl } from '../List/List.types';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
@@ -16,8 +16,8 @@ const list2 = [
   },
 ];
 
-const Main = ({ i18n, className }: MainProps) => {
-  const [list, setList] = useState<ListEl[]>(list2);
+const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList = [] }) => {
+  const [list, setList] = useState<ListEl[]>(defaultList);
 
   if (!i18n || !i18n.todo) {
     return null;

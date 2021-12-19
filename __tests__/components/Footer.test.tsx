@@ -10,10 +10,10 @@ describe('Footer', () => {
   });
 
   it('renders with data', () => {
-    const component = render(<Footer className="" i18n={footerI18n} />);
-    const footerPowered = getByTestId(component.container, 'footer-powered');
+    const { container } = render(<Footer className="" i18n={footerI18n} />);
+    const footerPowered = getByTestId(container, 'footer-powered');
 
     expect(footerPowered).toContainHTML(footerI18n.powered);
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

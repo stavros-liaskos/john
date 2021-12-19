@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllByRole, getAllByTestId, render } from '@testing-library/react';
+import { getAllByRole, render } from '@testing-library/react';
 import List from '../../components/List/List';
 import { listData } from '../../components/List/List.data';
 
@@ -10,10 +10,10 @@ describe('List', () => {
   });
 
   it('lists 2 artists', () => {
-    const component = render(<List list={listData} />);
-    const artistLogos = getAllByRole(component.container, 'img');
+    const { container } = render(<List list={listData} />);
+    const artistLogos = getAllByRole(container, 'img');
 
     expect(artistLogos.length).toEqual(2);
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should handle the search action of the user 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center h-48 bg-red-300"
+  >
+    <form
+      class="flex justify-center items-stretch h-10"
+      novalidate=""
+    >
+      <input
+        class="rounded mr-4 px-2 max-w-md"
+        name="search"
+        placeholder="Here goes the artist..."
+        type="text"
+      />
+      <button
+        class="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</div>
+`;

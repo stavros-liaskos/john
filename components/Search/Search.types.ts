@@ -5,5 +5,5 @@ export interface SearchI18n {
 
 export interface SearchProps {
   i18n: SearchI18n;
-  handleSearch: Function;
+  handleSearch: (query: string) => void;
 }

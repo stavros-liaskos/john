@@ -1,7 +1,8 @@
 import { FooterProps } from './Footer.types';
 import Image from 'next/image';
+import React from 'react';
 
-const Footer = ({ i18n, className }: FooterProps) => {
+const Footer: React.FunctionComponent<FooterProps> = ({ i18n, className }) => {
   if (!i18n || !i18n.powered) {
     return null;
   }

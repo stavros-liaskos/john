@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { ListProps, ListEl } from './List.types';
+import React from 'react';
 
-const List = ({ list }: ListProps) => {
+const List: React.FunctionComponent<ListProps> = ({ list }) => {
   if (!list) {
     return null;
   }

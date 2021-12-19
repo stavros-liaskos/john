@@ -1,8 +1,8 @@
 import { SearchProps } from './Search.types';
-import { useState, SyntheticEvent } from 'react';
+import React, { useState, SyntheticEvent } from 'react';
 
-const Search = ({ i18n, handleSearch }: SearchProps) => {
-  const [input, setInput] = useState<string>();
+const Search: React.FunctionComponent<SearchProps> = ({ i18n, handleSearch }) => {
+  const [input, setInput] = useState<string>('');
   if (!i18n || !i18n.button || !i18n.label) {
     return null;
   }
@@ -23,7 +23,7 @@ const Search = ({ i18n, handleSearch }: SearchProps) => {
           onChange={e => setInput(e.target.value)}
         />
         <button
-          className="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
           type="submit"
         >
           {i18n.button}
