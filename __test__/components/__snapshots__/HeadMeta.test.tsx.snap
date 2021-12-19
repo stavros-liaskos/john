@@ -1,70 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List renders with data 1`] = `
+exports[`HeadMeta renders without data without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
-      <div
-        class="border border-indigo-600"
-      >
-        <div
-          data-testid="list-el"
-        >
-          <p>
-            Led Zeppeling
-          </p>
-          <a
-            href="www.google.com"
-          >
-            Led Zeppeling
-          </a>
-        </div>
-        <div
-          data-testid="list-el"
-        >
-          <p>
-            Led Zeppeling
-          </p>
-          <a
-            href="www.google.com"
-          >
-            Led Zeppeling
-          </a>
-        </div>
-      </div>
-    </div>
+    <div />
   </body>,
-  "container": <div>
-    <div
-      class="border border-indigo-600"
-    >
-      <div
-        data-testid="list-el"
-      >
-        <p>
-          Led Zeppeling
-        </p>
-        <a
-          href="www.google.com"
-        >
-          Led Zeppeling
-        </a>
-      </div>
-      <div
-        data-testid="list-el"
-      >
-        <p>
-          Led Zeppeling
-        </p>
-        <a
-          href="www.google.com"
-        >
-          Led Zeppeling
-        </a>
-      </div>
-    </div>
-  </div>,
+  "container": <div />,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

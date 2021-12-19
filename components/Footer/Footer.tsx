@@ -1,5 +1,5 @@
-import { FooterProps } from "./Footer.types";
-import Image from "next/image";
+import { FooterProps } from './Footer.types';
+import Image from 'next/image';
 
 const Footer = ({ i18n, className }: FooterProps) => {
   if (!i18n || !i18n.powered) {
@@ -7,7 +7,7 @@ const Footer = ({ i18n, className }: FooterProps) => {
   }
 
   return (
-    <footer className={className}>
+    <footer className={`border border-indigo-600 ${className}`}>
       <a
         data-testid="footer-powered"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

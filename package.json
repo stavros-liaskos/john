@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint  --cache",
     "test": "jest --watch",
-    "prettier": "prettier \"./pages/**/*.{ts,tsx,json,css}\" --write",
+    "prettier": "prettier \"./{pages,components}/**/*.{ts,tsx,json,css}\" --write",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "identity-obj-proxy": "^3.0.0",
     "ignore-loader": "^0.1.2",
     "jest": "^27.4.5",
+    "jest-fetch-mock": "^3.0.3",
     "lint-staged": ">=10",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
@@ -41,5 +42,12 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "jest": {
+    "automock": false,
+    "resetMocks": false,
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   }
 }

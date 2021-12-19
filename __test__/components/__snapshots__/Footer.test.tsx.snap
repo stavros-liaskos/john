@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List renders with data 1`] = `
+exports[`Footer renders with data 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <footer>
+      <footer
+        class="border border-indigo-600 "
+      >
         <a
           data-testid="footer-powered"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -40,7 +42,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <footer>
+    <footer
+      class="border border-indigo-600 "
+    >
       <a
         data-testid="footer-powered"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

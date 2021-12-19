@@ -6,7 +6,7 @@ const List = ({ list }: ListProps) => {
   }
 
   return (
-    <div>
+    <div className="border border-indigo-600">
       {list.map((el: ListEl, index: number) => (
         <div key={index} data-testid="list-el">
           <p>{el.name}</p>

@@ -1,12 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List renders without data without crashing 1`] = `
+exports[`Search renders with data 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <form
+        class="border border-indigo-600"
+        novalidate=""
+      >
+        <label
+          for="search"
+        >
+          Here goes the artist...
+        </label>
+        <input
+          name="search"
+          type="text"
+        />
+        <button
+          data-testid="search-button"
+        >
+          Search
+        </button>
+      </form>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <form
+      class="border border-indigo-600"
+      novalidate=""
+    >
+      <label
+        for="search"
+      >
+        Here goes the artist...
+      </label>
+      <input
+        name="search"
+        type="text"
+      />
+      <button
+        data-testid="search-button"
+      >
+        Search
+      </button>
+    </form>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

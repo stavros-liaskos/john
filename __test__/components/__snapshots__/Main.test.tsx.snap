@@ -5,7 +5,9 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <main>
+      <main
+        class=""
+      >
         <h1
           class="text-3xl font-bold underline"
         >
@@ -17,7 +19,28 @@ Object {
             Next.js!
           </a>
         </h1>
-        <div>
+        <form
+          class="border border-indigo-600"
+          novalidate=""
+        >
+          <label
+            for="search"
+          >
+            Here goes the artist...
+          </label>
+          <input
+            name="search"
+            type="text"
+          />
+          <button
+            data-testid="search-button"
+          >
+            Search
+          </button>
+        </form>
+        <div
+          class="border border-indigo-600"
+        >
           <div
             data-testid="list-el"
           >
@@ -47,7 +70,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <main>
+    <main
+      class=""
+    >
       <h1
         class="text-3xl font-bold underline"
       >
@@ -59,7 +84,28 @@ Object {
           Next.js!
         </a>
       </h1>
-      <div>
+      <form
+        class="border border-indigo-600"
+        novalidate=""
+      >
+        <label
+          for="search"
+        >
+          Here goes the artist...
+        </label>
+        <input
+          name="search"
+          type="text"
+        />
+        <button
+          data-testid="search-button"
+        >
+          Search
+        </button>
+      </form>
+      <div
+        class="border border-indigo-600"
+      >
         <div
           data-testid="list-el"
         >
