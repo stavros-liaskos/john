@@ -1,7 +1,7 @@
 import React from 'react';
 import { getAllByText, render } from '@testing-library/react';
-import List from '../../components/List/List';
-import { listData, listI18n } from '../../components/List/List.data';
+import List from './List';
+import { listData, listI18n } from './List.data';
 
 describe('List', () => {
   it('renders without data without crashing', () => {

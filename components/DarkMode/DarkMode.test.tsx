@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DarkMode from '../../components/DarkMode/DarkMode';
+import DarkMode from './DarkMode';
 import { LocalStorageMock } from '@react-mock/localstorage';
 
 describe('DarkMode', () => {
