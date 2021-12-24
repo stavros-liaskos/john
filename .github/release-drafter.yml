@@ -1,5 +1,5 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: '$NEXT_MINOR_VERSION 🌈'
+tag-template: '$NEXT_MINOR_VERSION'
 categories:
   - title: '🚀 Features'
     labels:
@@ -13,6 +13,8 @@ categories:
   - title: '🧰 Maintenance'
     label: 'chore'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+branches:
+  - master
 template: |
   ## Changes
 
