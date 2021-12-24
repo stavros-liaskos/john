@@ -24,7 +24,7 @@ const list2 = [
 ];
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList = [] }) => {
-  const [list, setList] = useState<ListEl[]>(defaultList);
+  const [list, setList] = useState<ListEl[]>(!defaultList.length ? list2 : defaultList); // todo rm hardcoded data
 
   if (!i18n || !i18n.todo) {
     return null;
@@ -36,7 +36,10 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList
       body: new URLSearchParams(`query=${query}`),
     })
       .then(res => res.json())
-      .then(result => setList(list2)) // TODO replace list2 with result
+      .then(result => {
+        console.log(result);
+        return setList(list2); // TODO replace list2 with result
+      })
       .catch(() => {});
   };
 
@@ -45,7 +48,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList
       <DarkMode />
       <Search i18n={searchI18n} handleSearch={handleSearch} />
 
-      <List list={list2} i18n={listI18n} />
+      <List list={list} i18n={listI18n} />
     </main>
   );
 };
