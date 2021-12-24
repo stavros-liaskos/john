@@ -10,7 +10,6 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n, className }) => {
   return (
     <footer className={`border border-indigo-600 ${className}`}>
       <a
-        data-testid="footer-powered"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         target="_blank"
         rel="noopener noreferrer"

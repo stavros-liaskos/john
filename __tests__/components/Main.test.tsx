@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, getByRole, queryAllByRole } from '@testing-library/react';
+import { render, getByRole, getAllByText, getByText } from '@testing-library/react';
 import Main from '../../components/Main/Main';
 import { mainI18n } from '../../components/Main/Main.data';
 import { expect } from '@jest/globals';
@@ -8,11 +8,11 @@ import { MainProps } from '../../components/Main/Main.types';
 
 const setup = (props?: Partial<MainProps>) => {
   const { container } = render(<Main className="" i18n={mainI18n} {...props} />);
-  const search = getByRole(container, 'button');
-  const artistLogos = queryAllByRole(container, 'img');
+  const search = getByText(container, 'Search');
+  const unfollowBtns = getAllByText(container, 'unfollow');
   const input = getByRole(container, 'textbox');
 
-  return { container, search, artistLogos, input };
+  return { container, search, unfollowBtns, input };
 };
 
 describe('Main', () => {
@@ -21,21 +21,13 @@ describe('Main', () => {
     render(<Main />);
   });
 
-  it('show only Search without list prop', () => {
-    const { container, search, artistLogos } = setup();
-
-    expect(search).toBeTruthy();
-    expect(artistLogos.length).toEqual(0);
-    expect(container).toMatchSnapshot();
-  });
-
   it('show List of results ', async () => {
-    const { container, search, artistLogos } = setup({
+    const { container, search, unfollowBtns } = setup({
       defaultList: listData,
     });
 
     expect(search).toBeTruthy();
-    expect(artistLogos.length).toEqual(2);
+    expect(unfollowBtns.length).toEqual(3);
     expect(container).toMatchSnapshot();
   });
 });

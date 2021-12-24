@@ -1,37 +1,33 @@
-import Image from 'next/image';
-import { ListProps, ListEl } from './List.types';
 import React from 'react';
+import { ListProps, ListEl } from './List.types';
+import Spotify from '../Icons/spotify';
+import LastFm from '../Icons/lastfm';
 
-const List: React.FunctionComponent<ListProps> = ({ list }) => {
-  if (!list) {
+const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
+  if (!list || !i18n || !i18n.unfollow) {
     return null;
   }
 
   return (
     <div className="border border-indigo-100">
       {list.map((el: ListEl, index: number) => (
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl" key={index}>
-          <div className="md:flex">
-            <div className="md:shrink-0">
-              <Image
-                className="h-48 w-full object-cover md:h-full md:w-48"
-                src="https://www.placecage.com/120/120"
-                alt={`Logo of ${el.name}`}
-                width={120}
-                height={170}
-              />
-            </div>
-            <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-              <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-                {el.name}
+        <div className="flex justify-between items-center px-8 even:bg-gray-100" key={index}>
+          <p>{el.name}</p>
+          <div className="flex">
+            {el.lastFmUrl && (
+              <a className="inline" href={el.lastFmUrl}>
+                <LastFm />
               </a>
-              <p className="mt-2 text-gray-500">
-                Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find
-                your first customers.
-              </p>
-            </div>
+            )}
+            {el.spotifyUrl && (
+              <a className="inline" href={el.spotifyUrl}>
+                <Spotify />
+              </a>
+            )}
           </div>
+          <button className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none">
+            {i18n.unfollow}
+          </button>
         </div>
       ))}
     </div>

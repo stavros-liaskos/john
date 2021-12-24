@@ -4,15 +4,22 @@ import React, { useState } from 'react';
 import { ListEl } from '../List/List.types';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
+import { listI18n } from '../List/List.data';
+import DarkMode from '../DarkMode/DarkMode';
 
 const list2 = [
   {
     name: 'Led Zeppeling',
-    href: 'www.google.com',
+    spotifyUrl: 'www.google.com',
   },
   {
     name: 'YOYOO',
-    href: 'www.google.com',
+    lastFmUrl: 'www.google.com',
+  },
+  {
+    name: 'Art Beckley',
+    lastFmUrl: 'www.google.com',
+    spotifyUrl: 'www.google.com',
   },
 ];
 
@@ -35,9 +42,10 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList
 
   return (
     <main className={`${className}`}>
+      <DarkMode />
       <Search i18n={searchI18n} handleSearch={handleSearch} />
 
-      <List list={list} />
+      <List list={list2} i18n={listI18n} />
     </main>
   );
 };
