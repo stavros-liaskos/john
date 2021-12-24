@@ -35,6 +35,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Dark mode state is initialized by reading the OS preference or to `light` if that fails. It's also customizable by the user.
 
+## Supported browsers
+
+List supported browsers:
+
+```shell
+npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
+```
+
 - [ ] code coverage
 - [ ] threshold
 - [ ] lock master
