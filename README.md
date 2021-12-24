@@ -42,6 +42,3 @@ List supported browsers:
 ```shell
 npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
 ```
-
-- [ ] lock master
-- [ ] fix dark mode bug
