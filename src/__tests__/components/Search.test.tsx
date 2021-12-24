@@ -1,7 +1,7 @@
 import React from 'react';
 import { getByRole, fireEvent, render } from '@testing-library/react';
-import Search from '../../components/Search/Search';
-import { searchI18n } from '../../components/Search/Search.data';
+import Search from 'components/Search/Search';
+import { searchI18n } from 'components/Search/Search.data';
 
 const setup = () => {
   const handleSearch = jest.fn();

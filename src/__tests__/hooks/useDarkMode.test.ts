@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import useDarkMode from '../../hooks/useDarkMode';
+import useDarkMode from 'hooks/useDarkMode';
 // todo verify localstorage
 
 // https://react-hooks-testing-library.com/usage/basic-hooks#rendering

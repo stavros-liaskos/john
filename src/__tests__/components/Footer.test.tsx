@@ -1,7 +1,7 @@
 import React from 'react';
 import { getByText, render } from '@testing-library/react';
-import Footer from '../../components/Footer/Footer';
-import { footerI18n } from '../../components/Footer/Footer.data';
+import Footer from 'components/Footer/Footer';
+import { footerI18n } from 'components/Footer/Footer.data';
 import { contain } from '@hapi/hoek';
 
 describe('Footer', () => {

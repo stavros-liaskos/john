@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders a heading 1`] = `
+exports[`Index (Home) renders a heading 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
