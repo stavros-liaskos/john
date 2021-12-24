@@ -20,13 +20,17 @@ export default {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['pages/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  collectCoverageFrom: [
+    '{__tests__,components,hooks,pages}/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/*.{types,data}.ts',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['/node_modules/', '/.next', '/coverage'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/.next', '/coverage', '/components/Icons', '/pages/api'],
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -40,7 +44,14 @@ export default {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  coverageThreshold: {
+    global: {
+      statements: 83.44,
+      branches: 77.91,
+      functions: 60,
+      lines: 82.76,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,

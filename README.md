@@ -43,8 +43,5 @@ List supported browsers:
 npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
 ```
 
-- [ ] code coverage
-- [ ] threshold
 - [ ] lock master
-- [ ] ensure lint and prettier work properly
 - [ ] fix dark mode bug
