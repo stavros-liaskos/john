@@ -1,12 +1,11 @@
 {
-  "name": "john",
-  "private": true,
+  "name": "release-raccoon",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --cache --fix",
-    "test": "jest --watch",
+    "test": "jest",
     "prettier": "prettier \"**/*\" --write",
     "prepare": "husky install"
   },
@@ -44,7 +43,9 @@
     "typescript": "4.5.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ],
     "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": [
