@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ReleaseRaccoon
 
-## Getting Started
+A music release newsletter frontend application built on [Next.js](https://nextjs.org/).
 
-First, run the development server:
+Backend available here: https://github.com/jaivalis/release-raccoon
+
+## How to develop
+
+First install deps:
+
+```shell
+yarn
+```
+
+Start the development server:
 
 ```bash
 yarn dev
@@ -10,26 +20,55 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Do some changes on the code. The changes are automatically applied with the help of Next.js [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+When you are happy with your changes proceed with committing them. [Husky](https://github.com/typicode/husky)
+will trigger Prettier, Linter and Tests for the changed files according to [lint-staged](https://github.com/okonet/lint-staged).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You can also manually run them individually.
 
-## Learn More
+Prettier:
 
-To learn more about Next.js, take a look at the following resources:
+```shell
+yarn prettier
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Eslint (with Typescript):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```shell
+yarn lint
+```
 
-## Deploy on Vercel
+Tests (Jest):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```shell
+yarn test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployments
+
+This project uses [Vercel](https://vercel.com/) as it's hosting platform.  
+Vercel builds a production optimized version using:
+
+```shell
+yarn build
+```
+
+You can do the same locally. After you build, start the production server that uses that build:
+
+```shell
+yarn start
+```
+
+### Development deployments
+
+Each PR creates automatically a Preview env where one can visually verify the results.
+
+### Production deployments
+
+Each commit to `master` triggers a production deployment.
+
+> Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Dark mode
 
@@ -42,3 +81,12 @@ List supported browsers:
 ```shell
 npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
 ```
+
+## Learn More about Next.js
+
+Take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
