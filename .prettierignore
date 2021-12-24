@@ -1,6 +1,12 @@
 .git
-README.md
-.prettierrc
+.idea
+.husky
+.next
+coverage
+node_modules
+public
+**/*.snap
 .eslintcache
+.gitignore
 .prettierignore
-node_modules/**
+yarn.lock

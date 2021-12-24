@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint  --cache",
     "test": "jest --watch",
-    "prettier": "prettier \"./{__tests__,components,pages, hooks, types}/**/*.{ts,tsx,json,css}\" --write",
+    "prettier": "prettier \"**/*\" --write",
     "prepare": "husky install"
   },
   "dependencies": {
