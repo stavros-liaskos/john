@@ -4,11 +4,11 @@ import Spotlight from '../Icons/spotlight';
 import Moon from '../Icons/moon';
 
 const DarkMode: React.FunctionComponent = () => {
-  const { dark, setDark } = useDarkMode();
+  const { dark, loaded, setDark } = useDarkMode();
 
   return (
     <>
-      {dark ? (
+      {dark && loaded ? (
         <button onClick={() => setDark(!dark)} data-testid="spotlight">
           <Spotlight />
         </button>

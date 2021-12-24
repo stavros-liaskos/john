@@ -8,6 +8,9 @@ function useDarkMode() {
       (localStorage.theme === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)),
   );
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => setLoaded(true), []);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -21,7 +24,7 @@ function useDarkMode() {
     }
   }, [dark, setDark]);
 
-  return { dark, setDark };
+  return { dark, loaded, setDark };
 }
 
 export default useDarkMode;
