@@ -6,25 +6,10 @@ import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../List/List.data';
 import DarkMode from '../DarkMode/DarkMode';
-
-const list2 = [
-  {
-    name: 'Led Zeppeling',
-    spotifyUrl: 'www.google.com',
-  },
-  {
-    name: 'YOYOO',
-    lastFmUrl: 'www.google.com',
-  },
-  {
-    name: 'Art Beckley',
-    lastFmUrl: 'www.google.com',
-    spotifyUrl: 'www.google.com',
-  },
-];
+import mockedResponse from '../../mocks/searchResult.json';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList = [] }) => {
-  const [list, setList] = useState<ListEl[]>(!defaultList.length ? list2 : defaultList); // todo rm hardcoded data
+  const [list, setList] = useState<ListEl[]>(!defaultList.length ? mockedResponse.artistsPerResource.fromLastfm : defaultList); // todo rm hardcoded data
 
   if (!i18n || !i18n.todo) {
     return null;
@@ -38,7 +23,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        return setList(list2); // TODO replace list2 with result
+        return setList(mockedResponse.artistsPerResource.fromLastfm); // TODO replace list2 with result
       })
       .catch(() => {});
   };

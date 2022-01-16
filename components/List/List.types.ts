@@ -1,7 +1,8 @@
 export interface ListEl {
+  id?: string;
   name: string;
-  lastFmUrl?: string;
-  spotifyUrl?: string;
+  lastfmUri?: string;
+  spotifyUri?: string;
 }
 
 export interface ListI18n {
