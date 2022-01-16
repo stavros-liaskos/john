@@ -9,29 +9,19 @@ import DarkMode from '../DarkMode/DarkMode';
 import mockedResponse from '../../mocks/searchResult.json';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList = [] }) => {
-  const [list, setList] = useState<ListEl[]>(!defaultList.length ? mockedResponse.artistsPerResource.fromLastfm : defaultList); // todo rm hardcoded data
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [list, setList] = useState<ListEl[]>(
+    !defaultList.length ? mockedResponse.artistsPerResource.fromLastfm : defaultList,
+  ); // todo rm hardcoded data, get scrapped from db
 
   if (!i18n || !i18n.todo) {
     return null;
   }
 
-  const handleSearch = (query: string) => {
-    fetch('https://jsonplaceholder.typicode.com/todos', {
-      method: 'POST',
-      body: new URLSearchParams(`query=${query}`),
-    })
-      .then(res => res.json())
-      .then(result => {
-        console.log(result);
-        return setList(mockedResponse.artistsPerResource.fromLastfm); // TODO replace list2 with result
-      })
-      .catch(() => {});
-  };
-
   return (
     <main className={`${className}`}>
       <DarkMode />
-      <Search i18n={searchI18n} handleSearch={handleSearch} />
+      <Search i18n={searchI18n} />
 
       <List list={list} i18n={listI18n} />
     </main>

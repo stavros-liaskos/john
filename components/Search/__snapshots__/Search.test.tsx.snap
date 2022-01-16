@@ -3,7 +3,7 @@
 exports[`Search should handle the search action of the user 1`] = `
 <div>
   <div
-    class="flex justify-center items-center h-48 bg-red-300"
+    class="relative flex justify-center items-center h-48 bg-red-300"
   >
     <form
       class="flex justify-center items-stretch h-10"

@@ -1,19 +1,62 @@
 import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
+import mockedResponse from '../../mocks/searchResult.json';
+import { ListEl } from '../List/List.types';
 
-const Search: React.FunctionComponent<SearchProps> = ({ i18n, handleSearch }) => {
+const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
+  const [results, setResults] = useState<ListEl[] | null>(null);
+  const [disabled, setDisabled] = useState<boolean>(false);
+
   if (!i18n || !i18n.button || !i18n.label) {
     return null;
   }
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    handleSearch(input);
+    fetch('https://jsonplaceholder.typicode.com/todos', {
+      method: 'POST',
+      body: new URLSearchParams(`query=${input}`),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+        return setResults(mockedResponse.artistsPerResource.fromLastfm); // TODO replace results with result
+      })
+      .catch(error => {
+        console.error('Error:', JSON.stringify(error));
+        // TODO handle me
+      });
+  };
+
+  const handleFollow = (artistData: ListEl) => {
+    setDisabled(true);
+
+    fetch('/me/follow', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(artistData),
+    })
+      .then(() => {
+        console.log(`${artistData.name} successfully unfollowed`);
+      })
+      .catch(error => {
+        console.error('Error:', JSON.stringify(error));
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setResults(null);
+          setDisabled(false);
+        }, 1000);
+      });
   };
 
   return (
-    <div className="flex justify-center items-center h-48 bg-red-300">
+    <div className="relative flex justify-center items-center h-48 bg-red-300">
       <form className="flex justify-center items-stretch h-10" noValidate onSubmit={handleSubmit}>
         <input
           className="rounded mr-4 px-2 max-w-md"
@@ -29,6 +72,24 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n, handleSearch }) =>
           {i18n.button}
         </button>
       </form>
+      {results && (
+        <div className="absolute bg-slate-100 top-32">
+          <ul>
+            {results.map((result: ListEl, key: number) => (
+              <li className="flex justify-between" key={key}>
+                {result.name}
+                <button
+                  className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+                  onClick={() => handleFollow(result)}
+                  disabled={disabled}
+                >
+                  Follow
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

@@ -18,7 +18,8 @@ export const listData: ListEl[] = [
     lastfmUri: 'https://www.last.fm/music/lo+&+leduc',
     name: 'lo & leduc',
     spotifyUri: '',
-  }];
+  },
+];
 
 export const listI18n = {
   unfollow: 'unfollow',
