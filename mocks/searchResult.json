@@ -1,0 +1,187 @@
+{
+  "artistsPerResource": {
+    "fromDb": [],
+    "fromLastfm": [
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Liedfett",
+        "name": "Liedfett",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Leaders+of+the+New+School",
+        "name": "Leaders of the New School",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/lo+&+leduc",
+        "name": "lo & leduc",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Luedji+Luna",
+        "name": "Luedji Luna",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Lead",
+        "name": "Lead",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Animals+as+Leaders",
+        "name": "Animals as Leaders",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Elfen+Lied",
+        "name": "Elfen Lied",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Lead+Belly",
+        "name": "Lead Belly",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Bay+Ledges",
+        "name": "Bay Ledges",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Ledapple",
+        "name": "Ledapple",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Leon+Leiden",
+        "name": "Leon Leiden",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Ledger",
+        "name": "Ledger",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Kiana+Led%C3%A9",
+        "name": "Kiana Ledé",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Monsters+of+Liedermaching",
+        "name": "Monsters of Liedermaching",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Lendakaris+Muertos",
+        "name": "Lendakaris Muertos",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Kinder+Lieder",
+        "name": "Kinder Lieder",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Led+Er+Est",
+        "name": "Led Er Est",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Cult+Leader",
+        "name": "Cult Leader",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Jefre+Cantu-Ledesma",
+        "name": "Jefre Cantu-Ledesma",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Arlette+Leduc",
+        "name": "Arlette Leduc",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Leadley",
+        "name": "Leadley",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Tomas+Ledin",
+        "name": "Tomas Ledin",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Chris+LeDoux",
+        "name": "Chris LeDoux",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Leadbelly",
+        "name": "Leadbelly",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Ledisi",
+        "name": "Ledisi",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Lewd+Acts",
+        "name": "Lewd Acts",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Letdown.",
+        "name": "Letdown.",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Led+Zeppelin",
+        "name": "Led Zeppelin",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Led+Zepagain",
+        "name": "Led Zepagain",
+        "spotifyUri": ""
+      },
+      {
+        "id": "null",
+        "lastfmUri": "https://www.last.fm/music/Future+Leaders+of+the+World",
+        "name": "Future Leaders of the World",
+        "spotifyUri": ""
+      }
+    ]
+  }
+}

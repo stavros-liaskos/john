@@ -2,19 +2,23 @@ import { ListEl } from './List.types';
 
 export const listData: ListEl[] = [
   {
-    name: 'Led Zeppeling',
-    spotifyUrl: 'www.google.com',
+    id: 'null',
+    lastfmUri: 'https://www.last.fm/music/Liedfett',
+    name: 'Liedfett',
+    spotifyUri: '',
   },
   {
-    name: 'YOYOO',
-    lastFmUrl: 'www.google.com',
+    id: 'null',
+    lastfmUri: 'https://www.last.fm/music/Leaders+of+the+New+School',
+    name: 'Leaders of the New School',
+    spotifyUri: '',
   },
   {
-    name: 'Art Beckley',
-    lastFmUrl: 'www.google.com',
-    spotifyUrl: 'www.google.com',
-  },
-];
+    id: 'null',
+    lastfmUri: 'https://www.last.fm/music/lo+&+leduc',
+    name: 'lo & leduc',
+    spotifyUri: '',
+  }];
 
 export const listI18n = {
   unfollow: 'unfollow',
