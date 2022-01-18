@@ -3,20 +3,20 @@
 exports[`Search should handle the search action of the user 1`] = `
 <div>
   <div
-    class="relative flex justify-center items-center h-48 bg-red-300"
+    class="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black"
   >
     <form
       class="flex justify-center items-stretch h-10"
       novalidate=""
     >
       <input
-        class="rounded mr-4 px-2 max-w-md"
+        class="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
         name="search"
         placeholder="Here goes the artist..."
         type="text"
       />
       <button
-        class="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+        class="py-2 px-3 text-sm font-semibold rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400"
         type="submit"
       >
         Search

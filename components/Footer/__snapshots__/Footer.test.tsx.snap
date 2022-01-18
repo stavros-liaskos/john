@@ -3,10 +3,11 @@
 exports[`Footer renders with data 1`] = `
 <div>
   <footer
-    class="border border-indigo-600 "
+    class="flex items-center justify-center border-2 border-b-0  dark:border-slate-800 border-black p-10 "
   >
     <a
-      href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+      class="flex items-center dark:text-slate-400"
+      href="https://github.com/jaivalis/release-raccoon"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -20,12 +21,13 @@ exports[`Footer renders with data 1`] = `
           <img
             alt=""
             aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
             style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
           />
         </span>
         <img
-          alt="Vercel Logo"
+          alt="Github Logo"
+          class="flex items-center justify-center border-2 border-b-0  dark:border-slate-800 border-black p-6 "
           data-nimg="intrinsic"
           decoding="async"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"

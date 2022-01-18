@@ -56,17 +56,17 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   };
 
   return (
-    <div className="relative flex justify-center items-center h-48 bg-red-300">
+    <div className="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black">
       <form className="flex justify-center items-stretch h-10" noValidate onSubmit={handleSubmit}>
         <input
-          className="rounded mr-4 px-2 max-w-md"
+          className="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
           type="text"
           name="search"
           placeholder={i18n.label}
           onChange={e => setInput(e.target.value)}
         />
         <button
-          className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          className="py-2 px-3 text-sm font-semibold rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400"
           type="submit"
         >
           {i18n.button}
@@ -76,10 +76,10 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         <div className="absolute bg-slate-100 top-32">
           <ul>
             {results.map((result: ListEl, key: number) => (
-              <li className="flex justify-between" key={key}>
+              <li className="flex justify-between dark:text-slate-400" key={key}>
                 {result.name}
                 <button
-                  className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+                  className="py-2 px-3 text-sm font-semibold rounded-md shadow border-2 dark:text-white dark:border-slate-800 border-black"
                   onClick={() => handleFollow(result)}
                   disabled={disabled}
                 >

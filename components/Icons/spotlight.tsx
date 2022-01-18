@@ -1,15 +1,8 @@
 import React from 'react';
 import IconTypes from './iconTypes';
 
-const Spotlight: React.FunctionComponent<IconTypes> = ({ width = 24, height = 24 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    width={width}
-    height={height}
-  >
+const Spotlight: React.FunctionComponent<IconTypes> = ({ width = 24, height = 24, colour = 'currentColor' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke={colour} width={width} height={height}>
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
