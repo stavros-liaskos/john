@@ -16,7 +16,7 @@ exports[`Search should handle the search action of the user 1`] = `
         type="text"
       />
       <button
-        class="py-2 px-3 text-sm font-semibold rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400"
+        class="btn btn-large"
         type="submit"
       >
         Search

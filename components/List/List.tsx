@@ -52,7 +52,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
             )}
           </div>
           <button
-            className="py-1 px-3 ml-8 my-2 text-sm font-semibold rounded shadow border-2 dark:text-slate-400 dark:border-slate-800 border-black"
+            className={`btn btn-small ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
             onClick={() => followArtist(artist)}
             disabled={disabled}
           >

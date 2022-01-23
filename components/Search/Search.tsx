@@ -65,21 +65,21 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
           placeholder={i18n.label}
           onChange={e => setInput(e.target.value)}
         />
-        <button
-          className="py-2 px-3 text-sm font-semibold rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400"
-          type="submit"
-        >
+        <button className="btn btn-large" type="submit">
           {i18n.button}
         </button>
       </form>
       {results && (
-        <div className="absolute bg-slate-100 top-32">
+        <div className="absolute px-3 bg-slate-100 dark:bg-slate-800 top-32 border-2 border-zinc-900">
           <ul>
             {results.map((result: ListEl, key: number) => (
-              <li className="flex justify-between dark:text-slate-400" key={key}>
+              <li
+                className="flex justify-between items-center py-2 dark:text-slate-400 border-b-2 border-zinc-900"
+                key={key}
+              >
                 {result.name}
                 <button
-                  className="py-2 px-3 text-sm font-semibold rounded-md shadow border-2 dark:text-white dark:border-slate-800 border-black"
+                  className="btn btn-small !border-zinc-900"
                   onClick={() => handleFollow(result)}
                   disabled={disabled}
                 >

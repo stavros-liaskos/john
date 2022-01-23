@@ -3,3 +3,15 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply font-semibold text-sm rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400;
+  }
+  .btn-large {
+    @apply py-2 px-3;
+  }
+  .btn-small {
+    @apply py-1 px-3;
+  }
+}

@@ -39,7 +39,7 @@ exports[`Main show List of results  1`] = `
           type="text"
         />
         <button
-          class="py-2 px-3 text-sm font-semibold rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400"
+          class="btn btn-large"
           type="submit"
         >
           Search
@@ -83,7 +83,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="py-1 px-3 ml-8 my-2 text-sm font-semibold rounded shadow border-2 dark:text-slate-400 dark:border-slate-800 border-black"
+          class="btn btn-small ml-8 my-2 "
         >
           unfollow
         </button>
@@ -122,7 +122,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="py-1 px-3 ml-8 my-2 text-sm font-semibold rounded shadow border-2 dark:text-slate-400 dark:border-slate-800 border-black"
+          class="btn btn-small ml-8 my-2 !border-zinc-900"
         >
           unfollow
         </button>
@@ -161,7 +161,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="py-1 px-3 ml-8 my-2 text-sm font-semibold rounded shadow border-2 dark:text-slate-400 dark:border-slate-800 border-black"
+          class="btn btn-small ml-8 my-2 "
         >
           unfollow
         </button>
