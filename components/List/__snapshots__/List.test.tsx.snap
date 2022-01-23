@@ -6,15 +6,15 @@ exports[`List lists 2 artists 1`] = `
     class="border dark:border-slate-800"
   >
     <div
-      class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow dark:text-slate-400"
+        class="grow text-clip dark:text-slate-400"
       >
         Liedfett
       </p>
       <div
-        class="flex basis-2 mx-8"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
@@ -39,21 +39,21 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="btn btn-small ml-8 my-2 "
+        class="btn btn-small lg:ml-8 my-2 "
       >
         unfollow
       </button>
     </div>
     <div
-      class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow dark:text-slate-400"
+        class="grow text-clip dark:text-slate-400"
       >
         Leaders of the New School
       </p>
       <div
-        class="flex basis-2 mx-8"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
@@ -78,21 +78,21 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="btn btn-small ml-8 my-2 !border-zinc-900"
+        class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
       >
         unfollow
       </button>
     </div>
     <div
-      class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow dark:text-slate-400"
+        class="grow text-clip dark:text-slate-400"
       >
         lo & leduc
       </p>
       <div
-        class="flex basis-2 mx-8"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
@@ -117,7 +117,7 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="btn btn-small ml-8 my-2 "
+        class="btn btn-small lg:ml-8 my-2 "
       >
         unfollow
       </button>

@@ -35,10 +35,10 @@ Object {
               </svg>
             </button>
             <div
-              class="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black"
+              class="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black"
             >
               <form
-                class="flex justify-center items-stretch h-10"
+                class="flex justify-between md:justify-center w-full items-stretch h-10"
                 novalidate=""
               >
                 <input
@@ -59,15 +59,15 @@ Object {
               class="border dark:border-slate-800"
             >
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Liedfett
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -92,21 +92,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Leaders of the New School
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -131,21 +131,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   lo & leduc
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -170,21 +170,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Luedji Luna
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -209,21 +209,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Lead
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -248,21 +248,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Animals as Leaders
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -287,21 +287,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Elfen Lied
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -326,21 +326,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Lead Belly
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -365,21 +365,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Bay Ledges
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -404,21 +404,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Ledapple
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -443,21 +443,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Leon Leiden
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -482,21 +482,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Ledger
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -521,21 +521,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Kiana Ledé
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -560,21 +560,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Monsters of Liedermaching
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -599,21 +599,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Lendakaris Muertos
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -638,21 +638,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Kinder Lieder
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -677,21 +677,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Led Er Est
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -716,21 +716,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Cult Leader
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -755,21 +755,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Jefre Cantu-Ledesma
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -794,21 +794,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Arlette Leduc
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -833,21 +833,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Leadley
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -872,21 +872,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Tomas Ledin
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -911,21 +911,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Chris LeDoux
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -950,21 +950,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Leadbelly
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -989,21 +989,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Ledisi
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1028,21 +1028,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Lewd Acts
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1067,21 +1067,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Letdown.
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1106,21 +1106,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Led Zeppelin
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1145,21 +1145,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Led Zepagain
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1184,21 +1184,21 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 "
+                  class="btn btn-small lg:ml-8 my-2 "
                 >
                   unfollow
                 </button>
               </div>
               <div
-                class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+                class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
               >
                 <p
-                  class="grow dark:text-slate-400"
+                  class="grow text-clip dark:text-slate-400"
                 >
                   Future Leaders of the World
                 </p>
                 <div
-                  class="flex basis-2 mx-8"
+                  class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
                     class="inline"
@@ -1223,7 +1223,7 @@ Object {
                   
                 </div>
                 <button
-                  class="btn btn-small ml-8 my-2 !border-zinc-900"
+                  class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
                 >
                   unfollow
                 </button>
@@ -1303,10 +1303,10 @@ Object {
             </svg>
           </button>
           <div
-            class="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black"
+            class="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black"
           >
             <form
-              class="flex justify-center items-stretch h-10"
+              class="flex justify-between md:justify-center w-full items-stretch h-10"
               novalidate=""
             >
               <input
@@ -1327,15 +1327,15 @@ Object {
             class="border dark:border-slate-800"
           >
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Liedfett
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1360,21 +1360,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Leaders of the New School
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1399,21 +1399,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 lo & leduc
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1438,21 +1438,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Luedji Luna
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1477,21 +1477,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Lead
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1516,21 +1516,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Animals as Leaders
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1555,21 +1555,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Elfen Lied
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1594,21 +1594,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Lead Belly
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1633,21 +1633,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Bay Ledges
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1672,21 +1672,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Ledapple
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1711,21 +1711,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Leon Leiden
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1750,21 +1750,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Ledger
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1789,21 +1789,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Kiana Ledé
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1828,21 +1828,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Monsters of Liedermaching
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1867,21 +1867,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Lendakaris Muertos
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1906,21 +1906,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Kinder Lieder
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1945,21 +1945,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Led Er Est
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -1984,21 +1984,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Cult Leader
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2023,21 +2023,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Jefre Cantu-Ledesma
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2062,21 +2062,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Arlette Leduc
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2101,21 +2101,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Leadley
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2140,21 +2140,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Tomas Ledin
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2179,21 +2179,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Chris LeDoux
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2218,21 +2218,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Leadbelly
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2257,21 +2257,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Ledisi
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2296,21 +2296,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Lewd Acts
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2335,21 +2335,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Letdown.
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2374,21 +2374,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Led Zeppelin
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2413,21 +2413,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Led Zepagain
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2452,21 +2452,21 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 "
+                class="btn btn-small lg:ml-8 my-2 "
               >
                 unfollow
               </button>
             </div>
             <div
-              class="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100"
+              class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
             >
               <p
-                class="grow dark:text-slate-400"
+                class="grow text-clip dark:text-slate-400"
               >
                 Future Leaders of the World
               </p>
               <div
-                class="flex basis-2 mx-8"
+                class="flex basis-2 mx-4 md:mx-8"
               >
                 <a
                   class="inline"
@@ -2491,7 +2491,7 @@ Object {
                 
               </div>
               <button
-                class="btn btn-small ml-8 my-2 !border-zinc-900"
+                class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
               >
                 unfollow
               </button>

@@ -37,9 +37,12 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
   return (
     <div className="border dark:border-slate-800">
       {list.map((artist: ListEl, index: number) => (
-        <div className="flex justify-between items-center px-8 dark:even:bg-gray-800 even:bg-gray-100" key={index}>
-          <p className="grow dark:text-slate-400">{artist.name}</p>
-          <div className="flex basis-2 mx-8">
+        <div
+          className="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
+          key={index}
+        >
+          <p className="grow text-clip dark:text-slate-400">{artist.name}</p>
+          <div className="flex basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
               <a className="inline" href={artist.lastfmUri}>
                 <LastFm width={ICON_SIZE} height={ICON_SIZE} />
@@ -52,7 +55,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
             )}
           </div>
           <button
-            className={`btn btn-small ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
+            className={`btn btn-small lg:ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
             onClick={() => followArtist(artist)}
             disabled={disabled}
           >

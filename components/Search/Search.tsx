@@ -56,8 +56,12 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   };
 
   return (
-    <div className="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black">
-      <form className="flex justify-center items-stretch h-10" noValidate onSubmit={handleSubmit}>
+    <div className="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black">
+      <form
+        className="flex justify-between md:justify-center w-full items-stretch h-10"
+        noValidate
+        onSubmit={handleSubmit}
+      >
         <input
           className="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
           type="text"

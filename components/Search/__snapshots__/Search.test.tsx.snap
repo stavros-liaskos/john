@@ -3,10 +3,10 @@
 exports[`Search should handle the search action of the user 1`] = `
 <div>
   <div
-    class="relative flex justify-center items-center h-48 border-y-2  dark:border-slate-800 border-black"
+    class="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black"
   >
     <form
-      class="flex justify-center items-stretch h-10"
+      class="flex justify-between md:justify-center w-full items-stretch h-10"
       novalidate=""
     >
       <input
