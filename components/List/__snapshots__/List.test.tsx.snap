@@ -2,9 +2,7 @@
 
 exports[`List lists 2 artists 1`] = `
 <div>
-  <div
-    class="border dark:border-slate-800"
-  >
+  <div>
     <div
       class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >

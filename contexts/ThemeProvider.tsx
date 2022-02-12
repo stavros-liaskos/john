@@ -6,8 +6,7 @@ const isWindow = () => typeof window !== 'undefined';
 const ThemeProvider: FunctionComponent = ({ children }) => {
   const [dark, setDark] = useState<boolean>(
     isWindow() &&
-      (localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)),
+      (localStorage.theme),
   );
   const [loaded, setLoaded] = useState(false);
 

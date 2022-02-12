@@ -35,7 +35,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
   };
 
   return (
-    <div className="border dark:border-slate-800">
+    <div>
       {list.map((artist: ListEl, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"

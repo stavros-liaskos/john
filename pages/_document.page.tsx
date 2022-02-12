@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body className="bg-white dark:bg-zinc-900">
+          <script src="/noflash.js" />
           <Main />
           <NextScript />
         </body>
