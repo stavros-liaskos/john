@@ -4,10 +4,7 @@ import { ThemeContext } from './ThemeContext';
 const isWindow = () => typeof window !== 'undefined';
 
 const ThemeProvider: FunctionComponent = ({ children }) => {
-  const [dark, setDark] = useState<boolean>(
-    isWindow() &&
-      (localStorage.theme),
-  );
+  const [dark, setDark] = useState<boolean>(isWindow() && localStorage.theme);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);

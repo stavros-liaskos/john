@@ -1,5 +1,5 @@
 import React from 'react';
-import Spotlight from '../Icons/spotlight';
+import Sun from '../Icons/sun';
 import Moon from '../Icons/moon';
 import { useThemeContext } from '../../contexts/ThemeContext';
 
@@ -11,7 +11,7 @@ const DarkMode: React.FunctionComponent = () => {
   return (
     <button className="m-3" onClick={() => setDark(!dark)} data-testid={dark && loaded ? 'spotlight' : ''}>
       {dark && loaded ? (
-        <Spotlight colour="white" width={DARK_MODE_ICON_SIZE} height={DARK_MODE_ICON_SIZE} />
+        <Sun colour="white" width={DARK_MODE_ICON_SIZE} height={DARK_MODE_ICON_SIZE} />
       ) : (
         <Moon width={DARK_MODE_ICON_SIZE} height={DARK_MODE_ICON_SIZE} />
       )}
