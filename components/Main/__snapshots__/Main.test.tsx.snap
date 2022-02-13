@@ -46,7 +46,7 @@ exports[`Main show List of results  1`] = `
           type="text"
         />
         <button
-          class="btn btn-large"
+          class="btn flex btn-large"
           type="submit"
         >
           Search
@@ -88,7 +88,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="btn btn-small lg:ml-8 my-2 "
+          class="btn flex btn-small lg:ml-8 my-2 "
         >
           unfollow
         </button>
@@ -127,7 +127,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="btn btn-small lg:ml-8 my-2 !border-zinc-900"
+          class="btn flex btn-small lg:ml-8 my-2 !border-zinc-900"
         >
           unfollow
         </button>
@@ -166,7 +166,7 @@ exports[`Main show List of results  1`] = `
           
         </div>
         <button
-          class="btn btn-small lg:ml-8 my-2 "
+          class="btn flex btn-small lg:ml-8 my-2 "
         >
           unfollow
         </button>

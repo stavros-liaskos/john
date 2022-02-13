@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { ListProps, ListEl } from './List.types';
 import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
+import Button from '../Button/Button';
 
 const ICON_SIZE = 30;
 
 const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
-  const [disabled, setDisabled] = useState<boolean>(false);
+  const [artistLoading, setArtistLoading] = useState<string | null>(null);
 
   if (!list || !i18n || !i18n.unfollow) {
     return null;
   }
 
   const followArtist = (artistData: ListEl) => {
-    setDisabled(true);
+    setArtistLoading(artistData.name);
     fetch('/me/unfollow', {
       method: 'POST',
       mode: 'cors',
@@ -30,7 +31,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
         console.error('Error:', JSON.stringify(error));
       })
       .finally(() => {
-        setTimeout(() => setDisabled(false), 2000);
+        setTimeout(() => setArtistLoading(null), 2000);
       });
   };
 
@@ -54,13 +55,13 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
               </a>
             )}
           </div>
-          <button
-            className={`btn btn-small lg:ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
+          <Button
+            i18n={i18n.unfollow}
             onClick={() => followArtist(artist)}
-            disabled={disabled}
-          >
-            {i18n.unfollow}
-          </button>
+            className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
+            disabled={!!artistLoading && artist.name === artistLoading}
+            loading={!!artistLoading && artist.name === artistLoading}
+          />
         </div>
       ))}
     </div>

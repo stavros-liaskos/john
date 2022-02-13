@@ -2,6 +2,7 @@ import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
 import mockedResponse from '../../mocks/searchResult.json';
 import { ListEl } from '../List/List.types';
+import Button from '../Button/Button';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
@@ -14,18 +15,18 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch('https://jsonplaceholder.typicode.com/todos', {
-      method: 'POST',
-      body: new URLSearchParams(`query=${input}`),
-    })
+    fetch(`/search?${new URLSearchParams({ pattern: input })}`)
       .then(res => res.json())
       .then(result => {
         console.log(result);
         return setResults(mockedResponse.artistsPerResource.fromLastfm); // TODO replace results with result
       })
-      .catch(error => {
-        console.error('Error:', JSON.stringify(error));
+      .catch(() => {
         // TODO handle me
+      })
+      .finally(() => {
+        return setResults(mockedResponse.artistsPerResource.fromLastfm);
+        // TODO handle disabled/loading state
       });
   };
 
@@ -51,7 +52,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         setTimeout(() => {
           setResults(null);
           setDisabled(false);
-        }, 1000);
+        }, 10000);
       });
   };
 
@@ -69,9 +70,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
           placeholder={i18n.label}
           onChange={e => setInput(e.target.value)}
         />
-        <button className="btn btn-large" type="submit">
-          {i18n.button}
-        </button>
+        <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
       </form>
       {results && (
         <div className="absolute px-3 bg-slate-100 dark:bg-slate-800 top-32 border-2 border-zinc-900">

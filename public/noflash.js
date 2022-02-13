@@ -9,7 +9,7 @@
 
   function setClassOnDocumentBody(darkMode) {
     root.classList.add('dark');
-    darkMode && document.classList.add(classNameDark);
+    darkMode && document?.classList?.add(classNameDark);
     !darkMode && document.classList.remove(classNameDark);
   }
 
@@ -21,9 +21,6 @@
     localStorageTheme = localStorage.getItem(storageKey);
   } catch (err) {}
   var localStorageExists = localStorageTheme !== null;
-  if (localStorageExists) {
-    localStorageTheme = JSON.parse(localStorageTheme);
-  }
 
   // Determine the source of truth
   if (localStorageExists) {
