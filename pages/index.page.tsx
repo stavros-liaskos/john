@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <div className="flex flex-col h-screen justify-between">
         <Main className={'mb-auto'} i18n={{ todo: 'toso' }} />
 
-        <Footer className="h-10 bg-blue-500" i18n={{ powered: 'poweerf' }} />
+        <Footer className="h-10" i18n={{ powered: 'Powered by  ' }} />
       </div>
     </div>
   );

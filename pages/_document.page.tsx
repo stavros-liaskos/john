@@ -5,7 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="dark:bg-gray-400">
+        <body className="bg-white dark:bg-zinc-900">
+          <script src="/noflash.js" />
           <Main />
           <NextScript />
         </body>

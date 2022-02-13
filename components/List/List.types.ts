@@ -1,5 +1,5 @@
 export interface ListEl {
-  id?: string;
+  followedByUser: boolean;
   name: string;
   lastfmUri?: string;
   spotifyUri?: string;

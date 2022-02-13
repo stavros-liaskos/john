@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeContext';
 
 const isWindow = () => typeof window !== 'undefined';
 
-function useDarkMode() {
-  const [dark, setDark] = useState<boolean>(
-    isWindow() &&
-      (localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)),
-  );
+const ThemeProvider: FunctionComponent = ({ children }) => {
+  const [dark, setDark] = useState<boolean>(isWindow() && localStorage.theme);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
@@ -24,7 +21,7 @@ function useDarkMode() {
     }
   }, [dark, setDark]);
 
-  return { dark, loaded, setDark };
-}
+  return <ThemeContext.Provider value={{ dark, loaded, setDark }}>{children}</ThemeContext.Provider>;
+};
 
-export default useDarkMode;
+export default ThemeProvider;

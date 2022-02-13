@@ -2,26 +2,26 @@
 
 exports[`List lists 2 artists 1`] = `
 <div>
-  <div
-    class="border border-indigo-100"
-  >
+  <div>
     <div
-      class="flex justify-between items-center px-8 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
-      <p>
+      <p
+        class="grow text-clip dark:text-slate-400"
+      >
         Liedfett
       </p>
       <div
-        class="flex basis-2"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
           href="https://www.last.fm/music/Liedfett"
         >
           <svg
-            height="40"
+            height="30"
             viewBox="0 0 112.195 112.195"
-            width="40"
+            width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -37,28 +37,30 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+        class="btn flex btn-small lg:ml-8 my-2 "
       >
         unfollow
       </button>
     </div>
     <div
-      class="flex justify-between items-center px-8 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
-      <p>
+      <p
+        class="grow text-clip dark:text-slate-400"
+      >
         Leaders of the New School
       </p>
       <div
-        class="flex basis-2"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
           href="https://www.last.fm/music/Leaders+of+the+New+School"
         >
           <svg
-            height="40"
+            height="30"
             viewBox="0 0 112.195 112.195"
-            width="40"
+            width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -74,28 +76,30 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+        class="btn flex btn-small lg:ml-8 my-2 !border-zinc-900"
       >
         unfollow
       </button>
     </div>
     <div
-      class="flex justify-between items-center px-8 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
     >
-      <p>
+      <p
+        class="grow text-clip dark:text-slate-400"
+      >
         lo & leduc
       </p>
       <div
-        class="flex basis-2"
+        class="flex basis-2 mx-4 md:mx-8"
       >
         <a
           class="inline"
           href="https://www.last.fm/music/lo+&+leduc"
         >
           <svg
-            height="40"
+            height="30"
             viewBox="0 0 112.195 112.195"
-            width="40"
+            width="30"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -111,7 +115,7 @@ exports[`List lists 2 artists 1`] = `
         
       </div>
       <button
-        class="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+        class="btn flex btn-small lg:ml-8 my-2 "
       >
         unfollow
       </button>

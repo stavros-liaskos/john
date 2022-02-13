@@ -19,7 +19,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, className, defaultList
   }
 
   return (
-    <main className={`${className}`}>
+    <main className={`border-x-2 dark:border-slate-800 border-black ${className}`}>
       <DarkMode />
       <Search i18n={searchI18n} />
 

@@ -2,6 +2,7 @@ import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
 import mockedResponse from '../../mocks/searchResult.json';
 import { ListEl } from '../List/List.types';
+import Button from '../Button/Button';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
@@ -14,18 +15,18 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch('https://jsonplaceholder.typicode.com/todos', {
-      method: 'POST',
-      body: new URLSearchParams(`query=${input}`),
-    })
+    fetch(`/search?${new URLSearchParams({ pattern: input })}`)
       .then(res => res.json())
       .then(result => {
         console.log(result);
         return setResults(mockedResponse.artistsPerResource.fromLastfm); // TODO replace results with result
       })
-      .catch(error => {
-        console.error('Error:', JSON.stringify(error));
+      .catch(() => {
         // TODO handle me
+      })
+      .finally(() => {
+        return setResults(mockedResponse.artistsPerResource.fromLastfm);
+        // TODO handle disabled/loading state
       });
   };
 
@@ -51,35 +52,37 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         setTimeout(() => {
           setResults(null);
           setDisabled(false);
-        }, 1000);
+        }, 10000);
       });
   };
 
   return (
-    <div className="relative flex justify-center items-center h-48 bg-red-300">
-      <form className="flex justify-center items-stretch h-10" noValidate onSubmit={handleSubmit}>
+    <div className="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black">
+      <form
+        className="flex justify-between md:justify-center w-full items-stretch h-10"
+        noValidate
+        onSubmit={handleSubmit}
+      >
         <input
-          className="rounded mr-4 px-2 max-w-md"
+          className="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
           type="text"
           name="search"
           placeholder={i18n.label}
           onChange={e => setInput(e.target.value)}
         />
-        <button
-          className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
-          type="submit"
-        >
-          {i18n.button}
-        </button>
+        <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
       </form>
       {results && (
-        <div className="absolute bg-slate-100 top-32">
+        <div className="absolute px-3 bg-slate-100 dark:bg-slate-800 top-32 border-2 border-zinc-900">
           <ul>
             {results.map((result: ListEl, key: number) => (
-              <li className="flex justify-between" key={key}>
+              <li
+                className="flex justify-between items-center py-2 dark:text-slate-400 border-b-2 border-zinc-900"
+                key={key}
+              >
                 {result.name}
                 <button
-                  className="py-2 px-3 bg-indigo-800 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+                  className="btn btn-small !border-zinc-900"
                   onClick={() => handleFollow(result)}
                   disabled={disabled}
                 >

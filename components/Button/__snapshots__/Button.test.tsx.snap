@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button calls to action when button clicked 1`] = `
+<div>
+  <button
+    class="btn flex undefined"
+  >
+    <div
+      class="loading-icon"
+    />
+    Click Me!
+  </button>
+</div>
+`;
+
+exports[`Button renders a disabled button 1`] = `
+<div>
+  <button
+    class="btn flex undefined"
+    disabled=""
+  >
+    No Action
+  </button>
+</div>
+`;
+
+exports[`Button renders a spinner when loading 1`] = `
+<div>
+  <button
+    class="btn flex undefined"
+  >
+    <div
+      class="loading-icon"
+    />
+    No Action
+  </button>
+</div>
+`;
+
+exports[`Button renders an enabled button by default and not a loading spinner 1`] = `
+<div>
+  <button
+    class="btn flex undefined"
+  >
+    Click Me!
+  </button>
+</div>
+`;
