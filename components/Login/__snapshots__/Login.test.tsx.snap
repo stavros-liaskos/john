@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders with data without crashing 1`] = `
+<div>
+  <div
+    class="flex flex-col items-center justify-center w-full h-96 p-3"
+  >
+    <h2
+      class="dark:text-slate-400 text-4xl mb-3"
+    >
+      Welcome to Release Raccoon!
+    </h2>
+    <p
+      class="dark:text-slate-400 text-xl mb-3"
+    >
+      Receive your favorite artists' music in your email every week!
+    </p>
+    <button
+      class="btn btn-large lg:ml-8 mx-3 my-2 w-44 h-14 mb-3"
+    >
+      Register
+    </button>
+  </div>
+</div>
+`;

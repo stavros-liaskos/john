@@ -1,10 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import Meta from './Meta';
+import { renderWithAct } from '../../utils/test-utils';
 
 describe('Meta', () => {
-  it('renders without data without crashing', () => {
-    const component = render(<Meta />);
-    expect(component).toMatchSnapshot();
+  it('renders without data without crashing', async () => {
+    await renderWithAct(<Meta />);
   });
 });
