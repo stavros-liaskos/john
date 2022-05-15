@@ -11,3 +11,4 @@ public
 .prettierignore
 yarn.lock
 LICENSE
+.env*

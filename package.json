@@ -10,13 +10,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^1.8.0",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.1.3",
-    "@react-mock/localstorage": "^0.1.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
@@ -34,6 +34,7 @@
     "ignore-loader": "^0.1.2",
     "jest": "^27.4.5",
     "jest-fetch-mock": "^3.0.3",
+    "jest-localstorage-mock": "^2.4.21",
     "lint-staged": ">=10",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",

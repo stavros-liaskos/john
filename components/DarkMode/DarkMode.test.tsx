@@ -1,23 +1,40 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import DarkMode from './DarkMode';
-import { LocalStorageMock } from '@react-mock/localstorage';
+import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { act } from '@testing-library/react';
 
 describe('DarkMode', () => {
-  it('show Spotlight on dark mode', () => {
-    const { container } = render(
-      <LocalStorageMock items={{ theme: 'dark' }}>
-        {localStorage.theme === 'dark' && <p>asdf</p>}
-        <DarkMode />
-      </LocalStorageMock>,
-    );
+  beforeEach(() => {
+    beforeEachTest();
+  });
 
-    // todo
-    // expect(getByTestId(container, 'spotlight')).toBeTruthy();
+  it('shows Sun icon on dark mode', async () => {
+    localStorage.setItem('theme', 'dark');
+    const component = await renderWithAct(<DarkMode />);
+    const { container } = component;
+
+    expect(component.getByTestId('sun')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
-  xit('show Moon on light mode', () => {
-    // todo
+  it('shows Moon icon on light mode', async () => {
+    localStorage.removeItem('theme');
+    const component = await renderWithAct(<DarkMode />);
+    const { container } = component;
+
+    expect(component.getByTestId('moon')).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('toggles to Sun Icon when clicking the Moon', async () => {
+    localStorage.removeItem('theme');
+    const component = await renderWithAct(<DarkMode />);
+    const button = component.getByTestId('moon');
+    expect(component.getByTestId('moon')).toBeTruthy();
+
+    act(() => {
+      button?.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+    });
+    expect(component.getByTestId('sun')).toBeTruthy();
   });
 });
