@@ -2,12 +2,15 @@
 
 exports[`List lists 2 artists 1`] = `
 <div>
-  <div>
+  <div
+    style="overflow: auto;"
+  >
+     
     <div
-      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow text-clip dark:text-slate-400"
+        class="grow text-clip dark:text-slate-300"
       >
         Liedfett
       </p>
@@ -43,10 +46,10 @@ exports[`List lists 2 artists 1`] = `
       </button>
     </div>
     <div
-      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow text-clip dark:text-slate-400"
+        class="grow text-clip dark:text-slate-300"
       >
         Leaders of the New School
       </p>
@@ -82,10 +85,10 @@ exports[`List lists 2 artists 1`] = `
       </button>
     </div>
     <div
-      class="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
     >
       <p
-        class="grow text-clip dark:text-slate-400"
+        class="grow text-clip dark:text-slate-300"
       >
         lo & leduc
       </p>

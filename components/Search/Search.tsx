@@ -57,14 +57,14 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   };
 
   return (
-    <div className="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black">
+    <div className="relative flex lg:justify-center items-center h-20 md:h-48 dark:border-slate-600 border-black w-full">
       <form
-        className="flex justify-between md:justify-center w-full items-stretch h-10"
+        className="flex justify-between md:justify-center items-stretch h-10 w-full"
         noValidate
         onSubmit={handleSubmit}
       >
         <input
-          className="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
+          className="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-600 border-black dark:bg-slate-800 dark:text-slate-300"
           type="text"
           name="search"
           placeholder={i18n.label}
@@ -73,11 +73,15 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
       </form>
       {results && (
-        <div className="absolute px-3 bg-slate-100 dark:bg-slate-800 top-32 border-2 border-zinc-900">
+        <div
+          className="absolute px-3 bg-slate-100 dark:bg-slate-800 border-2 border-zinc-900 top-12 w-full"
+          style={{ zIndex: 2 }}
+        >
+          {/* TODO tailwidn */}
           <ul>
             {results.map((result: ListEl, key: number) => (
               <li
-                className="flex justify-between items-center py-2 dark:text-slate-400 border-b-2 border-zinc-900"
+                className="flex justify-between items-center py-2 dark:text-slate-300 border-b-2 border-zinc-900"
                 key={key}
               >
                 {result.name}

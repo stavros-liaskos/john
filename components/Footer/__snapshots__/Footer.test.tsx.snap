@@ -3,10 +3,10 @@
 exports[`Footer renders with data 1`] = `
 <div>
   <footer
-    class="flex items-center justify-center border-t-2 dark:border-slate-800 border-black "
+    class="flex items-center justify-center border-t-2 dark:border-slate-600 border-black "
   >
     <a
-      class="flex items-center dark:text-slate-400"
+      class="flex items-center dark:text-slate-300"
       href="https://github.com/jaivalis/release-raccoon"
       rel="noopener noreferrer"
       target="_blank"

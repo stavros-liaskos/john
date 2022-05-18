@@ -3,14 +3,14 @@
 exports[`Search should handle the search action of the user 1`] = `
 <div>
   <div
-    class="relative flex lg:justify-center items-center px-4 h-20 md:h-48 border-y-2 dark:border-slate-800 border-black"
+    class="relative flex lg:justify-center items-center h-20 md:h-48 dark:border-slate-600 border-black w-full"
   >
     <form
-      class="flex justify-between md:justify-center w-full items-stretch h-10"
+      class="flex justify-between md:justify-center items-stretch h-10 w-full"
       novalidate=""
     >
       <input
-        class="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-800 border-black dark:bg-slate-800 dark:text-slate-400"
+        class="mr-4 px-2 min-m-lg border-b-2 dark:border-slate-600 border-black dark:bg-slate-800 dark:text-slate-300"
         name="search"
         placeholder="Here goes the artist..."
         type="text"
