@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <div className="sm:border-x-2 rr-border">
         <Header />
 
-        <Main i18n={{ todo: 'toso' }} />
+        <Main i18n={{ todo: 'todo' }} />
 
         <Footer className="h-20" i18n={{ powered: 'Powered by  ' }} />
       </div>

@@ -36,9 +36,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
   };
 
   return (
-    <div style={{ overflow: 'auto' }}>
-      {' '}
-      {/* TODO use tailwind */}
+    <div className="overflow-auto">
       {list.map((artist: ListEl, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
