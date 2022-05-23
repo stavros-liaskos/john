@@ -36,7 +36,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
   };
 
   return (
-    <div className="overflow-auto">
+    <div className="overflow-auto w-full">
       {list.map((artist: ListEl, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"

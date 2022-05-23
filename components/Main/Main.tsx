@@ -27,10 +27,10 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, defaultList = [] }) =>
   return (
     <main className={`flex flex-col items-center justify-center w-full p-3 mb-auto min-h-[calc(100vh_-_8.5rem)]`}>
       {user ? (
-        <>
+        <div className={`flex flex-col items-center justify-center w-full lg:w-9/12`}>
           <Search i18n={searchI18n} />
           <List list={list} i18n={listI18n} />
-        </>
+        </div>
       ) : (
         <Login
           i18n={{
