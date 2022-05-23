@@ -5,8 +5,14 @@
 @tailwind utilities;
 
 @layer components {
+  .rr-border {
+    @apply dark:border-slate-600 border-black;
+  }
+  .rr-text {
+    @apply dark:text-slate-300;
+  }
   .btn {
-    @apply font-semibold text-sm rounded-sm shadow border-2 dark:border-slate-800 border-black dark:text-slate-400 flex items-center justify-center;
+    @apply font-semibold text-sm rounded-sm shadow border-2 rr-border rr-text flex items-center justify-center;
   }
   .btn-large {
     @apply py-2 px-3;

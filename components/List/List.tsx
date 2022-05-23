@@ -36,13 +36,13 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
   };
 
   return (
-    <div>
+    <div className="overflow-auto w-full">
       {list.map((artist: ListEl, index: number) => (
         <div
-          className="flex justify-between md:justify-center items-center px-4 dark:even:bg-gray-800 even:bg-gray-100"
+          className="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
           key={index}
         >
-          <p className="grow text-clip dark:text-slate-400">{artist.name}</p>
+          <p className="grow text-clip rr-text">{artist.name}</p>
           <div className="flex basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
               <a className="inline" href={artist.lastfmUri}>

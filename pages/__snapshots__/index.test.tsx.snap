@@ -6,16 +6,43 @@ exports[`Home renders a heading 1`] = `
     class="container max-auto"
   >
     <div
-      class="border-2 dark:border-slate-800 border-black"
+      class="sm:border-x-2 rr-border"
     >
+      <header
+        class="flex justify-between h-14 rr-border border-b-2"
+      >
+        <button
+          class="m-3"
+          data-testid="moon"
+        >
+          <svg
+            class="h-6 w-6"
+            color="var(--geist-foreground)"
+            fill="none"
+            height="28"
+            shape-rendering="geometricPrecision"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="28"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+            />
+          </svg>
+        </button>
+      </header>
       <div>
         invalid json response body at  reason: Unexpected end of JSON input
       </div>
       <footer
-        class="flex items-center justify-center border-t-2 dark:border-slate-800 border-black h-24"
+        class="flex items-center justify-center border-t-2 rr-border h-20"
       >
         <a
-          class="flex items-center dark:text-slate-400"
+          class="flex items-center rr-text"
           href="https://github.com/jaivalis/release-raccoon"
           rel="noopener noreferrer"
           target="_blank"

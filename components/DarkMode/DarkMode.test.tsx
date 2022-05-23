@@ -33,7 +33,7 @@ describe('DarkMode', () => {
     expect(component.getByTestId('moon')).toBeTruthy();
 
     act(() => {
-      button?.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+      button?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
     expect(component.getByTestId('sun')).toBeTruthy();
   });

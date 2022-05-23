@@ -6,6 +6,5 @@ export interface MainI18n {
 
 export interface MainProps {
   i18n: MainI18n;
-  className: string;
   defaultList?: ListEl[];
 }
