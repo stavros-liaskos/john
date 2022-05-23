@@ -25,7 +25,10 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n, defaultList = [] }) =>
   if (error) return <div>{error.message}</div>;
 
   return (
-    <main className={`flex flex-col items-center justify-center w-full p-3 mb-auto min-h-[calc(100vh_-_8.5rem)]`}>
+    <main
+      className={`flex flex-col items-center justify-center w-full p-3 mb-auto min-h-[calc(100vh_-_8.5rem)]`}
+      style={{ minHeight: 'calc(100vh - 8.5rem)' }} /* the tailwind class only works locally */
+    >
       {user ? (
         <div className={`flex flex-col items-center justify-center w-full lg:w-9/12`}>
           <Search i18n={searchI18n} />
