@@ -6,12 +6,12 @@ exports[`Login renders with data without crashing 1`] = `
     class="flex flex-col items-center justify-center lg:w-1/2"
   >
     <h2
-      class="dark:text-slate-300 text-4xl mb-3"
+      class="rr-text text-4xl mb-3"
     >
       Welcome to Release Raccoon!
     </h2>
     <p
-      class="dark:text-slate-300 text-xl mb-3"
+      class="rr-text text-xl mb-3"
     >
       Receive your favorite artists' music in your email every week!
     </p>
@@ -27,12 +27,12 @@ exports[`Login renders with data without crashing 1`] = `
         class="text-center"
       >
         <p
-          class="dark:text-slate-300"
+          class="rr-text"
         >
           Artists
         </p>
         <p
-          class="dark:text-slate-300"
+          class="rr-text"
         >
           4965
         </p>
@@ -41,12 +41,12 @@ exports[`Login renders with data without crashing 1`] = `
         class="text-center"
       >
         <p
-          class="dark:text-slate-300"
+          class="rr-text"
         >
           Releases
         </p>
         <p
-          class="dark:text-slate-300"
+          class="rr-text"
         >
           3816
         </p>

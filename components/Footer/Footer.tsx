@@ -11,9 +11,9 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n, className }) => {
   }
 
   return (
-    <footer className={`flex items-center justify-center border-t-2 dark:border-slate-600 border-black ${className}`}>
+    <footer className={`flex items-center justify-center border-t-2 rr-border ${className}`}>
       <a
-        className="flex items-center dark:text-slate-300"
+        className="flex items-center rr-text"
         href="https://github.com/jaivalis/release-raccoon"
         target="_blank"
         rel="noopener noreferrer"

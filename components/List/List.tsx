@@ -44,7 +44,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
           className="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
           key={index}
         >
-          <p className="grow text-clip dark:text-slate-300">{artist.name}</p>
+          <p className="grow text-clip rr-text">{artist.name}</p>
           <div className="flex basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
               <a className="inline" href={artist.lastfmUri}>

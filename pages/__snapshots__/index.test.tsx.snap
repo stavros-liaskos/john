@@ -6,10 +6,10 @@ exports[`Home renders a heading 1`] = `
     class="container max-auto"
   >
     <div
-      class="sm:border-x-2 dark:border-slate-600 border-black"
+      class="sm:border-x-2 rr-border"
     >
       <header
-        class="flex justify-between h-14 dark:border-slate-600 border-black border-b-2"
+        class="flex justify-between h-14 rr-border border-b-2"
       >
         <button
           class="m-3"
@@ -39,10 +39,10 @@ exports[`Home renders a heading 1`] = `
         invalid json response body at  reason: Unexpected end of JSON input
       </div>
       <footer
-        class="flex items-center justify-center border-t-2 dark:border-slate-600 border-black h-20"
+        class="flex items-center justify-center border-t-2 rr-border h-20"
       >
         <a
-          class="flex items-center dark:text-slate-300"
+          class="flex items-center rr-text"
           href="https://github.com/jaivalis/release-raccoon"
           rel="noopener noreferrer"
           target="_blank"

@@ -6,7 +6,7 @@ const Header: React.FunctionComponent = () => {
   const { user } = useUser();
 
   return (
-    <header className="flex justify-between h-14 dark:border-slate-600 border-black border-b-2">
+    <header className="flex justify-between h-14 rr-border border-b-2">
       <DarkMode />
 
       {user && (

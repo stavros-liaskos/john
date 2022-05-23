@@ -6,10 +6,10 @@ import Header from '../components/Header/Header';
 const Home: NextPage = () => {
   return (
     <div className="container max-auto">
-      <div className="sm:border-x-2 dark:border-slate-600 border-black">
+      <div className="sm:border-x-2 rr-border">
         <Header />
 
-        <Main className={''} i18n={{ todo: 'toso' }} />
+        <Main i18n={{ todo: 'toso' }} />
 
         <Footer className="h-20" i18n={{ powered: 'Powered by  ' }} />
       </div>
