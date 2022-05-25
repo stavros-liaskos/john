@@ -15,7 +15,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
 
   const followArtist = (artistData: ListEl) => {
     setArtistLoading(artistData.name);
-    fetch('/me/unfollow', {
+    fetch('https://release-racconBE.com/todos/me/unfollow', {
       method: 'POST',
       mode: 'cors',
       headers: {
