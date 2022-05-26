@@ -64,7 +64,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         onSubmit={handleSubmit}
       >
         <input
-          className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-slate-800 rr-text w-full md:w-2/3"
+          className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
           type="text"
           name="search"
           placeholder={i18n.label}
@@ -73,13 +73,13 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
       </form>
       {results && (
-        <div className="absolute px-3 bg-slate-100 dark:bg-slate-800 border-2 border-zinc-900 top-16 md:top-32 w-full z-10">
+        <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-16 md:top-32 w-full z-10">
           <ul>
             {results.map((result: ListEl, key: number) => (
-              <li className="flex justify-between items-center py-2 rr-text border-b-2 border-zinc-900" key={key}>
+              <li className="flex justify-between items-center py-2 rr-text border-b-2 border-gh-dark" key={key}>
                 {result.name}
                 <button
-                  className="btn btn-small !border-zinc-900"
+                  className="btn btn-small !border-gh-dark"
                   onClick={() => handleFollow(result)}
                   disabled={disabled}
                 >

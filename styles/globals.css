@@ -6,7 +6,7 @@
 
 @layer components {
   .rr-border {
-    @apply dark:border-slate-600 border-black;
+    @apply dark:border-gh-border border-black;
   }
   .rr-text {
     @apply dark:text-slate-300;
