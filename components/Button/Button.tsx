@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonProps } from './Button.types';
+import Spin from '../Icons/spin';
 
 const Button: React.FunctionComponent<ButtonProps> = ({
   className,
@@ -15,7 +16,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <button className={`btn flex ${className}`} onClick={onClick} disabled={disabled} type={type}>
-      {loading && <div className="loading-icon" />}
+      {loading && <Spin />}
       {i18n}
     </button>
   );
