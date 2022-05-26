@@ -15,7 +15,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch(`https://release-racconBE.com/todos/me/search/?${new URLSearchParams({ pattern: input })}`)
+    fetch(`${process.env.BE_BASE_URL}/todos/me/search/?${new URLSearchParams({ pattern: input })}`)
       .then(res => res.json())
       .then(result => {
         console.log(result);
@@ -33,7 +33,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const handleFollow = (artistData: ListEl) => {
     setDisabled(true);
 
-    fetch('https://release-racconBE.com/todos/me/follow', {
+    fetch(`${process.env.BE_BASE_URL}/todos/me/follow`, {
       method: 'POST',
       mode: 'cors',
       headers: {

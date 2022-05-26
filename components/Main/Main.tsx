@@ -9,13 +9,14 @@ import { useUser } from '@auth0/nextjs-auth0';
 import Login from '../Login/Login';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
-  const { user, error, isLoading } = useUser();
+  const { user, error } = useUser(); // TODO use isLoading or try Suspense
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [list, setList] = useState<ListEl[]>();
 
-  useEffect(()=>{
-    fetch('https://release-racconBE.com/todos/me/myArtists', {
+  useEffect(() => {
+    console.warn(`${process.env.BE_BASE_URL}/todos/me/myArtists`);
+    fetch(`${process.env.BE_BASE_URL}/todos/me/myArtists`, {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -24,14 +25,14 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
       referrerPolicy: 'no-referrer',
     })
       .then(response => response.json())
-      .then(data => setList(data))
-  },[])
+      .then(data => setList(data));
+  }, []);
 
   if (!i18n || !i18n.todo) {
     return null;
   }
 
-  if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
   return (
