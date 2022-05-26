@@ -36,7 +36,6 @@ exports[`List lists 2 artists 1`] = `
             />
           </svg>
         </a>
-        
       </div>
       <button
         class="btn flex btn-small lg:ml-8 my-2 "
@@ -75,7 +74,6 @@ exports[`List lists 2 artists 1`] = `
             />
           </svg>
         </a>
-        
       </div>
       <button
         class="btn flex btn-small lg:ml-8 my-2 !border-zinc-900"
@@ -114,7 +112,6 @@ exports[`List lists 2 artists 1`] = `
             />
           </svg>
         </a>
-        
       </div>
       <button
         class="btn flex btn-small lg:ml-8 my-2 "

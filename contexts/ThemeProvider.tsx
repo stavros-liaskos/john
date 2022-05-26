@@ -1,9 +1,13 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FC, ReactElement, useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 const isWindow = () => typeof window !== 'undefined';
 
-const ThemeProvider: FunctionComponent = ({ children }) => {
+interface ChildrenProps {
+  children: ReactElement;
+}
+
+const ThemeProvider: FC<ChildrenProps> = ({ children }) => {
   const [dark, setDark] = useState<boolean>(isWindow() && localStorage.theme);
   const [loaded, setLoaded] = useState(false);
 
