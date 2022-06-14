@@ -1,19 +1,29 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Header from './Header';
-import { renderWithAct } from '../../utils/test-utils';
+import { UserProvider } from '@auth0/nextjs-auth0';
 
 describe('Header', () => {
-  // TODO write test
-  it('shows Logout btn when user is logged in', async () => {
-    const { container } = await renderWithAct(<Header />);
+  it('hides Logout btn when user is logged out', () => {
+    const component = render(
+      <UserProvider>
+        <Header />
+      </UserProvider>,
+    );
 
-    expect(container).toMatchSnapshot();
+    expect(component.findByText('Logout')).toMatchObject({});
   });
 
-  xit('hides Logout btn when user is logged out', () => {
-    const { container } = render(<Header />);
+  it('shows Logout btn when user is logged in', () => {
+    const component = render(
+      <UserProvider user={{ user: 'john.doe' }}>
+        <Header />
+      </UserProvider>,
+    );
 
+    const { container } = component;
+
+    expect(component.findByText('Logout')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 });
