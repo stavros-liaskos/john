@@ -24,6 +24,8 @@ export default {
     '{components,contexts,hooks,pages}/**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/*.{types,data}.ts',
+    '!**/_app.page.tsx',
+    '!**/_document.page.tsx',
   ],
 
   // The directory where Jest should output its coverage files

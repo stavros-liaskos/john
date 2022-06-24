@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List lists 2 artists 1`] = `
+exports[`List unfollows artist on "unfollow" btn click 1`] = `
 <div>
   <div
     class="overflow-auto w-full"
