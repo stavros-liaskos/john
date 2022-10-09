@@ -39,7 +39,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
     <div className="overflow-auto w-full">
       {list.map((artist: ListEl, index: number) => (
         <div
-          className="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
+          className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
           key={index}
         >
           <p className="grow text-clip rr-text">{artist.name}</p>
@@ -58,7 +58,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
           <Button
             i18n={i18n.unfollow}
             onClick={() => followArtist(artist)}
-            className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-zinc-900' : ''}`}
+            className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-gh-dark' : ''}`}
             disabled={!!artistLoading && artist.name === artistLoading}
             loading={!!artistLoading && artist.name === artistLoading}
           />

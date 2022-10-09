@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List lists 2 artists 1`] = `
+exports[`List unfollows artist on "unfollow" btn click 1`] = `
 <div>
   <div
     class="overflow-auto w-full"
   >
     <div
-      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
     >
       <p
         class="grow text-clip rr-text"
@@ -44,7 +44,7 @@ exports[`List lists 2 artists 1`] = `
       </button>
     </div>
     <div
-      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
     >
       <p
         class="grow text-clip rr-text"
@@ -76,13 +76,13 @@ exports[`List lists 2 artists 1`] = `
         </a>
       </div>
       <button
-        class="btn flex btn-small lg:ml-8 my-2 !border-zinc-900"
+        class="btn flex btn-small lg:ml-8 my-2 !border-gh-dark"
       >
         unfollow
       </button>
     </div>
     <div
-      class="flex justify-between md:justify-center items-center dark:even:bg-gray-800 even:bg-gray-100"
+      class="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
     >
       <p
         class="grow text-clip rr-text"

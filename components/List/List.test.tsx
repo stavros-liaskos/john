@@ -9,10 +9,10 @@ describe('List', () => {
     render(<List />);
   });
 
-  it('lists 2 artists', () => {
+  it('unfollows artist on "unfollow" btn click', () => {
     const { container } = render(<List list={listData} i18n={listI18n} />);
-    const unfollowBtns = getAllByText(container, 'unfollow');
 
+    const unfollowBtns = getAllByText(container, 'unfollow');
     expect(unfollowBtns.length).toEqual(3);
     expect(container).toMatchSnapshot();
   });
