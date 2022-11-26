@@ -7,16 +7,17 @@ import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../List/List.data';
 import { useUser } from '@auth0/nextjs-auth0';
 import Login from '../Login/Login';
+import {components} from '../../types/schema';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
-  const { user, error } = useUser(); // TODO use isLoading or try Suspense
+  //const { user, error } = useUser(); // TODO use isLoading or try Suspense
+  const { user, error } = { user: 'asdf',  error: null}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [list, setList] = useState<ListEl[]>();
+  const [list, setList] = useState<components['schemas']['FollowedArtistsResponse']>();
 
   useEffect(() => {
-    console.warn(`${process.env.BE_BASE_URL}/todos/me/myArtists`);
-    fetch(`${process.env.BE_BASE_URL}/todos/me/myArtists`, {
+    fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -33,7 +34,9 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   }
 
   // if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if (error) { // @ts-ignore
+    return <div>{error.message}</div>;
+  }
 
   return (
     <main
