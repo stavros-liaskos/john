@@ -1,17 +1,16 @@
 import { MainProps } from './Main.types';
 import List from '../List/List';
 import React, { useEffect, useState } from 'react';
-import { ListEl } from '../List/List.types';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../List/List.data';
 import { useUser } from '@auth0/nextjs-auth0';
 import Login from '../Login/Login';
-import {components} from '../../types/schema';
+import { components } from '../../types/schema';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
-  //const { user, error } = useUser(); // TODO use isLoading or try Suspense
-  const { user, error } = { user: 'asdf',  error: null}
+  const { user, error, isLoading } = useUser(); // TODO use isLoading or try Suspense
+  // const { user, error } = { user: 'asdf',  error: null}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [list, setList] = useState<components['schemas']['FollowedArtistsResponse']>();
@@ -33,8 +32,8 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
     return null;
   }
 
-  // if (isLoading) return <div>Loading...</div>;
-  if (error) { // @ts-ignore
+  if (isLoading) return <div>Loading...</div>;
+  if (error) {
     return <div>{error.message}</div>;
   }
 
@@ -44,9 +43,9 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
       style={{ minHeight: 'calc(100vh - 8.5rem)' }} /* the tailwind class only works locally */
     >
       {user ? (
-        <div className={`flex flex-col items-center justify-center w-full lg:w-9/12`}>
+        <div className={`flex flex-col items-center w-full lg:w-9/12`}>
           <Search i18n={searchI18n} />
-          <List list={list} i18n={listI18n} />
+          {list?.rows && <List list={list.rows} i18n={listI18n} />}
         </div>
       ) : (
         <Login

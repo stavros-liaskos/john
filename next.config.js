@@ -6,7 +6,7 @@ module.exports = {
     domains: ['www.placecage.com'],
   },
   async rewrites() {
-    return [{ source: "/:path*", destination: "/api/server/:path*" }];
+    return [{ source: '/:path*', destination: '/api/server/:path*' }];
   },
   env: {
     BE_BASE_URL: process.env.BE_BASE_URL,

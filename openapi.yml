@@ -4,40 +4,40 @@ info:
   title: release-raccoon-app API
   version: 0.0.1-SNAPSHOT
 tags:
-- name: ArtistResource
-- name: RaccoonUserResource
-- name: ReleaseResource
+  - name: ArtistResource
+  - name: RaccoonUserResource
+  - name: ReleaseResource
 paths:
   /:
     get:
       tags:
-      - Index Resource
+        - Index Resource
       responses:
-        "200":
+        '200':
           description: OK
   /artist:
     get:
       tags:
-      - ArtistResource
+        - ArtistResource
       parameters:
-      - name: page
-        in: query
-        schema:
-          format: int32
-          default: 0
-          type: integer
-      - name: size
-        in: query
-        schema:
-          format: int32
-          default: 20
-          type: integer
-      - name: sort
-        in: query
-        schema:
-          type: array
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -47,14 +47,14 @@ paths:
                   $ref: '#/components/schemas/Artist'
     post:
       tags:
-      - ArtistResource
+        - ArtistResource
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Artist'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
@@ -62,9 +62,9 @@ paths:
   /artist/count:
     get:
       tags:
-      - ArtistResource
+        - ArtistResource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -74,44 +74,44 @@ paths:
   /artist/search:
     get:
       tags:
-      - Artist Search Resource
+        - Artist Search Resource
       parameters:
-      - name: pattern
-        in: query
-        schema:
-          type: string
-      - name: size
-        in: query
-        required: false
-        schema:
-          format: int32
-          type: integer
+        - name: pattern
+          in: query
+          schema:
+            type: string
+        - name: size
+          in: query
+          required: false
+          schema:
+            format: int32
+            type: integer
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ArtistSearchResponse'
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /artist/{id}:
     get:
       tags:
-      - ArtistResource
+        - ArtistResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -119,135 +119,135 @@ paths:
                 $ref: '#/components/schemas/Artist'
     put:
       tags:
-      - ArtistResource
+        - ArtistResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Artist'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Artist'
     delete:
       tags:
-      - ArtistResource
+        - ArtistResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "204": {}
+        '204': {}
   /me:
     get:
       tags:
-      - User Profile Resource
+        - User Profile Resource
       responses:
-        "200":
+        '200':
           description: OK
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /me/enable-services:
     get:
       tags:
-      - User Profile Resource
+        - User Profile Resource
       parameters:
-      - name: enableSpotify
-        in: query
-        required: false
-        schema:
-          type: boolean
-      - name: lastfmUsername
-        in: query
-        required: false
-        schema:
-          type: string
+        - name: enableSpotify
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: lastfmUsername
+          in: query
+          required: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /me/follow:
     post:
       tags:
-      - User Profile Resource
+        - User Profile Resource
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ArtistDto'
       responses:
-        "200":
+        '200':
           description: OK
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /me/followed-artists:
     get:
       tags:
-      - User Profile Resource
+        - User Profile Resource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FollowedArtistsResponse'
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /me/unfollow/{artistId}:
     delete:
       tags:
-      - User Profile Resource
+        - User Profile Resource
       parameters:
-      - name: artistId
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: artistId
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "200":
+        '200':
           description: OK
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
   /notify-users:
     get:
       tags:
-      - Notifying Resource
+        - Notifying Resource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -256,26 +256,26 @@ paths:
   /raccoon-user:
     get:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       parameters:
-      - name: page
-        in: query
-        schema:
-          format: int32
-          default: 0
-          type: integer
-      - name: size
-        in: query
-        schema:
-          format: int32
-          default: 20
-          type: integer
-      - name: sort
-        in: query
-        schema:
-          type: array
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -285,14 +285,14 @@ paths:
                   $ref: '#/components/schemas/RaccoonUser'
     post:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/RaccoonUser'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
@@ -300,9 +300,9 @@ paths:
   /raccoon-user/count:
     get:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -312,16 +312,16 @@ paths:
   /raccoon-user/{id}:
     get:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -329,60 +329,60 @@ paths:
                 $ref: '#/components/schemas/RaccoonUser'
     put:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/RaccoonUser'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RaccoonUser'
     delete:
       tags:
-      - RaccoonUserResource
+        - RaccoonUserResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "204": {}
+        '204': {}
   /release:
     get:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       parameters:
-      - name: page
-        in: query
-        schema:
-          format: int32
-          default: 0
-          type: integer
-      - name: size
-        in: query
-        schema:
-          format: int32
-          default: 20
-          type: integer
-      - name: sort
-        in: query
-        schema:
-          type: array
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -392,14 +392,14 @@ paths:
                   $ref: '#/components/schemas/Release'
     post:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Release'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
@@ -407,9 +407,9 @@ paths:
   /release-scrape:
     get:
       tags:
-      - Release Scrape Resource
+        - Release Scrape Resource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -421,9 +421,9 @@ paths:
   /release/count:
     get:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -433,16 +433,16 @@ paths:
   /release/{id}:
     get:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -450,43 +450,43 @@ paths:
                 $ref: '#/components/schemas/Release'
     put:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Release'
       responses:
-        "201":
+        '201':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Release'
     delete:
       tags:
-      - ReleaseResource
+        - ReleaseResource
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          format: int64
-          type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
       responses:
-        "204": {}
+        '204': {}
   /scrape-taste/lastfm:
     get:
       tags:
-      - Taste Scraping Resource
+        - Taste Scraping Resource
       responses:
-        "200":
+        '200':
           description: OK
           content:
             text/plain:
@@ -494,77 +494,77 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/UserArtist'
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
     parameters:
-    - name: email
-      in: query
-      schema:
-        type: string
+      - name: email
+        in: query
+        schema:
+          type: string
   /scrape-taste/spotify:
     get:
       tags:
-      - Taste Scraping Resource
+        - Taste Scraping Resource
       responses:
-        "200":
+        '200':
           description: OK
-        "401":
+        '401':
           description: Not Authorized
-        "403":
+        '403':
           description: Not Allowed
       security:
-      - SecurityScheme: []
+        - SecurityScheme: []
     parameters:
-    - name: email
-      in: query
-      schema:
-        type: string
+      - name: email
+        in: query
+        schema:
+          type: string
   /spotify-auth-callback:
     get:
       tags:
-      - Spotify Auth Resource
+        - Spotify Auth Resource
       parameters:
-      - name: code
-        in: query
-        schema:
-          type: string
-      - name: error
-        in: query
-        schema:
-          type: string
-      - name: state
-        in: query
-        schema:
-          type: string
+        - name: code
+          in: query
+          schema:
+            type: string
+        - name: error
+          in: query
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
     post:
       tags:
-      - Spotify Auth Resource
+        - Spotify Auth Resource
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/RegisterUserRequest'
       responses:
-        "200":
+        '200':
           description: OK
   /spotify-auth-callback/user-top-artists:
     get:
       tags:
-      - Spotify Auth Resource
+        - Spotify Auth Resource
       parameters:
-      - name: userId
-        in: query
-        schema:
-          type: string
+        - name: userId
+          in: query
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
 components:
   schemas:
@@ -588,7 +588,7 @@ components:
           type: string
     ArtistDto:
       required:
-      - name
+        - name
       type: object
       properties:
         id:
@@ -634,7 +634,7 @@ components:
       example: 2022-03-10T12:15:50
     RaccoonUser:
       required:
-      - email
+        - email
       type: object
       properties:
         id:
@@ -660,7 +660,7 @@ components:
           $ref: '#/components/schemas/LocalDateTime'
     RegisterUserRequest:
       required:
-      - email
+        - email
       type: object
       properties:
         email:
@@ -695,12 +695,12 @@ components:
           type: boolean
         user:
           allOf:
-          - $ref: '#/components/schemas/RaccoonUser'
-          - writeOnly: true
+            - $ref: '#/components/schemas/RaccoonUser'
+            - writeOnly: true
         artist:
           allOf:
-          - $ref: '#/components/schemas/Artist'
-          - writeOnly: true
+            - $ref: '#/components/schemas/Artist'
+            - writeOnly: true
   securitySchemes:
     SecurityScheme:
       type: oauth2

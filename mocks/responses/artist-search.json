@@ -1,5 +1,5 @@
 {
-  "rows": [
+  "artists": [
     {
       "followedByUser": false,
       "id": 1700,
@@ -13,5 +13,5 @@
       "name": "Ill Considered, Oli Savill"
     }
   ],
-  "total": 2
+  "count": 2
 }

@@ -3,9 +3,8 @@
  * Do not make direct changes to the file.
  */
 
-
 export interface paths {
-  "/": {
+  '/': {
     get: {
       responses: {
         /** @description OK */
@@ -13,20 +12,20 @@ export interface paths {
       };
     };
   };
-  "/artist": {
+  '/artist': {
     get: {
       parameters?: {
         query?: {
           page?: number;
           size?: number;
-          sort?: (unknown)[];
+          sort?: unknown[];
         };
       };
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": (components["schemas"]["Artist"])[];
+            'application/json': components['schemas']['Artist'][];
           };
         };
       };
@@ -34,31 +33,31 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["Artist"];
+          'application/json': components['schemas']['Artist'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["Artist"];
+            'application/json': components['schemas']['Artist'];
           };
         };
       };
     };
   };
-  "/artist/count": {
+  '/artist/count': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": number;
+            'application/json': number;
           };
         };
       };
     };
   };
-  "/artist/search": {
+  '/artist/search': {
     get: {
       parameters?: {
         query?: {
@@ -70,7 +69,7 @@ export interface paths {
         /** @description OK */
         200: {
           content: {
-            "application/json": components["schemas"]["ArtistSearchResponse"];
+            'application/json': components['schemas']['ArtistSearchResponse'];
           };
         };
         /** @description Not Authorized */
@@ -80,7 +79,7 @@ export interface paths {
       };
     };
   };
-  "/artist/{id}": {
+  '/artist/{id}': {
     get: {
       parameters: {
         path: {
@@ -91,7 +90,7 @@ export interface paths {
         /** @description OK */
         200: {
           content: {
-            "application/json": components["schemas"]["Artist"];
+            'application/json': components['schemas']['Artist'];
           };
         };
       };
@@ -104,13 +103,13 @@ export interface paths {
       };
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["Artist"];
+          'application/json': components['schemas']['Artist'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["Artist"];
+            'application/json': components['schemas']['Artist'];
           };
         };
       };
@@ -126,7 +125,7 @@ export interface paths {
       };
     };
   };
-  "/me": {
+  '/me': {
     get: {
       responses: {
         /** @description OK */
@@ -138,7 +137,7 @@ export interface paths {
       };
     };
   };
-  "/me/enable-services": {
+  '/me/enable-services': {
     get: {
       parameters?: {
         query?: {
@@ -156,11 +155,11 @@ export interface paths {
       };
     };
   };
-  "/me/follow": {
+  '/me/follow': {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["ArtistDto"];
+          'application/json': components['schemas']['ArtistDto'];
         };
       };
       responses: {
@@ -173,13 +172,13 @@ export interface paths {
       };
     };
   };
-  "/me/followed-artists": {
+  '/me/followed-artists': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": components["schemas"]["FollowedArtistsResponse"];
+            'application/json': components['schemas']['FollowedArtistsResponse'];
           };
         };
         /** @description Not Authorized */
@@ -189,7 +188,7 @@ export interface paths {
       };
     };
   };
-  "/me/unfollow/{artistId}": {
+  '/me/unfollow/{artistId}': {
     delete: {
       parameters: {
         path: {
@@ -206,32 +205,32 @@ export interface paths {
       };
     };
   };
-  "/notify-users": {
+  '/notify-users': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": boolean;
+            'application/json': boolean;
           };
         };
       };
     };
   };
-  "/raccoon-user": {
+  '/raccoon-user': {
     get: {
       parameters?: {
         query?: {
           page?: number;
           size?: number;
-          sort?: (unknown)[];
+          sort?: unknown[];
         };
       };
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": (components["schemas"]["RaccoonUser"])[];
+            'application/json': components['schemas']['RaccoonUser'][];
           };
         };
       };
@@ -239,31 +238,31 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["RaccoonUser"];
+          'application/json': components['schemas']['RaccoonUser'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["RaccoonUser"];
+            'application/json': components['schemas']['RaccoonUser'];
           };
         };
       };
     };
   };
-  "/raccoon-user/count": {
+  '/raccoon-user/count': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": number;
+            'application/json': number;
           };
         };
       };
     };
   };
-  "/raccoon-user/{id}": {
+  '/raccoon-user/{id}': {
     get: {
       parameters: {
         path: {
@@ -274,7 +273,7 @@ export interface paths {
         /** @description OK */
         200: {
           content: {
-            "application/json": components["schemas"]["RaccoonUser"];
+            'application/json': components['schemas']['RaccoonUser'];
           };
         };
       };
@@ -287,13 +286,13 @@ export interface paths {
       };
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["RaccoonUser"];
+          'application/json': components['schemas']['RaccoonUser'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["RaccoonUser"];
+            'application/json': components['schemas']['RaccoonUser'];
           };
         };
       };
@@ -309,20 +308,20 @@ export interface paths {
       };
     };
   };
-  "/release": {
+  '/release': {
     get: {
       parameters?: {
         query?: {
           page?: number;
           size?: number;
-          sort?: (unknown)[];
+          sort?: unknown[];
         };
       };
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": (components["schemas"]["Release"])[];
+            'application/json': components['schemas']['Release'][];
           };
         };
       };
@@ -330,43 +329,43 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["Release"];
+          'application/json': components['schemas']['Release'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["Release"];
+            'application/json': components['schemas']['Release'];
           };
         };
       };
     };
   };
-  "/release-scrape": {
+  '/release-scrape': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": (components["schemas"]["Release"])[];
+            'application/json': components['schemas']['Release'][];
           };
         };
       };
     };
   };
-  "/release/count": {
+  '/release/count': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "application/json": number;
+            'application/json': number;
           };
         };
       };
     };
   };
-  "/release/{id}": {
+  '/release/{id}': {
     get: {
       parameters: {
         path: {
@@ -377,7 +376,7 @@ export interface paths {
         /** @description OK */
         200: {
           content: {
-            "application/json": components["schemas"]["Release"];
+            'application/json': components['schemas']['Release'];
           };
         };
       };
@@ -390,13 +389,13 @@ export interface paths {
       };
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["Release"];
+          'application/json': components['schemas']['Release'];
         };
       };
       responses: {
         201: {
           content: {
-            "application/json": components["schemas"]["Release"];
+            'application/json': components['schemas']['Release'];
           };
         };
       };
@@ -412,13 +411,13 @@ export interface paths {
       };
     };
   };
-  "/scrape-taste/lastfm": {
+  '/scrape-taste/lastfm': {
     get: {
       responses: {
         /** @description OK */
         200: {
           content: {
-            "text/plain": (components["schemas"]["UserArtist"])[];
+            'text/plain': components['schemas']['UserArtist'][];
           };
         };
         /** @description Not Authorized */
@@ -433,7 +432,7 @@ export interface paths {
       };
     };
   };
-  "/scrape-taste/spotify": {
+  '/scrape-taste/spotify': {
     get: {
       responses: {
         /** @description OK */
@@ -450,7 +449,7 @@ export interface paths {
       };
     };
   };
-  "/spotify-auth-callback": {
+  '/spotify-auth-callback': {
     get: {
       parameters?: {
         query?: {
@@ -467,7 +466,7 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["RegisterUserRequest"];
+          'application/json': components['schemas']['RegisterUserRequest'];
         };
       };
       responses: {
@@ -476,7 +475,7 @@ export interface paths {
       };
     };
   };
-  "/spotify-auth-callback/user-top-artists": {
+  '/spotify-auth-callback/user-top-artists': {
     get: {
       parameters?: {
         query?: {
@@ -498,7 +497,7 @@ export interface components {
     Artist: {
       /** Format: int64 */
       id?: number;
-      createDate?: components["schemas"]["LocalDateTime"];
+      createDate?: components['schemas']['LocalDateTime'];
       name?: string;
       lastfmUri?: string;
       spotifyUri?: string;
@@ -517,20 +516,20 @@ export interface components {
     ArtistSearchResponse: {
       /** Format: int32 */
       count?: number;
-      artists?: (components["schemas"]["ArtistDto"])[];
+      artists?: components['schemas']['ArtistDto'][];
     };
     FollowedArtistsResponse: {
       /** Format: int32 */
       total?: number;
-      rows?: (components["schemas"]["ArtistDto"])[];
+      rows?: components['schemas']['ArtistDto'][];
     };
     /**
-     * Format: date 
+     * Format: date
      * @example "2022-03-10T00:00:00.000Z"
      */
     LocalDate: string;
     /**
-     * Format: date-time 
+     * Format: date-time
      * @example "2022-03-10T12:15:50.000Z"
      */
     LocalDateTime: string;
@@ -541,11 +540,11 @@ export interface components {
       username?: string;
       lastfmUsername?: string;
       spotifyEnabled?: boolean;
-      lastNotified?: components["schemas"]["LocalDate"];
-      createDate?: components["schemas"]["LocalDateTime"];
-      modifyDate?: components["schemas"]["LocalDateTime"];
-      lastSpotifyScrape?: components["schemas"]["LocalDateTime"];
-      lastLastFmScrape?: components["schemas"]["LocalDateTime"];
+      lastNotified?: components['schemas']['LocalDate'];
+      createDate?: components['schemas']['LocalDateTime'];
+      modifyDate?: components['schemas']['LocalDateTime'];
+      lastSpotifyScrape?: components['schemas']['LocalDateTime'];
+      lastLastFmScrape?: components['schemas']['LocalDateTime'];
     };
     RegisterUserRequest: {
       email: string;
@@ -559,14 +558,14 @@ export interface components {
       type?: string;
       spotifyUri?: string;
       musicbrainzId?: string;
-      releasedOn?: components["schemas"]["LocalDate"];
+      releasedOn?: components['schemas']['LocalDate'];
     };
     UserArtist: {
       /** Format: float */
       weight?: number;
       hasNewRelease?: boolean;
-      user?: components["schemas"]["RaccoonUser"] & Record<string, never>;
-      artist?: components["schemas"]["Artist"] & Record<string, never>;
+      user?: components['schemas']['RaccoonUser'] & Record<string, never>;
+      artist?: components['schemas']['Artist'] & Record<string, never>;
     };
   };
   responses: never;

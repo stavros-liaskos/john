@@ -3,9 +3,19 @@ import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import Main from './Main';
 import props from './Main.data';
 import { expect } from '@jest/globals';
+import followedArtists from '../../mocks/responses/followed-artists.json';
 
 describe('Main', () => {
-  beforeEach(() => beforeEachTest());
+  beforeEach(() => {
+    beforeEachTest();
+    jest
+      .spyOn(global, 'fetch')
+      .mockResolvedValue(new Response(JSON.stringify({ json: followedArtists }), { status: 200, statusText: 'OK' }));
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
   it('renders without data without crashing', async () => {
     // @ts-ignore

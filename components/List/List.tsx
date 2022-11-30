@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ListProps, ListEl } from './List.types';
+import { ListProps } from './List.types';
 import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
 import Button from '../Button/Button';
+import { components } from '../../types/schema';
 
 const ICON_SIZE = 30;
 
@@ -13,7 +14,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
     return null;
   }
 
-  const followArtist = (artistData: ListEl) => {
+  const followArtist = (artistData: components['schemas']['ArtistDto']) => {
     setArtistLoading(artistData.name);
     fetch('${process.env.BE_BASE_URL}/todos/me/unfollow', {
       method: 'POST',
@@ -37,7 +38,7 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
 
   return (
     <div className="overflow-auto w-full">
-      {list.map((artist: ListEl, index: number) => (
+      {list.map((artist, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
           key={index}

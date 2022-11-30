@@ -3,7 +3,7 @@
 exports[`Main show List of results  1`] = `
 <div>
   <div>
-    invalid json response body at  reason: Unexpected end of JSON input
+    body used already for: 
   </div>
 </div>
 `;
