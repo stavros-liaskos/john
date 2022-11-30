@@ -35,9 +35,62 @@ exports[`Home renders a heading 1`] = `
           </svg>
         </button>
       </header>
-      <div>
-        body used already for: 
-      </div>
+      <main
+        class="flex flex-col items-center justify-center w-full p-3 mb-auto min-h-[calc(100vh_-_8.5rem)]"
+        style="min-height: calc(100vh - 8.5rem);"
+      >
+        <div
+          class="flex flex-col items-center justify-center lg:w-1/2"
+        >
+          <h2
+            class="rr-text text-4xl mb-3"
+          >
+            Welcome to Release Raccoon!
+          </h2>
+          <p
+            class="rr-text text-xl mb-3"
+          >
+            Receive your favorite artists' music in your email every week!
+          </p>
+          <button
+            class="btn btn-large lg:ml-8 my-8 w-44 h-14"
+          >
+            Register
+          </button>
+          <div
+            class="flex justify-between w-full px-16 mt-16"
+          >
+            <div
+              class="text-center"
+            >
+              <p
+                class="rr-text"
+              >
+                Artists
+              </p>
+              <p
+                class="rr-text"
+              >
+                4965
+              </p>
+            </div>
+            <div
+              class="text-center"
+            >
+              <p
+                class="rr-text"
+              >
+                Releases
+              </p>
+              <p
+                class="rr-text"
+              >
+                3816
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer
         class="flex items-center justify-center border-t-2 rr-border h-20"
       >

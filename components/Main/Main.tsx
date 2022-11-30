@@ -9,7 +9,7 @@ import Login from '../Login/Login';
 import { components } from '../../types/schema';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
-  const { user, error, isLoading } = useUser(); // TODO use isLoading or try Suspense
+  const { user } = useUser();
   // const { user, error } = { user: 'asdf',  error: null}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -30,11 +30,6 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
 
   if (!i18n || !i18n.todo) {
     return null;
-  }
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) {
-    return <div>{error.message}</div>;
   }
 
   return (

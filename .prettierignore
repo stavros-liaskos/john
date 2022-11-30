@@ -13,3 +13,4 @@ public
 yarn.lock
 LICENSE
 .env*
+.sonarcloud.properties

@@ -18,7 +18,6 @@ describe('Home', () => {
     const component = await renderWithAct(<Home />);
     const { container } = component;
 
-    // expect(component.getByText('Loading...')).toBe('Loading...');
     expect(container).toMatchSnapshot(); // TODO fix
   });
 });
