@@ -1,0 +1,712 @@
+---
+openapi: 3.0.3
+info:
+  title: release-raccoon-app API
+  version: 0.0.1-SNAPSHOT
+tags:
+  - name: ArtistResource
+  - name: RaccoonUserResource
+  - name: ReleaseResource
+paths:
+  /:
+    get:
+      tags:
+        - Index Resource
+      responses:
+        '200':
+          description: OK
+  /artist:
+    get:
+      tags:
+        - ArtistResource
+      parameters:
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Artist'
+    post:
+      tags:
+        - ArtistResource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Artist'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artist'
+  /artist/count:
+    get:
+      tags:
+        - ArtistResource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                format: int64
+                type: integer
+  /artist/search:
+    get:
+      tags:
+        - Artist Search Resource
+      parameters:
+        - name: pattern
+          in: query
+          schema:
+            type: string
+        - name: size
+          in: query
+          required: false
+          schema:
+            format: int32
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArtistSearchResponse'
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /artist/{id}:
+    get:
+      tags:
+        - ArtistResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artist'
+    put:
+      tags:
+        - ArtistResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Artist'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artist'
+    delete:
+      tags:
+        - ArtistResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '204': {}
+  /me:
+    get:
+      tags:
+        - User Profile Resource
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /me/enable-services:
+    get:
+      tags:
+        - User Profile Resource
+      parameters:
+        - name: enableSpotify
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: lastfmUsername
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /me/follow:
+    post:
+      tags:
+        - User Profile Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtistDto'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /me/followed-artists:
+    get:
+      tags:
+        - User Profile Resource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FollowedArtistsResponse'
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /me/unfollow/{artistId}:
+    delete:
+      tags:
+        - User Profile Resource
+      parameters:
+        - name: artistId
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /notify-users:
+    get:
+      tags:
+        - Notifying Resource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
+  /raccoon-user:
+    get:
+      tags:
+        - RaccoonUserResource
+      parameters:
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RaccoonUser'
+    post:
+      tags:
+        - RaccoonUserResource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RaccoonUser'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RaccoonUser'
+  /raccoon-user/count:
+    get:
+      tags:
+        - RaccoonUserResource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                format: int64
+                type: integer
+  /raccoon-user/{id}:
+    get:
+      tags:
+        - RaccoonUserResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RaccoonUser'
+    put:
+      tags:
+        - RaccoonUserResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RaccoonUser'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RaccoonUser'
+    delete:
+      tags:
+        - RaccoonUserResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '204': {}
+  /release:
+    get:
+      tags:
+        - ReleaseResource
+      parameters:
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 20
+            type: integer
+        - name: sort
+          in: query
+          schema:
+            type: array
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Release'
+    post:
+      tags:
+        - ReleaseResource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Release'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+  /release-scrape:
+    get:
+      tags:
+        - Release Scrape Resource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Release'
+  /release/count:
+    get:
+      tags:
+        - ReleaseResource
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                format: int64
+                type: integer
+  /release/{id}:
+    get:
+      tags:
+        - ReleaseResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+    put:
+      tags:
+        - ReleaseResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Release'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+    delete:
+      tags:
+        - ReleaseResource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        '204': {}
+  /scrape-taste/lastfm:
+    get:
+      tags:
+        - Taste Scraping Resource
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserArtist'
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+    parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+  /scrape-taste/spotify:
+    get:
+      tags:
+        - Taste Scraping Resource
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+    parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+  /spotify-auth-callback:
+    get:
+      tags:
+        - Spotify Auth Resource
+      parameters:
+        - name: code
+          in: query
+          schema:
+            type: string
+        - name: error
+          in: query
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+        - Spotify Auth Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterUserRequest'
+      responses:
+        '200':
+          description: OK
+  /spotify-auth-callback/user-top-artists:
+    get:
+      tags:
+        - Spotify Auth Resource
+      parameters:
+        - name: userId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Artist:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        createDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        name:
+          type: string
+        lastfmUri:
+          type: string
+        spotifyUri:
+          type: string
+        musicbrainzId:
+          type: string
+        spotifyUriId:
+          type: string
+    ArtistDto:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        lastfmUri:
+          type: string
+        spotifyUri:
+          type: string
+        musicbrainzId:
+          type: string
+        followedByUser:
+          type: boolean
+    ArtistSearchResponse:
+      type: object
+      properties:
+        count:
+          format: int32
+          type: integer
+        artists:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArtistDto'
+    FollowedArtistsResponse:
+      type: object
+      properties:
+        total:
+          format: int32
+          type: integer
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArtistDto'
+    LocalDate:
+      format: date
+      type: string
+      example: 2022-03-10
+    LocalDateTime:
+      format: date-time
+      type: string
+      example: 2022-03-10T12:15:50
+    RaccoonUser:
+      required:
+        - email
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        email:
+          type: string
+        username:
+          type: string
+        lastfmUsername:
+          type: string
+        spotifyEnabled:
+          type: boolean
+        lastNotified:
+          $ref: '#/components/schemas/LocalDate'
+        createDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        modifyDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        lastSpotifyScrape:
+          $ref: '#/components/schemas/LocalDateTime'
+        lastLastFmScrape:
+          $ref: '#/components/schemas/LocalDateTime'
+    RegisterUserRequest:
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          type: string
+        lastfmUsername:
+          type: string
+        spotifyEnabled:
+          type: boolean
+    Release:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        type:
+          type: string
+        spotifyUri:
+          type: string
+        musicbrainzId:
+          type: string
+        releasedOn:
+          $ref: '#/components/schemas/LocalDate'
+    UserArtist:
+      type: object
+      properties:
+        weight:
+          format: float
+          type: number
+        hasNewRelease:
+          type: boolean
+        user:
+          allOf:
+            - $ref: '#/components/schemas/RaccoonUser'
+            - writeOnly: true
+        artist:
+          allOf:
+            - $ref: '#/components/schemas/Artist'
+            - writeOnly: true
+  securitySchemes:
+    SecurityScheme:
+      type: oauth2
+      description: Authentication
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/auth
+          tokenUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/token/introspect
+          refreshUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/token
