@@ -33,31 +33,30 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   }
 
   return (
-    <main
-      className={`flex flex-col items-center justify-center w-full p-3 mb-auto min-h-[calc(100vh_-_8.5rem)]`}
-      style={{ minHeight: 'calc(100vh - 8.5rem)' }} /* the tailwind class only works locally */
-    >
-      {user ? (
-        <div className={`flex flex-col items-center w-full lg:w-9/12`}>
-          <Search i18n={searchI18n} />
-          {list?.rows && <List list={list.rows} i18n={listI18n} />}
-        </div>
-      ) : (
-        <Login
-          i18n={{
-            welcome: 'Welcome to Release Raccoon!',
-            loginBtn: 'Register',
-            text: "Receive your favorite artists' music in your email every week!",
-            artistsCount: 'Artists',
-            releasesCount: 'Releases',
-          }}
-          handleRegister={() => (window.location.href = '/api/auth/login')}
-          counters={{
-            artistsCounter: 4965,
-            releasesCounter: 3816,
-          }}
-        />
-      )}
+    <main className={`flex-1 flex flex-col items-center w-full p-3 h-24`}>
+      <div className={`flex flex-col items-center w-full lg:w-9/12`}>
+        {user ? (
+          <>
+            <Search i18n={searchI18n} />
+            {list?.rows && <List list={list.rows} i18n={listI18n} />}
+          </>
+        ) : (
+          <Login
+            i18n={{
+              welcome: 'Welcome to Release Raccoon!',
+              loginBtn: 'Register',
+              text: "Receive your favorite artists' music in your email every week!",
+              artistsCount: 'Artists',
+              releasesCount: 'Releases',
+            }}
+            handleRegister={() => (window.location.href = '/api/auth/login')}
+            counters={{
+              artistsCounter: 4965,
+              releasesCounter: 3816,
+            }}
+          />
+        )}
+      </div>
     </main>
   );
 };

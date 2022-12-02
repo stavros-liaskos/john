@@ -3,7 +3,7 @@
 exports[`Header shows Logout btn when user is logged in 1`] = `
 <div>
   <header
-    class="flex justify-between h-14 rr-border border-b-2"
+    class="flex justify-between basis-14 rr-border border-b-2"
   >
     <button
       class="m-3"

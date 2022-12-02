@@ -1,5 +1,7 @@
 # ReleaseRaccoon
 
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=stavros-liaskos_release-raccoon&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=stavros-liaskos_release-raccoon)
+
 A music release newsletter frontend application built on [Next.js](https://nextjs.org/).
 
 Backend available here: https://github.com/jaivalis/release-raccoon
@@ -77,7 +79,7 @@ Dark mode state is initialized by reading the OS preference or to `light` if tha
 ## API Endpoints
 
 API endpoints for the app are documented in [this OpenAPI](./openapi.yml) export.  
-A [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) is required for each request.  
+A [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) is required for each request.
 
 > OpenAPI export was generated based on the backend project [here](https://github.com/jaivalis/release-raccoon#readmeTODO)
 
