@@ -20,38 +20,6 @@ exports[`Login renders with data without crashing 1`] = `
     >
       Register
     </button>
-    <div
-      class="flex justify-between w-full px-16 mt-16"
-    >
-      <div
-        class="text-center"
-      >
-        <p
-          class="rr-text"
-        >
-          Artists
-        </p>
-        <p
-          class="rr-text"
-        >
-          4965
-        </p>
-      </div>
-      <div
-        class="text-center"
-      >
-        <p
-          class="rr-text"
-        >
-          Releases
-        </p>
-        <p
-          class="rr-text"
-        >
-          3816
-        </p>
-      </div>
-    </div>
   </div>
 </div>
 `;

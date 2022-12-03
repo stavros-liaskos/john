@@ -6,12 +6,12 @@ import Header from '../components/Header/Header';
 const Home: NextPage = () => {
   return (
     <div className="container max-auto">
-      <div className="sm:border-x-2 rr-border">
+      <div className="sm:border-x-2 rr-border flex flex-col h-screen">
         <Header />
 
         <Main i18n={{ todo: 'todo' }} />
 
-        <Footer className="h-20" i18n={{ powered: 'Powered by  ' }} />
+        <Footer i18n={{ powered: 'Powered by  ' }} />
       </div>
     </div>
   );

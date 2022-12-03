@@ -9,5 +9,4 @@ type LoginI18n = {
 export interface LoginProps {
   i18n: LoginI18n;
   handleRegister: Function;
-  counters: { artistsCounter: number; releasesCounter: number };
 }

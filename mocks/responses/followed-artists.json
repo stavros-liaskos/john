@@ -1,0 +1,17 @@
+{
+  "rows": [
+    {
+      "followedByUser": false,
+      "id": 1700,
+      "lastfmUri": "https://www.last.fm/music/Chris+Clark",
+      "name": "Chris Clark"
+    },
+    {
+      "followedByUser": false,
+      "id": 1701,
+      "lastfmUri": "https://www.last.fm/music/Ill+Considered,+Oli+Savill",
+      "name": "Ill Considered, Oli Savill"
+    }
+  ],
+  "total": 2
+}

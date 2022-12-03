@@ -1,39 +1,35 @@
 import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
-import mockedResponse from '../../mocks/searchResult.json';
-import { ListEl } from '../List/List.types';
 import Button from '../Button/Button';
+import { components } from '../../types/schema';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
-  const [results, setResults] = useState<ListEl[] | null>(null);
+  const [results, setResults] = useState<components['schemas']['ArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
 
   if (!i18n || !i18n.button || !i18n.label) {
     return null;
   }
 
-  const handleSubmit = (e: SyntheticEvent) => {
+  const handleSearch = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch(`/search?${new URLSearchParams({ pattern: input })}`)
+    fetch(`${process.env.BE_BASE_URL}/artist/search/?${new URLSearchParams({ pattern: input })}`)
       .then(res => res.json())
       .then(result => {
-        console.log(result);
-        return setResults(mockedResponse.artistsPerResource.fromLastfm); // TODO replace results with result
+        return setResults(result.artists); // TODO handle no results
       })
       .catch(() => {
         // TODO handle me
       })
       .finally(() => {
-        return setResults(mockedResponse.artistsPerResource.fromLastfm);
         // TODO handle disabled/loading state
       });
   };
 
-  const handleFollow = (artistData: ListEl) => {
+  const handleFollow = (artistData: components['schemas']['ArtistDto']) => {
     setDisabled(true);
-
-    fetch('/me/follow', {
+    fetch(`${process.env.BE_BASE_URL}/me/follow`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -43,7 +39,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       body: JSON.stringify(artistData),
     })
       .then(() => {
-        console.log(`${artistData.name} successfully unfollowed`);
+        console.log(`${artistData.name} successfully followed`);
       })
       .catch(error => {
         console.error('Error:', JSON.stringify(error));
@@ -52,7 +48,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         setTimeout(() => {
           setResults(null);
           setDisabled(false);
-        }, 10000);
+        }, 1000);
       });
   };
 
@@ -61,7 +57,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       <form
         className="flex justify-between md:justify-between items-stretch h-10 w-full"
         noValidate
-        onSubmit={handleSubmit}
+        onSubmit={handleSearch}
       >
         <input
           className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
@@ -75,7 +71,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       {results && (
         <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-16 md:top-32 w-full z-10">
           <ul>
-            {results.map((result: ListEl, key: number) => (
+            {results.map((result: components['schemas']['ArtistDto'], key: number) => (
               <li className="flex justify-between items-center py-2 rr-text border-b-2 border-gh-dark" key={key}>
                 {result.name}
                 <button

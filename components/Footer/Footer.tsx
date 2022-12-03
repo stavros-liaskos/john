@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { useThemeContext } from '../../contexts/ThemeContext';
 
-const Footer: React.FunctionComponent<FooterProps> = ({ i18n, className }) => {
+const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
   const { dark } = useThemeContext();
 
   if (!i18n || !i18n.powered) {
@@ -11,7 +11,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n, className }) => {
   }
 
   return (
-    <footer className={`flex items-center justify-center border-t-2 rr-border ${className}`}>
+    <footer className={`flex items-center justify-center basis-16 border-t-2 rr-border`}>
       <a
         className="flex items-center rr-text"
         href="https://github.com/jaivalis/release-raccoon"
