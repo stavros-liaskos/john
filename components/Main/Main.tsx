@@ -1,9 +1,9 @@
 import { MainProps } from './Main.types';
-import List from '../List/List';
+import FollowedArtistList from '../FollowedArtistList/FollowedArtistList';
 import React from 'react';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
-import { listI18n } from '../List/List.data';
+import { listI18n } from '../FollowedArtistList/FollowedArtistList.data';
 import { useUser } from '@auth0/nextjs-auth0';
 import Login from '../Login/Login';
 
@@ -13,7 +13,6 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   if (!i18n || !i18n.todo) {
     return null;
   }
-  console.warn(user);
 
   return (
     <main className={`flex-1 flex flex-col items-center w-full p-3 h-24`}>
@@ -21,7 +20,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
         {user ? (
           <>
             <Search i18n={searchI18n} />
-            <List i18n={listI18n} />
+            <FollowedArtistList i18n={listI18n} />
           </>
         ) : (
           <Login

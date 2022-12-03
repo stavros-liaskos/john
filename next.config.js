@@ -2,9 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'ts'],
-  images: {
-    domains: ['www.placecage.com'],
-  },
   async rewrites() {
     return [
       { source: '/me/:path*', destination: '/api/mockServer/me/:path*' },
