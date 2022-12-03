@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ListProps } from './List.types';
 import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
@@ -7,10 +7,24 @@ import { components } from '../../types/schema';
 
 const ICON_SIZE = 30;
 
-const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
+const List: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<string | null>(null);
+  const [list, setList] = useState<components['schemas']['FollowedArtistsResponse']>();
 
-  if (!list || !i18n || !i18n.unfollow) {
+  useEffect(() => {
+    fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      referrerPolicy: 'no-referrer',
+    })
+      .then(response => response.json())
+      .then(data => setList(data));
+  }, []);
+
+  if (!list?.rows || !i18n || !i18n.unfollow) {
     return null;
   }
 
@@ -38,7 +52,9 @@ const List: React.FunctionComponent<ListProps> = ({ list, i18n }) => {
 
   return (
     <div className="overflow-auto w-full">
-      {list.map((artist, index: number) => (
+      {!list?.rows && <p>You don not track any artists yet</p>}
+
+      {list.rows.map((artist, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
           key={index}

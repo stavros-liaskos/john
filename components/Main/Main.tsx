@@ -1,36 +1,19 @@
 import { MainProps } from './Main.types';
 import List from '../List/List';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../List/List.data';
 import { useUser } from '@auth0/nextjs-auth0';
 import Login from '../Login/Login';
-import { components } from '../../types/schema';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   const { user } = useUser();
-  // const { user, error } = { user: 'asdf',  error: null}
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [list, setList] = useState<components['schemas']['FollowedArtistsResponse']>();
-
-  useEffect(() => {
-    fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      referrerPolicy: 'no-referrer',
-    })
-      .then(response => response.json())
-      .then(data => setList(data));
-  }, []);
 
   if (!i18n || !i18n.todo) {
     return null;
   }
+  console.warn(user);
 
   return (
     <main className={`flex-1 flex flex-col items-center w-full p-3 h-24`}>
@@ -38,7 +21,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
         {user ? (
           <>
             <Search i18n={searchI18n} />
-            {list?.rows && <List list={list.rows} i18n={listI18n} />}
+            <List i18n={listI18n} />
           </>
         ) : (
           <Login
@@ -50,10 +33,6 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
               releasesCount: 'Releases',
             }}
             handleRegister={() => (window.location.href = '/api/auth/login')}
-            counters={{
-              artistsCounter: 4965,
-              releasesCounter: 3816,
-            }}
           />
         )}
       </div>

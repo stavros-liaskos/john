@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 const Home: NextPage = () => {
   return (
     <div className="container max-auto">
-      <div className="sm:border-x-2 rr-border flex flex-col min-h-screen">
+      <div className="sm:border-x-2 rr-border flex flex-col h-screen">
         <Header />
 
         <Main i18n={{ todo: 'todo' }} />

@@ -9,55 +9,25 @@ exports[`Main show List of results  1`] = `
       class="flex flex-col items-center w-full lg:w-9/12"
     >
       <div
-        class="flex flex-col items-center justify-center lg:w-1/2"
+        class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
       >
-        <h2
-          class="rr-text text-4xl mb-3"
+        <form
+          class="flex justify-between md:justify-between items-stretch h-10 w-full"
+          novalidate=""
         >
-          Welcome to Release Raccoon!
-        </h2>
-        <p
-          class="rr-text text-xl mb-3"
-        >
-          Receive your favorite artists' music in your email every week!
-        </p>
-        <button
-          class="btn btn-large lg:ml-8 my-8 w-44 h-14"
-        >
-          Register
-        </button>
-        <div
-          class="flex justify-between w-full px-16 mt-16"
-        >
-          <div
-            class="text-center"
+          <input
+            class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+            name="search"
+            placeholder="Here goes the artist..."
+            type="text"
+          />
+          <button
+            class="btn flex btn-large"
+            type="submit"
           >
-            <p
-              class="rr-text"
-            >
-              Artists
-            </p>
-            <p
-              class="rr-text"
-            >
-              4965
-            </p>
-          </div>
-          <div
-            class="text-center"
-          >
-            <p
-              class="rr-text"
-            >
-              Releases
-            </p>
-            <p
-              class="rr-text"
-            >
-              3816
-            </p>
-          </div>
-        </div>
+            Search
+          </button>
+        </form>
       </div>
     </div>
   </main>
