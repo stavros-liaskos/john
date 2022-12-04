@@ -4,13 +4,20 @@ import Main from './Main';
 import props from './Main.data';
 import { expect } from '@jest/globals';
 import followedArtists from '../../mocks/responses/followed-artists.json';
+import { UserProvider } from '@auth0/nextjs-auth0';
+import fetchMock from 'jest-fetch-mock';
 
 describe('Main', () => {
   beforeEach(() => {
     beforeEachTest();
-    jest
-      .spyOn(global, 'fetch')
-      .mockResolvedValue(new Response(JSON.stringify({ json: followedArtists }), { status: 200, statusText: 'OK' }));
+
+    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
+      if (req.url.endsWith('/me/followed-artists')) {
+        return Promise.resolve({ body: JSON.stringify({ json: followedArtists }) });
+      } else {
+        return Promise.reject({ status: 404 });
+      }
+    });
   });
 
   afterEach(() => {
@@ -22,11 +29,24 @@ describe('Main', () => {
     await renderWithAct(<Main />);
   });
 
-  xit('show List of results ', async () => {
-    const { container } = await renderWithAct(<Main {...props} />);
+  it('shows registration button', async () => {
+    const { findByText } = await renderWithAct(
+      <UserProvider>
+        <Main {...props} />
+      </UserProvider>,
+    );
 
-    // expect(search).toBeTruthy();
-    // expect(unfollowBtns.length).toEqual(3);
-    expect(container).toMatchSnapshot(); // TODO fix
+    const registerBtn = await findByText(/Register/);
+    expect(registerBtn.closest('a')).toHaveAttribute('href', '/api/auth/login');
+  });
+
+  it('shows artist search for logged in user', async () => {
+    const { findByText } = await renderWithAct(
+      <UserProvider user={{ user: 'john.doe' }}>
+        <Main {...props} />
+      </UserProvider>,
+    );
+
+    expect(await findByText('Search')).toBeTruthy();
   });
 });

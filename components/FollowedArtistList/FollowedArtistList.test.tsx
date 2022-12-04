@@ -26,14 +26,14 @@ describe('List', () => {
     const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
     global.fetch = mockedFetch;
 
-    const container = render(<FollowedArtistList i18n={listI18n} />);
-    const buttons = await container.findAllByText('unfollow');
+    const component = render(<FollowedArtistList i18n={listI18n} />);
+    const buttons = await component.findAllByText('unfollow');
 
     expect(buttons).toHaveLength(2);
     expect(mockedFetch).toBeCalledTimes(1);
     expect(mRes.json).toBeCalledTimes(1);
 
-    expect(container).toMatchSnapshot();
+    expect(component.container).toMatchSnapshot();
   });
 
   it('unfollows artist on btn click', async () => {

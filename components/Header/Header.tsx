@@ -10,9 +10,9 @@ const Header: React.FunctionComponent = () => {
       <DarkMode />
 
       {user && (
-        <button className="btn btn-small lg:ml-8 mx-3 my-2" onClick={() => (window.location.href = '/api/auth/logout')}>
-          Logout
-        </button>
+        <a href="/api/auth/logout">
+          <button className="btn btn-small lg:ml-8 mx-3 my-2">Logout</button>
+        </a>
       )}
     </header>
   );
