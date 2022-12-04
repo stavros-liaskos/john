@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, renderWithAct } from '../../utils/test-utils';
+import { renderWithAct } from '../../utils/test-utils';
 import Login from './Login';
 
 const props = {
@@ -10,11 +10,6 @@ const props = {
     artistsCount: 'Artists',
     releasesCount: 'Releases',
   },
-  handleRegister: () => {},
-  counters: {
-    artistsCounter: 4965,
-    releasesCounter: 3816,
-  },
 };
 
 describe('Login', () => {
@@ -23,17 +18,11 @@ describe('Login', () => {
     await renderWithAct(<Login />);
   });
 
-  it('renders with data without crashing', async () => {
-    const { container } = await renderWithAct(<Login {...props} />);
+  it('renders login button', async () => {
+    const { container, findByText } = await renderWithAct(<Login {...props} />);
 
+    const registerBtn = await findByText(/Register/);
     expect(container).toMatchSnapshot();
-  });
-
-  it('redirects when Register btn is clicked', async () => {
-    const handleRegister = jest.fn();
-    const { getByText } = await renderWithAct(<Login {...props} handleRegister={handleRegister} />);
-
-    fireEvent.click(getByText(/Register/));
-    expect(handleRegister).toHaveBeenCalledTimes(1);
+    expect(registerBtn.closest('a')).toHaveAttribute('href', '/api/auth/login');
   });
 });

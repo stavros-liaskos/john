@@ -28,10 +28,10 @@ describe('Home', () => {
     jest.restoreAllMocks();
   });
 
-  xit('renders a heading', async () => {
+  it('renders a heading', async () => {
     const component = await renderWithAct(<Home />);
     const { container } = component;
 
-    expect(container).toMatchSnapshot(); // TODO fix
+    expect(container).toMatchSnapshot();
   });
 });

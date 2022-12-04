@@ -31,7 +31,6 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
               artistsCount: 'Artists',
               releasesCount: 'Releases',
             }}
-            handleRegister={() => (window.location.href = '/api/auth/login')}
           />
         )}
       </div>

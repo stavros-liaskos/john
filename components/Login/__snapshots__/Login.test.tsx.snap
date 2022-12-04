@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login renders with data without crashing 1`] = `
+exports[`Login renders login button 1`] = `
 <div>
   <div
     class="flex flex-col items-center justify-center lg:w-1/2"
@@ -15,11 +15,15 @@ exports[`Login renders with data without crashing 1`] = `
     >
       Receive your favorite artists' music in your email every week!
     </p>
-    <button
-      class="btn btn-large lg:ml-8 my-8 w-44 h-14"
+    <a
+      href="/api/auth/login"
     >
-      Register
-    </button>
+      <button
+        class="btn btn-large lg:ml-8 my-8 w-44 h-14"
+      >
+        Register
+      </button>
+    </a>
   </div>
 </div>
 `;
