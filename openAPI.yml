@@ -195,7 +195,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ArtistDto'
+              $ref: '#/components/schemas/SearchResultArtistDto'
       responses:
         '200':
           description: OK
@@ -586,8 +586,19 @@ components:
           type: string
         spotifyUriId:
           type: string
-    ArtistDto:
+    ArtistSearchResponse:
+      type: object
+      properties:
+        count:
+          format: int32
+          type: integer
+        artists:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultArtistDto'
+    FollowedArtistDto:
       required:
+        - id
         - name
       type: object
       properties:
@@ -602,18 +613,6 @@ components:
           type: string
         musicbrainzId:
           type: string
-        followedByUser:
-          type: boolean
-    ArtistSearchResponse:
-      type: object
-      properties:
-        count:
-          format: int32
-          type: integer
-        artists:
-          type: array
-          items:
-            $ref: '#/components/schemas/ArtistDto'
     FollowedArtistsResponse:
       type: object
       properties:
@@ -623,7 +622,7 @@ components:
         rows:
           type: array
           items:
-            $ref: '#/components/schemas/ArtistDto'
+            $ref: '#/components/schemas/FollowedArtistDto'
     LocalDate:
       format: date
       type: string
@@ -685,6 +684,24 @@ components:
           type: string
         releasedOn:
           $ref: '#/components/schemas/LocalDate'
+    SearchResultArtistDto:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        lastfmUri:
+          type: string
+        spotifyUri:
+          type: string
+        musicbrainzId:
+          type: string
+        followedByUser:
+          type: boolean
     UserArtist:
       type: object
       properties:

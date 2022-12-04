@@ -5,7 +5,7 @@ import { components } from '../../types/schema';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
-  const [results, setResults] = useState<components['schemas']['ArtistDto'][] | null>(null);
+  const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
 
   if (!i18n || !i18n.button || !i18n.label) {
@@ -27,7 +27,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       });
   };
 
-  const handleFollow = (artistData: components['schemas']['ArtistDto']) => {
+  const handleFollow = (artistData: components['schemas']['SearchResultArtistDto']) => {
     setDisabled(true);
     fetch(`${process.env.BE_BASE_URL}/me/follow`, {
       method: 'POST',
@@ -71,7 +71,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       {results && (
         <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-16 md:top-32 w-full z-10">
           <ul>
-            {results.map((result: components['schemas']['ArtistDto'], key: number) => (
+            {results.map((result: components['schemas']['SearchResultArtistDto'], key: number) => (
               <li className="flex justify-between items-center py-2 rr-text border-b-2 border-gh-dark" key={key}>
                 {result.name}
                 <button
