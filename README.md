@@ -8,19 +8,25 @@ Backend available here: https://github.com/jaivalis/release-raccoon
 
 ## How to develop
 
+Make a copy of `.env` to `.env.local` and populate with correct values:
+
+```shell
+$ cp .env.dist .env
+```
+
 First install deps:
 
 ```shell
-yarn
+$ yarn
 ```
 
 Start the development server:
 
 ```bash
-yarn dev
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the website. That's it!
 
 Do some changes on the code. The changes are automatically applied with the help of Next.js [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh).
 
@@ -32,19 +38,19 @@ You can also manually run them individually.
 Prettier:
 
 ```shell
-yarn prettier
+$ yarn prettier
 ```
 
 Eslint (with Typescript):
 
 ```shell
-yarn lint
+$ yarn lint
 ```
 
 Tests (Jest):
 
 ```shell
-yarn test
+$ yarn test
 ```
 
 ## Deployments
@@ -53,13 +59,13 @@ This project uses [Vercel](https://vercel.com/) as it's hosting platform.
 Vercel builds a production optimized version using:
 
 ```shell
-yarn build
+$ yarn build
 ```
 
 You can do the same locally. After you build, start the production server that uses that build:
 
 ```shell
-yarn start
+$ yarn start
 ```
 
 ### Development deployments
@@ -83,7 +89,7 @@ A [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) is required fo
 To generate a ts schema:
 
 ```shell
-npx openapi-typescript openapi.yml --output types/schema.ts
+$ npx openapi-typescript openapi.yml --output types/schema.ts
 ```
 
 ## Supported browsers
@@ -91,7 +97,7 @@ npx openapi-typescript openapi.yml --output types/schema.ts
 List supported browsers:
 
 ```shell
-npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
+$ npx browserslist ">0.3%, not ie 11, not dead, not op_mini all"
 ```
 
 ## Learn More about Next.js
