@@ -159,7 +159,7 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          'application/json': components['schemas']['ArtistDto'];
+          'application/json': components['schemas']['SearchResultArtistDto'];
         };
       };
       responses: {
@@ -504,24 +504,23 @@ export interface components {
       musicbrainzId?: string;
       spotifyUriId?: string;
     };
-    ArtistDto: {
+    ArtistSearchResponse: {
+      /** Format: int32 */
+      count?: number;
+      artists?: components['schemas']['SearchResultArtistDto'][];
+    };
+    FollowedArtistDto: {
       /** Format: int64 */
-      id?: number;
+      id: number;
       name: string;
       lastfmUri?: string;
       spotifyUri?: string;
       musicbrainzId?: string;
-      followedByUser?: boolean;
-    };
-    ArtistSearchResponse: {
-      /** Format: int32 */
-      count?: number;
-      artists?: components['schemas']['ArtistDto'][];
     };
     FollowedArtistsResponse: {
       /** Format: int32 */
       total?: number;
-      rows?: components['schemas']['ArtistDto'][];
+      rows?: components['schemas']['FollowedArtistDto'][];
     };
     /**
      * Format: date
@@ -559,6 +558,15 @@ export interface components {
       spotifyUri?: string;
       musicbrainzId?: string;
       releasedOn?: components['schemas']['LocalDate'];
+    };
+    SearchResultArtistDto: {
+      /** Format: int64 */
+      id?: number;
+      name: string;
+      lastfmUri?: string;
+      spotifyUri?: string;
+      musicbrainzId?: string;
+      followedByUser?: boolean;
     };
     UserArtist: {
       /** Format: float */
