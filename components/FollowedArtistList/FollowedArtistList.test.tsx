@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act, waitFor } from '@testing-library/react';
+import { render, act, fireEvent } from '@testing-library/react';
 import FollowedArtistList from './FollowedArtistList';
 import { listI18n } from './FollowedArtistList.data';
 import { beforeEachTest } from '../../utils/test-utils';
@@ -13,9 +13,6 @@ describe('List', () => {
     originFetch = global.fetch;
 
     beforeEachTest();
-    jest
-      .spyOn(global, 'fetch')
-      .mockResolvedValue(new Response(JSON.stringify({ json: followedArtists }), { status: 200, statusText: 'OK' }));
   });
 
   afterEach(() => {
@@ -23,23 +20,45 @@ describe('List', () => {
     jest.restoreAllMocks();
   });
 
-  it('renders without data without crashing', async () => {
-    await act(() => {
-      // @ts-ignore
-      render(<FollowedArtistList />);
-    });
-  });
-
   it('renders artists with "unfollow" btn', async () => {
     const fakeResponse = followedArtists;
     const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
     const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
     global.fetch = mockedFetch;
+
     const container = render(<FollowedArtistList i18n={listI18n} />);
-    const buttons = await waitFor(() => container.getAllByText('unfollow'));
+    const buttons = await container.findAllByText('unfollow');
+
     expect(buttons).toHaveLength(2);
     expect(mockedFetch).toBeCalledTimes(1);
     expect(mRes.json).toBeCalledTimes(1);
+
     expect(container).toMatchSnapshot();
+  });
+
+  it('unfollows artist on btn click', async () => {
+    const fakeResponse = followedArtists;
+    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
+    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
+    global.fetch = mockedFetch;
+
+    const { findAllByText } = render(<FollowedArtistList i18n={listI18n} />);
+
+    const buttons = await findAllByText('unfollow');
+
+    expect(buttons).toHaveLength(2);
+    expect(mockedFetch).toBeCalledTimes(1);
+    expect(mRes.json).toBeCalledTimes(1);
+
+    const mRes1 = { json: jest.fn().mockResolvedValueOnce('OK') };
+    global.fetch = jest.fn().mockResolvedValueOnce(mRes1);
+
+    const logSpy = jest.spyOn(console, 'log');
+    await act(() => {
+      fireEvent['click'](buttons[0]);
+    });
+    const artists = await findAllByText('unfollow');
+    expect(logSpy).toBeCalledWith('1700 successfully unfollowed');
+    expect(artists).toHaveLength(1);
   });
 });

@@ -80,7 +80,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
           </div>
           <Button
             i18n={i18n.unfollow}
-            onClick={() => unfollowArtist(artist.id!)} // TODO fix in BE: id must be required
+            onClick={() => unfollowArtist(artist.id)}
             className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-gh-dark' : ''}`}
             disabled={!!artistLoading && artist.id === artistLoading}
             loading={!!artistLoading && artist.id === artistLoading}
