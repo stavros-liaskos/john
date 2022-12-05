@@ -2,6 +2,7 @@ import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
 import Button from '../Button/Button';
 import { components } from '../../types/schema';
+import { getFollowedArtists } from '../../utils/getFollowedArtists';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
@@ -19,12 +20,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       .then(result => {
         return setResults(result.artists); // TODO handle no results
       })
-      .catch(() => {
-        // TODO handle me
-      })
-      .finally(() => {
-        // TODO handle disabled/loading state
-      });
+      .catch(console.error);
   };
 
   const handleFollow = (artistData: components['schemas']['SearchResultArtistDto']) => {

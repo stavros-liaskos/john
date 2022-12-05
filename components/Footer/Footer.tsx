@@ -1,7 +1,7 @@
 import { FooterProps } from './Footer.types';
 import Image from 'next/image';
 import React from 'react';
-import { useThemeContext } from '../../contexts/ThemeContext';
+import { useThemeContext } from '../../contexts/Theme/ThemeContext';
 
 const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
   const { dark } = useThemeContext();

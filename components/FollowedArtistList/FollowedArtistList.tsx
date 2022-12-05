@@ -4,6 +4,7 @@ import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
 import Button from '../Button/Button';
 import { components } from '../../types/schema';
+import { getFollowedArtists } from '../../utils/getFollowedArtists';
 
 const ICON_SIZE = 30;
 
@@ -12,19 +13,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['FollowedArtistsResponse']>();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        referrerPolicy: 'no-referrer',
-      });
-      const json = await data.json();
-      setFollowedArtistList(json);
-    };
-    fetchData().catch(console.error);
+    getFollowedArtists(setFollowedArtistList);
   }, []);
 
   if (!followedArtistList?.rows || !i18n || !i18n.unfollow) {

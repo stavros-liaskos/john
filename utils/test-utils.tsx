@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
-import ThemeProvider from '../contexts/ThemeProvider';
+import ThemeProvider from '../contexts/Theme/ThemeProvider';
 import { UserProvider } from '@auth0/nextjs-auth0';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
