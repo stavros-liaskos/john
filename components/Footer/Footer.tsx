@@ -31,5 +31,5 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
     </footer>
   );
 };
-
+Footer.whyDidYouRender = true;
 export default Footer;

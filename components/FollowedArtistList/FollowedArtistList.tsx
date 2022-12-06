@@ -90,5 +90,5 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     </div>
   );
 };
-
+FollowedArtistList.whyDidYouRender = false;
 export default FollowedArtistList;

@@ -10,5 +10,5 @@ const Meta: React.FunctionComponent = () => {
     </Head>
   );
 };
-
+Meta.whyDidYouRender = false;
 export default Meta;

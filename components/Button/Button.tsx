@@ -21,5 +21,5 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     </button>
   );
 };
-
+Button.whyDidYouRender = false;
 export default Button;
