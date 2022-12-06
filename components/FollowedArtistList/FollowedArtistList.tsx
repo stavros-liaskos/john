@@ -15,9 +15,10 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     const fetchData = async () => {
       const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
         method: 'GET',
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${process.env.BE_BASE_URL}`,
         },
         referrerPolicy: 'no-referrer',
       });
