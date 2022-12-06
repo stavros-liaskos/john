@@ -1,10 +1,10 @@
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 const isWindow = () => typeof window !== 'undefined';
 
 interface ChildrenProps {
-  children: ReactElement;
+  children: ReactNode;
 }
 
 const ThemeProvider: FC<ChildrenProps> = ({ children }) => {

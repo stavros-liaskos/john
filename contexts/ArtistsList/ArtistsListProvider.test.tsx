@@ -1,31 +1,44 @@
 import { useArtistsListContext } from './ArtistsListContext';
-import { cleanup, render, fireEvent, waitFor } from '@testing-library/react';
-import ArtistsListProvider from './ArtistsListProvider';
+import { cleanup, queryByText, waitForElementToBeRemoved } from '@testing-library/react';
+import { beforeEachTest, render } from '../../utils/test-utils';
+import followedArtists from '../../mocks/responses/followed-artists.json';
 
 describe('ArtistsListContext', () => {
-  afterEach(() => cleanup);
+  beforeEach(() => {
+    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
+      if (req.url.endsWith('/me/followed-artists')) {
+        return Promise.resolve({ body: JSON.stringify({ json: followedArtists }) });
+      } else {
+        return Promise.reject({ status: 404 });
+      }
+    });
 
-  const ButtonSetDark = () => {
-    const { dark, loaded, setDark } = useArtistsListContext();
+    beforeEachTest();
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+    cleanup();
+  });
+
+  const ArtistList = () => {
+    const { followedArtistList, loading } = useArtistsListContext();
+    console.warn(followedArtistList,loading);
     return (
       <div>
-        <button onClick={() => setDark(!dark)}>Toggle dark</button>
-        <span>Dark theme {dark && loaded ? 'ON' : 'OFF'}</span>
+        {loading && <span>Loading</span>}
+        {followedArtistList?.rows &&
+          followedArtistList.rows.map((artist, key) => <span key={key}>Artist: {artist.name}</span>)}
       </div>
     );
   };
 
-  it('toggles dark mode', async () => {
-    const { getByText } = render(
-      <ArtistsListProvider>
-        <ButtonSetDark />
-      </ArtistsListProvider>,
-    );
+  it('gets/sets followed artists', async () => {
+    const { findAllByText } = render(<ArtistList />);
 
-    await waitFor(() => fireEvent.click(getByText(/Toggle dark/i)));
-    expect(getByText('Dark theme ON')).toBeTruthy();
-
-    await waitFor(() => fireEvent.click(getByText(/Toggle dark/i)));
-    expect(getByText('Dark theme OFF')).toBeTruthy();
+    setTimeout(async ()=>{
+      const artists = await findAllByText(/Artist/i);
+      expect(artists).toHaveLength(2);
+    }, 200)
   });
 });

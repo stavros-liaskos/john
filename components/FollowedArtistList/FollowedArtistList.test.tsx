@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, act, fireEvent } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList from './FollowedArtistList';
 import { listI18n } from './FollowedArtistList.data';
-import { beforeEachTest } from '../../utils/test-utils';
+import { beforeEachTest, render } from '../../utils/test-utils';
 import followedArtists from '../../mocks/responses/followed-artists.json';
 
 describe('List', () => {

@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ListProps } from './FollowedArtistList.types';
 import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
 import Button from '../Button/Button';
-import { components } from '../../types/schema';
-import { getFollowedArtists } from '../../utils/getFollowedArtists';
+import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
 
 const ICON_SIZE = 30;
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['FollowedArtistsResponse']>();
-
-  useEffect(() => {
-    getFollowedArtists(setFollowedArtistList);
-  }, []);
+  const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
 
   if (!followedArtistList?.rows || !i18n || !i18n.unfollow) {
     return null;
