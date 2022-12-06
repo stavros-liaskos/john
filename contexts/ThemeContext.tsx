@@ -9,7 +9,7 @@ interface ThemeContextType {
 export const ThemeContext = createContext<ThemeContextType>({
   dark: true,
   loaded: true,
-  setDark: () => {},
+  setDark: () => {}, // TODO check default
 });
 ThemeContext.displayName = 'ThemeContext';
 

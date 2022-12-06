@@ -17,5 +17,5 @@ const Header: React.FunctionComponent = () => {
     </header>
   );
 };
-
+Header.whyDidYouRender = false;
 export default Header;
