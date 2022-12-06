@@ -7,5 +7,6 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
     trackAllPureComponents: true,
     trackHooks: true,
     logOwnerReasons: true,
+    collapseGroups: true,
   });
 }

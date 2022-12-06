@@ -18,5 +18,5 @@ const DarkMode: React.FunctionComponent = () => {
     </button>
   );
 };
-DarkMode.whyDidYouRender = false;
+DarkMode.whyDidYouRender = true;
 export default DarkMode;

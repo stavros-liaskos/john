@@ -89,5 +89,5 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     </div>
   );
 };
-Search.whyDidYouRender = false;
+Search.whyDidYouRender = true;
 export default Search;
