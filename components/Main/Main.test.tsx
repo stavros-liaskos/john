@@ -2,7 +2,6 @@ import React from 'react';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import Main from './Main';
 import props from './Main.data';
-import { expect } from '@jest/globals';
 import followedArtists from '../../mocks/responses/followed-artists.json';
 import { UserProvider } from '@auth0/nextjs-auth0';
 import fetchMock from 'jest-fetch-mock';
@@ -20,24 +19,19 @@ describe('Main', () => {
     });
   });
 
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
   it('renders without data without crashing', async () => {
     // @ts-ignore
     await renderWithAct(<Main />);
   });
 
   it('shows registration button', async () => {
-    const { findByText } = await renderWithAct(
+    const { findAllByText } = await renderWithAct(
       <UserProvider>
         <Main {...props} />
       </UserProvider>,
     );
 
-    const registerBtn = await findByText(/Register/);
-    expect(registerBtn.closest('a')).toHaveAttribute('href', '/api/auth/login');
+    expect(await findAllByText(/Register/)).toHaveLength(1);
   });
 
   it('shows artist search for logged in user', async () => {

@@ -12,6 +12,7 @@ export function getFollowedArtists(
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': `${process.env.BE_BASE_URL}`,
       },
       referrerPolicy: 'no-referrer',
     });

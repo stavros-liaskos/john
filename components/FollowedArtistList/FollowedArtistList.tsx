@@ -15,7 +15,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     return null;
   }
 
-  const unfollowArtist = (artistID: number) => {
+  function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
     fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
       method: 'DELETE',
@@ -27,18 +27,20 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       body: JSON.stringify({ artistID }),
     })
       .then(() => {
-        const newList = followedArtistList.rows!.filter(artist => artist.id !== artistID);
-        setFollowedArtistList({
-          total: newList.length,
-          rows: newList,
-        });
+        const newList = followedArtistList?.rows && followedArtistList.rows.filter(artist => artist.id !== artistID);
+        if (newList && newList.length !== followedArtistList?.rows?.length) {
+          setFollowedArtistList({
+            total: newList.length,
+            rows: newList,
+          });
+        }
         console.log(`${artistID} successfully unfollowed`);
       })
       .catch(error => {
         console.error(JSON.stringify(error));
       })
       .finally(() => setArtistLoading(0));
-  };
+  }
 
   return (
     <div className="overflow-auto w-full">
@@ -47,7 +49,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       {followedArtistList.rows.map((artist, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
-          key={index}
+          key={artist.id}
         >
           <p className="grow text-clip rr-text">{artist.name}</p>
           <div className="flex basis-2 mx-4 md:mx-8">
@@ -64,7 +66,8 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
           </div>
           <Button
             i18n={i18n.unfollow}
-            onClick={() => unfollowArtist(artist.id)}
+            handleClick={unfollowArtist}
+            handleClickArg={artist.id}
             className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-gh-dark' : ''}`}
             disabled={!!artistLoading && artist.id === artistLoading}
             loading={!!artistLoading && artist.id === artistLoading}
@@ -74,5 +77,5 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     </div>
   );
 };
-
+FollowedArtistList.whyDidYouRender = true;
 export default FollowedArtistList;

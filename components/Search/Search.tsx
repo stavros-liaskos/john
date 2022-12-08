@@ -2,7 +2,6 @@ import { SearchProps } from './Search.types';
 import React, { useState, SyntheticEvent } from 'react';
 import Button from '../Button/Button';
 import { components } from '../../types/schema';
-import { getFollowedArtists } from '../../utils/getFollowedArtists';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [input, setInput] = useState<string>('');
@@ -85,5 +84,5 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     </div>
   );
 };
-
+Search.whyDidYouRender = true;
 export default Search;

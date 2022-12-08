@@ -1,6 +1,6 @@
 import { useArtistsListContext } from './ArtistsListContext';
-import { cleanup, queryByText, waitForElementToBeRemoved } from '@testing-library/react';
-import { beforeEachTest, render } from '../../utils/test-utils';
+import { cleanup } from '@testing-library/react';
+import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/responses/followed-artists.json';
 
 describe('ArtistsListContext', () => {
@@ -23,7 +23,6 @@ describe('ArtistsListContext', () => {
 
   const ArtistList = () => {
     const { followedArtistList, loading } = useArtistsListContext();
-    console.warn(followedArtistList,loading);
     return (
       <div>
         {loading && <span>Loading</span>}
@@ -34,11 +33,11 @@ describe('ArtistsListContext', () => {
   };
 
   it('gets/sets followed artists', async () => {
-    const { findAllByText } = render(<ArtistList />);
+    const { findAllByText } = await renderWithAct(<ArtistList />);
 
-    setTimeout(async ()=>{
+    setTimeout(async () => {
       const artists = await findAllByText(/Artist/i);
       expect(artists).toHaveLength(2);
-    }, 200)
+    }, 200);
   });
 });

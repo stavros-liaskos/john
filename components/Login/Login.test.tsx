@@ -1,6 +1,6 @@
 import React from 'react';
-import { renderWithAct } from '../../utils/test-utils';
 import Login from './Login';
+import { render } from '@testing-library/react';
 
 const props = {
   i18n: {
@@ -13,16 +13,14 @@ const props = {
 };
 
 describe('Login', () => {
-  it('renders without data without crashing', async () => {
+  it('renders without data without crashing', () => {
     // @ts-ignore
-    await renderWithAct(<Login />);
+    render(<Login />);
   });
 
-  it('renders login button', async () => {
-    const { container, findByText } = await renderWithAct(<Login {...props} />);
+  it('renders login button', () => {
+    const { container } = render(<Login {...props} />);
 
-    const registerBtn = await findByText(/Register/);
     expect(container).toMatchSnapshot();
-    expect(registerBtn.closest('a')).toHaveAttribute('href', '/api/auth/login');
   });
 });

@@ -37,5 +37,5 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
     </main>
   );
 };
-
+Main.whyDidYouRender = false;
 export default Main;

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 const isWindow = () => typeof window !== 'undefined';
@@ -11,6 +11,7 @@ const ThemeProvider: FC<ChildrenProps> = ({ children }) => {
   const [dark, setDark] = useState<boolean>(isWindow() && localStorage.theme);
   const [loaded, setLoaded] = useState(false);
 
+  const value = useMemo(() => ({ dark, loaded, setDark }), [dark, loaded]);
   useEffect(() => setLoaded(true), []);
 
   useEffect(() => {
@@ -23,9 +24,9 @@ const ThemeProvider: FC<ChildrenProps> = ({ children }) => {
       root.classList.remove('dark');
       isWindow() && localStorage.removeItem('theme');
     }
-  }, [dark, setDark]);
+  }, [dark]);
 
-  return <ThemeContext.Provider value={{ dark, loaded, setDark }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;
