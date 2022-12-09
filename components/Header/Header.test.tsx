@@ -21,10 +21,6 @@ describe('Header', () => {
       </UserProvider>,
     );
 
-    const logoutBtn = await component.findByText('Logout');
-
-    expect(component.findByRole('a')).toBeTruthy();
-    expect(logoutBtn.closest('a')).toHaveAttribute('href', '/api/auth/logout');
     expect(component.container).toMatchSnapshot();
   });
 });

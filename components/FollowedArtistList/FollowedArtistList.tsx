@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ListProps } from './FollowedArtistList.types';
 import Spotify from '../Icons/spotify';
 import LastFm from '../Icons/lastfm';
 import Button from '../Button/Button';
-import { components } from '../../types/schema';
+import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
 
 const ICON_SIZE = 30;
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['FollowedArtistsResponse']>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
-        method: 'GET',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': `${process.env.BE_BASE_URL}`,
-        },
-        referrerPolicy: 'no-referrer',
-      });
-      const json = await data.json();
-      setFollowedArtistList(json);
-    };
-    fetchData().catch(console.error);
-  }, []);
+  const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
 
   if (!followedArtistList?.rows || !i18n || !i18n.unfollow) {
     return null;
   }
 
-  function unfollowArtist(artistID: number){
+  function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
     fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
       method: 'DELETE',
@@ -63,7 +46,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     <div className="overflow-auto w-full">
       {!followedArtistList?.rows && <p>You don not track any artists yet</p>}
 
-      {followedArtistList.rows.map((artist, index) => (
+      {followedArtistList.rows.map((artist, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
           key={artist.id}

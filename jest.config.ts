@@ -5,7 +5,7 @@
 
 export default {
   // All imported modules in your tests should be mocked automatically
-  // automock: false,
+  automock: false,
 
   // Stop running tests after `n` failures
   // bail: 0,
@@ -48,10 +48,10 @@ export default {
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      statements: 95.83,
+      statements: 90.9,
       branches: 88.23,
-      functions: 90,
-      lines: 95.65,
+      functions: 75,
+      lines: 90.56,
     },
   },
 

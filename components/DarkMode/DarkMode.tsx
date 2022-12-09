@@ -1,7 +1,7 @@
 import React from 'react';
 import Sun from '../Icons/sun';
 import Moon from '../Icons/moon';
-import { useThemeContext } from '../../contexts/ThemeContext';
+import { useThemeContext } from '../../contexts/Theme/ThemeContext';
 
 const DARK_MODE_ICON_SIZE = 28;
 

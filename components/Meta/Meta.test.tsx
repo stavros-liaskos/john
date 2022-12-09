@@ -1,9 +1,9 @@
 import React from 'react';
 import Meta from './Meta';
-import { renderWithAct } from '../../utils/test-utils';
+import { render } from '@testing-library/react';
 
 describe('Meta', () => {
-  it('renders without data without crashing', async () => {
-    await renderWithAct(<Meta />);
+  it('renders without data without crashing', () => {
+    render(<Meta />);
   });
 });

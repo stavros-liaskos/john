@@ -19,12 +19,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       .then(result => {
         return setResults(result.artists); // TODO handle no results
       })
-      .catch(() => {
-        // TODO handle me
-      })
-      .finally(() => {
-        // TODO handle disabled/loading state
-      });
+      .catch(console.error);
   };
 
   const handleFollow = (artistData: components['schemas']['SearchResultArtistDto']) => {
