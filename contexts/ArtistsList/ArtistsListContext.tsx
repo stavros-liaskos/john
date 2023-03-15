@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction, useContext } from 'react';
+import React, { createContext, Dispatch, SetStateAction, useContext } from 'react';
 import { components } from '../../types/schema';
 
 interface ArtistsListContextType {
@@ -7,7 +7,7 @@ interface ArtistsListContextType {
   loading: boolean;
 }
 
-export const ArtistsListContext = createContext<ArtistsListContextType>(undefined as unknown as ArtistsListContextType);
+export const ArtistsListContext: React.Context<ArtistsListContextType> = createContext<ArtistsListContextType>(undefined as unknown as ArtistsListContextType);
 ArtistsListContext.displayName = 'ArtistsListContext';
 
 export function useArtistsListContext() {
