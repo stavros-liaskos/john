@@ -1,5 +1,5 @@
 import { FooterProps } from './Footer.types';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import React from 'react';
 import { useThemeContext } from '../../contexts/Theme/ThemeContext';
 
