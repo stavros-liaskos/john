@@ -9,11 +9,12 @@ Backend available here: https://github.com/jaivalis/release-raccoon
 ## How to develop
 
 Make a copy of `.env` to `.env.local`.
+
 ```shell
 $ cp .env .env.local
 ```
 
-More on how to generate this values [here](https://auth0.com/docs/quickstart/webapp/nextjs)  
+More on how to generate this values [here](https://auth0.com/docs/quickstart/webapp/nextjs)
 
 First install deps:
 
