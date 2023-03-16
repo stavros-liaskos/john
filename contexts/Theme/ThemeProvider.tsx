@@ -8,11 +8,14 @@ interface ChildrenProps {
 }
 
 const ThemeProvider: FC<ChildrenProps> = ({ children }) => {
-  const [dark, setDark] = useState<boolean>(isWindow() && localStorage.theme);
+  const [dark, setDark] = useState<boolean>();
   const [loaded, setLoaded] = useState(false);
 
   const value = useMemo(() => ({ dark, loaded, setDark }), [dark, loaded]);
-  useEffect(() => setLoaded(true), []);
+  useEffect(() => {
+    setDark(isWindow() && localStorage.theme);
+    setLoaded(true);
+  }, []);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -20,7 +23,7 @@ const ThemeProvider: FC<ChildrenProps> = ({ children }) => {
     if (dark) {
       root.classList.add('dark');
       isWindow() && localStorage.setItem('theme', 'dark');
-    } else {
+    } else if (dark === false) {
       root.classList.remove('dark');
       isWindow() && localStorage.removeItem('theme');
     }

@@ -29,7 +29,7 @@
   } else if (supportsColorSchemeQuery) {
     // source of truth from system
     setClassOnDocumentBody(mql.matches);
-    localStorage.setItem(storageKey, mql.matches);
+     mql.matches && localStorage.setItem(storageKey, classNameDark);
   } else {
     // source of truth from document.body
     var isDarkMode = document.classList.contains(classNameDark);

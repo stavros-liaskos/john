@@ -7,7 +7,9 @@ interface ArtistsListContextType {
   loading: boolean;
 }
 
-export const ArtistsListContext: React.Context<ArtistsListContextType> = createContext<ArtistsListContextType>(undefined as unknown as ArtistsListContextType);
+export const ArtistsListContext: React.Context<ArtistsListContextType> = createContext<ArtistsListContextType>(
+  undefined as unknown as ArtistsListContextType,
+);
 ArtistsListContext.displayName = 'ArtistsListContext';
 
 export function useArtistsListContext() {
