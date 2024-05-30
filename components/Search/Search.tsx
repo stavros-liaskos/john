@@ -8,13 +8,13 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
 
-  if (!i18n || !i18n.button || !i18n.label) {
+  if (!i18n?.button || !i18n?.label) {
     return null;
   }
 
   const handleSearch = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch(`${process.env.BE_BASE_URL}/artist/search/?${new URLSearchParams({ pattern: input })}`)
+    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: input })}`)
       .then(res => res.json())
       .then(result => {
         return setResults(result.artists); // TODO handle no results
