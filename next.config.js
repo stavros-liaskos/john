@@ -1,14 +1,13 @@
 const path = require('path');
 
+const IS_MOCK = false;
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'ts'],
   async rewrites() {
-    return [
-      { source: '/me/:path*', destination: '/api/mockServer/me/:path*' },
-      { source: '/artist/:path*', destination: '/api/mockServer/artist/:path*' },
-    ];
+    return [createRewritePath('/me/:path*'), createRewritePath('/artist/:path*')];
   },
   env: {
     BE_BASE_URL: process.env.BE_BASE_URL,
@@ -31,3 +30,7 @@ module.exports = {
     return config;
   },
 };
+
+function createRewritePath(path) {
+  return { source: path, destination: `/api${IS_MOCK ? '/mockServer' : ''}${path}` };
+}
