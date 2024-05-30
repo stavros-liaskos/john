@@ -1,9 +1,16 @@
+import type { Config } from 'jest';
+const nextJest = require('next/jest');
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+});
 
-export default {
+// Add any custom config to be passed to Jest
+const config: Config = {
   // All imported modules in your tests should be mocked automatically
   automock: false,
 
@@ -35,7 +42,7 @@ export default {
   coveragePathIgnorePatterns: ['/node_modules/', '/.next', '/coverage', '/components/Icons', '/pages/api'],
 
   // Indicates which provider should be used to instrument code for coverage
-  // coverageProvider: "babel",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -213,3 +220,5 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+export default createJestConfig(config);
