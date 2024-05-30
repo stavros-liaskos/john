@@ -1,6 +1,6 @@
 const path = require('path');
 
-const IS_MOCK = false;
+const IS_MOCK = true;
 
 /** @type {import('next').NextConfig} */
 module.exports = {

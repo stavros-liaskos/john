@@ -1,6 +1,6 @@
 import React from 'react';
 import DarkMode from '../DarkMode/DarkMode';
-import { useUser } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from 'next/link';
 
 const Header: React.FunctionComponent = () => {

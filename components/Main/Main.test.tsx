@@ -3,7 +3,7 @@ import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import Main from './Main';
 import props from './Main.data';
 import followedArtists from '../../mocks/responses/followed-artists.json';
-import { UserProvider } from '@auth0/nextjs-auth0';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import fetchMock from 'jest-fetch-mock';
 
 describe('Main', () => {
