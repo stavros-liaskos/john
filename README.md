@@ -58,7 +58,7 @@ $ yarn test
 ## Mock Data
 
 You can work on the FE by mocking the BE data.  
-Simply set `IS_MOCK` in `next.config.js` to `true`.
+Simply set env `IS_MOCK` to `true`.
 
 ## Deployments
 
