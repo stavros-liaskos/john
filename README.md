@@ -58,7 +58,7 @@ $ yarn test
 ## Mock Data
 
 You can work on the FE by mocking the BE data.  
-Simply set env `IS_MOCK` to `true`.
+Simply set env `MOCK_SERVER_RESPONSE` to `true`.
 
 ## Deployments
 
