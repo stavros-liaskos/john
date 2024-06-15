@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   };
 
   try {
-    const response = await fetch(process.env.BE_BASE_URL!, requestOptions);
+    const response = await fetch(process.env.BE_BASE_URL as unknown as URL, requestOptions);
     const result = await response.text();
     res.status(200).json(JSON.parse(result));
   } catch (e) {
