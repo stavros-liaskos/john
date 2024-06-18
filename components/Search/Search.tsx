@@ -14,7 +14,10 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   const handleSearch = (e: SyntheticEvent) => {
     e.preventDefault();
-    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: input })}`)
+    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: input })}`, {
+      method: 'GET',
+      credentials: 'include',
+    })
       .then(res => res.json())
       .then(result => {
         return setResults(result.artists); // TODO handle no results
@@ -24,13 +27,11 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   const handleFollow = (artistData: components['schemas']['SearchResultArtistDto']) => {
     setDisabled(true);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
     fetch(`${process.env.BE_BASE_URL}/me/follow`, {
       method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      referrerPolicy: 'no-referrer',
+      credentials: 'include',
+      headers,
       body: JSON.stringify(artistData),
     })
       .then(() => {

@@ -1,7 +1,7 @@
 import '../scripts/wdyr';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { UserProvider } from '@auth0/nextjs-auth0';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import ThemeProvider from '../contexts/Theme/ThemeProvider';
 import ArtistsListProvider from '../contexts/ArtistsList/ArtistsListProvider';
 

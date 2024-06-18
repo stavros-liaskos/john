@@ -1,14 +1,13 @@
 const path = require('path');
 
+const MOCK_SERVER_RESPONSE = process.env.MOCK_SERVER_RESPONSE === 'true';
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'ts'],
   async rewrites() {
-    return [
-      { source: '/me/:path*', destination: '/api/mockServer/me/:path*' },
-      { source: '/artist/:path*', destination: '/api/mockServer/artist/:path*' },
-    ];
+    return createRewritePaths(['/me/:path*', '/artist/:path*']);
   },
   env: {
     BE_BASE_URL: process.env.BE_BASE_URL,
@@ -31,3 +30,7 @@ module.exports = {
     return config;
   },
 };
+
+function createRewritePaths(paths) {
+  return paths.map(path => ({ source: path, destination: `/api${MOCK_SERVER_RESPONSE ? '/mockServer' : ''}${path}` }));
+}

@@ -55,6 +55,11 @@ Tests (Jest):
 $ yarn test
 ```
 
+## Mock Data
+
+You can work on the FE by mocking the BE data.  
+Simply set env `MOCK_SERVER_RESPONSE` to `true`.
+
 ## Deployments
 
 This project uses [Vercel](https://vercel.com/) as it's hosting platform.  

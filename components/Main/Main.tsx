@@ -4,7 +4,7 @@ import React from 'react';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../FollowedArtistList/FollowedArtistList.data';
-import { useUser } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Login from '../Login/Login';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {

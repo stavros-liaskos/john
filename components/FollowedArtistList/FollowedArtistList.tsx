@@ -19,11 +19,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     setArtistLoading(artistID);
     fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
       method: 'DELETE',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      referrerPolicy: 'no-referrer',
+      credentials: 'include',
       body: JSON.stringify({ artistID }),
     })
       .then(() => {
