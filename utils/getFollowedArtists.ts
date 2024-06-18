@@ -6,19 +6,14 @@ export function getFollowedArtists(
   setLoading: Dispatch<SetStateAction<boolean>>,
 ) {
   setLoading(true);
-  const fetchData = async () => {
+  fetchData().catch(console.error);
+
+  async function fetchData() {
     const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
       method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': `${process.env.BE_BASE_URL}`,
-      },
-      referrerPolicy: 'no-referrer',
     });
     const json = await data.json();
     setState(json);
     setLoading(false);
-  };
-  fetchData().catch(console.error);
+  }
 }
