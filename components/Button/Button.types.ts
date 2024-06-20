@@ -5,5 +5,5 @@ export interface ButtonProps {
   handleClickArg?: number;
   disabled?: boolean;
   loading?: boolean;
-  type?: 'submit';
+  type?: 'submit' | 'button';
 }

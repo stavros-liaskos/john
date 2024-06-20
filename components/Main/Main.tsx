@@ -6,6 +6,7 @@ import { searchI18n } from '../Search/Search.data';
 import { listI18n } from '../FollowedArtistList/FollowedArtistList.data';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Login from '../Login/Login';
+import Scrapers from '../Scrape/Scrapers';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   const { user } = useUser();
@@ -20,6 +21,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
         {user ? (
           <>
             <Search i18n={searchI18n} />
+            <Scrapers />
             <FollowedArtistList i18n={listI18n} />
           </>
         ) : (
