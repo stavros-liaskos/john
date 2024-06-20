@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { ListProps } from './FollowedArtistList.types';
-import Spotify from '../Icons/spotify';
-import LastFm from '../Icons/lastfm';
-import Button from '../Button/Button';
 import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
-
-const ICON_SIZE = 30;
+import ArtistsList from '../ArtistsList/ArtistsList';
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
   const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
 
-  if (!followedArtistList?.rows || !i18n || !i18n.unfollow) {
+  if (!followedArtistList?.rows || !i18n || !i18n.btnTxt) {
     return null;
   }
 
+  // TODO remove from this scope
   function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
     fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
@@ -39,38 +36,12 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   }
 
   return (
-    <div className="overflow-auto w-full">
-      {!followedArtistList?.rows && <p>You don not track any artists yet</p>}
-
-      {followedArtistList.rows.map((artist, index: number) => (
-        <div
-          className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
-          key={artist.id}
-        >
-          <p className="grow text-clip rr-text">{artist.name}</p>
-          <div className="flex basis-2 mx-4 md:mx-8">
-            {artist.lastfmUri && (
-              <a className="inline" href={artist.lastfmUri}>
-                <LastFm width={ICON_SIZE} height={ICON_SIZE} />
-              </a>
-            )}
-            {artist.spotifyUri && (
-              <a className="inline" href={artist.spotifyUri}>
-                <Spotify width={ICON_SIZE} height={ICON_SIZE} />
-              </a>
-            )}
-          </div>
-          <Button
-            i18n={i18n.unfollow}
-            handleClick={unfollowArtist}
-            handleClickArg={artist.id}
-            className={`btn-small lg:ml-8 my-2 ${index % 2 ? '!border-gh-dark' : ''}`}
-            disabled={!!artistLoading && artist.id === artistLoading}
-            loading={!!artistLoading && artist.id === artistLoading}
-          />
-        </div>
-      ))}
-    </div>
+    <ArtistsList
+      i18n={i18n}
+      artistsList={followedArtistList}
+      onButtonClick={unfollowArtist}
+      artistLoading={artistLoading}
+    />
   );
 };
 FollowedArtistList.whyDidYouRender = true;

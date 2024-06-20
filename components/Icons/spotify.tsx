@@ -2,7 +2,7 @@ import React from 'react';
 import IconTypes from './iconTypes';
 
 const Spotify: React.FunctionComponent<IconTypes> = ({ width = 40, height = 40 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={width} height={height}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={width} height={height} role={'img'}>
     <g clipRule="evenodd">
       <path fill="none" d="M0 0h128v128H0z" />
       <path

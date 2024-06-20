@@ -3,7 +3,7 @@ import FollowedArtistList from '../FollowedArtistList/FollowedArtistList';
 import React from 'react';
 import Search from '../Search/Search';
 import { searchI18n } from '../Search/Search.data';
-import { listI18n } from '../FollowedArtistList/FollowedArtistList.data';
+import { followedArtistListI18n } from '../FollowedArtistList/FollowedArtistList.data';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Login from '../Login/Login';
 import Scrapers from '../Scrape/Scrapers';
@@ -24,7 +24,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
           <>
             <Search i18n={searchI18n} />
             <Scrapers />
-            <FollowedArtistList i18n={listI18n} />
+            <FollowedArtistList i18n={followedArtistListI18n} />
             <Recommendations i18n={recommendationsI18n} />
           </>
         ) : (

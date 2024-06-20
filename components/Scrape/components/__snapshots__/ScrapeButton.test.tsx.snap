@@ -7,6 +7,7 @@ exports[`Scrape component matches snapshot 1`] = `
   >
     <svg
       height="30"
+      role="img"
       viewBox="0 0 128 128"
       width="30"
       xmlns="http://www.w3.org/2000/svg"
