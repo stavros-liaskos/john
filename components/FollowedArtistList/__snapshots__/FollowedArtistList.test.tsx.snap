@@ -39,6 +39,7 @@ exports[`FollowedArtistList renders artists with "unfollow" btn 1`] = `
       </div>
       <button
         class="btn flex btn-small lg:ml-8 my-2 "
+        type="button"
       >
         unfollow
       </button>
@@ -77,6 +78,7 @@ exports[`FollowedArtistList renders artists with "unfollow" btn 1`] = `
       </div>
       <button
         class="btn flex btn-small lg:ml-8 my-2 !border-gh-dark"
+        type="button"
       >
         unfollow
       </button>

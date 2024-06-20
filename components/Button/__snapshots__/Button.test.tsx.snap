@@ -4,6 +4,7 @@ exports[`Button calls to action when button clicked 1`] = `
 <div>
   <button
     class="btn flex undefined"
+    type="button"
   >
     <svg
       class="animate-spin -ml-1 mr-3 h-5 w-5 text:black dark:text-white"
@@ -35,6 +36,7 @@ exports[`Button renders a disabled button 1`] = `
   <button
     class="btn flex undefined"
     disabled=""
+    type="button"
   >
     No Action
   </button>
@@ -45,6 +47,7 @@ exports[`Button renders a spinner when loading 1`] = `
 <div>
   <button
     class="btn flex undefined"
+    type="button"
   >
     <svg
       class="animate-spin -ml-1 mr-3 h-5 w-5 text:black dark:text-white"
@@ -75,6 +78,7 @@ exports[`Button renders an enabled button by default and not a loading spinner 1
 <div>
   <button
     class="btn flex undefined"
+    type="button"
   >
     Click Me!
   </button>

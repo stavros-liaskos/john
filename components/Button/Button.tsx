@@ -8,11 +8,11 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   handleClick = () => {},
   disabled = false,
   loading = false,
-  type,
+  type = 'button',
   handleClickArg,
 }) => {
   const handleClickCallback = useCallback(() => {
-    handleClickArg && handleClick(handleClickArg);
+    handleClickArg ? handleClick(handleClickArg) : handleClick();
   }, [handleClick, handleClickArg]);
 
   if (!i18n) {
