@@ -1,7 +1,7 @@
 import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList from './FollowedArtistList';
-import { listI18n } from './FollowedArtistList.data';
+import { followedArtistListI18n } from './FollowedArtistList.data';
 import { beforeEachTest, render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/responses/followed-artists.json';
 
@@ -26,14 +26,12 @@ describe('FollowedArtistList', () => {
     const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
     global.fetch = mockedFetch;
 
-    const component = render(<FollowedArtistList i18n={listI18n} />);
-    const buttons = await component.findAllByText('unfollow');
+    const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
+    const buttons = await component.findAllByText(followedArtistListI18n.btnTxt);
 
     expect(buttons).toHaveLength(2);
     // expect(mockedFetch).toBeCalledTimes(1); TODO fix
     expect(mRes.json).toBeCalledTimes(1);
-
-    expect(component.container).toMatchSnapshot();
   });
 
   it('unfollows artist on btn click', async () => {
@@ -42,9 +40,9 @@ describe('FollowedArtistList', () => {
     const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
     global.fetch = mockedFetch;
 
-    const { findAllByText } = await renderWithAct(<FollowedArtistList i18n={listI18n} />);
+    const { findAllByText } = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
 
-    const buttons = await findAllByText('unfollow');
+    const buttons = await findAllByText(followedArtistListI18n.btnTxt);
 
     expect(buttons).toHaveLength(2);
     // expect(mockedFetch).toBeCalledTimes(1); TODO fix
@@ -59,8 +57,20 @@ describe('FollowedArtistList', () => {
         fireEvent.click(buttons[0]);
       });
     });
-    const artists = await findAllByText('unfollow');
+    const artists = await findAllByText(followedArtistListI18n.btnTxt);
     expect(logSpy).toBeCalledWith('1700 successfully unfollowed');
     expect(artists).toHaveLength(1);
+  });
+
+  it('matches snapshot', async () => {
+    const fakeResponse = followedArtists;
+    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
+    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
+    global.fetch = mockedFetch;
+
+    const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
+    await act(() => {});
+
+    expect(component.container).toMatchSnapshot();
   });
 });

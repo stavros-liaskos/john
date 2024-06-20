@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FollowedArtistList matches snapshot 1`] = `
+exports[`ArtistsList matches snapshot 1`] = `
 <div>
   <div
     class="overflow-auto w-full"
