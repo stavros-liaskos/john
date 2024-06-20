@@ -1,124 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Scrape component matches snapshot 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
-      >
-        <svg
-          height="30"
-          viewBox="0 0 128 128"
-          width="30"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-rule="evenodd"
-          >
-            <path
-              d="M0 0h128v128H0z"
-              fill="none"
-            />
-            <path
-              d="M64 0C28.8 0 0 28.8 0 64s28.8 64 64 64 64-28.8 64-64S99.52 0 64 0m29.44 92.48c-1.28 1.92-3.52 2.56-5.44 1.28-15.04-9.28-33.92-11.2-56.32-6.08-2.24.64-4.16-.96-4.8-2.88-.64-2.24.96-4.16 2.88-4.8 24.32-5.44 45.44-3.2 62.08 7.04 2.24.96 2.56 3.52 1.6 5.44m7.68-17.6c-1.6 2.24-4.48 3.2-6.72 1.6-17.28-10.56-43.52-13.76-63.68-7.36-2.56.64-5.44-.64-6.08-3.2-.64-2.56.64-5.44 3.2-6.08 23.36-7.04 52.16-3.52 72 8.64 1.92.96 2.88 4.16 1.28 6.4m.64-17.92C81.28 44.8 47.04 43.52 27.52 49.6c-3.2.96-6.4-.96-7.36-3.84-.96-3.2.96-6.4 3.84-7.36 22.72-6.72 60.16-5.44 83.84 8.64 2.88 1.6 3.84 5.44 2.24 8.32-1.6 2.24-5.44 3.2-8.32 1.6"
-              fill="#10BC4C"
-              fill-rule="evenodd"
-            />
-          </g>
-        </svg>
-        <button
-          class="btn flex undefined"
-          type="button"
-        >
-          Scrape Spotify
-        </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+<div>
+  <div
+    class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+  >
+    <svg
+      height="30"
+      viewBox="0 0 128 128"
+      width="30"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        height="30"
-        viewBox="0 0 128 128"
-        width="30"
-        xmlns="http://www.w3.org/2000/svg"
+      <g
+        clip-rule="evenodd"
       >
-        <g
-          clip-rule="evenodd"
-        >
-          <path
-            d="M0 0h128v128H0z"
-            fill="none"
-          />
-          <path
-            d="M64 0C28.8 0 0 28.8 0 64s28.8 64 64 64 64-28.8 64-64S99.52 0 64 0m29.44 92.48c-1.28 1.92-3.52 2.56-5.44 1.28-15.04-9.28-33.92-11.2-56.32-6.08-2.24.64-4.16-.96-4.8-2.88-.64-2.24.96-4.16 2.88-4.8 24.32-5.44 45.44-3.2 62.08 7.04 2.24.96 2.56 3.52 1.6 5.44m7.68-17.6c-1.6 2.24-4.48 3.2-6.72 1.6-17.28-10.56-43.52-13.76-63.68-7.36-2.56.64-5.44-.64-6.08-3.2-.64-2.56.64-5.44 3.2-6.08 23.36-7.04 52.16-3.52 72 8.64 1.92.96 2.88 4.16 1.28 6.4m.64-17.92C81.28 44.8 47.04 43.52 27.52 49.6c-3.2.96-6.4-.96-7.36-3.84-.96-3.2.96-6.4 3.84-7.36 22.72-6.72 60.16-5.44 83.84 8.64 2.88 1.6 3.84 5.44 2.24 8.32-1.6 2.24-5.44 3.2-8.32 1.6"
-            fill="#10BC4C"
-            fill-rule="evenodd"
-          />
-        </g>
-      </svg>
-      <button
-        class="btn flex undefined"
-        type="button"
-      >
-        Scrape Spotify
-      </button>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+        <path
+          d="M0 0h128v128H0z"
+          fill="none"
+        />
+        <path
+          d="M64 0C28.8 0 0 28.8 0 64s28.8 64 64 64 64-28.8 64-64S99.52 0 64 0m29.44 92.48c-1.28 1.92-3.52 2.56-5.44 1.28-15.04-9.28-33.92-11.2-56.32-6.08-2.24.64-4.16-.96-4.8-2.88-.64-2.24.96-4.16 2.88-4.8 24.32-5.44 45.44-3.2 62.08 7.04 2.24.96 2.56 3.52 1.6 5.44m7.68-17.6c-1.6 2.24-4.48 3.2-6.72 1.6-17.28-10.56-43.52-13.76-63.68-7.36-2.56.64-5.44-.64-6.08-3.2-.64-2.56.64-5.44 3.2-6.08 23.36-7.04 52.16-3.52 72 8.64 1.92.96 2.88 4.16 1.28 6.4m.64-17.92C81.28 44.8 47.04 43.52 27.52 49.6c-3.2.96-6.4-.96-7.36-3.84-.96-3.2.96-6.4 3.84-7.36 22.72-6.72 60.16-5.44 83.84 8.64 2.88 1.6 3.84 5.44 2.24 8.32-1.6 2.24-5.44 3.2-8.32 1.6"
+          fill="#10BC4C"
+          fill-rule="evenodd"
+        />
+      </g>
+    </svg>
+    <button
+      class="btn flex undefined"
+      type="button"
+    >
+      Scrape Spotify
+    </button>
+  </div>
+</div>
 `;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recommendations matches snapshot 1`] = `
+<div>
+  <div>
+    <h3
+      class="rr-text"
+    >
+      Other artists
+    </h3>
+    <div>
+      artists lists todo
+    </div>
+  </div>
+</div>
+`;

@@ -23,7 +23,7 @@ describe('Scrape', () => {
     });
 
     it('matches snapshot', () => {
-      const container = render(
+      const { container } = render(
         <ScrapeButton iconName={'Spotify'} buttonText={'Scrape Spotify'} musicService={'Spotify'} />,
       );
       expect(container).toMatchSnapshot();
