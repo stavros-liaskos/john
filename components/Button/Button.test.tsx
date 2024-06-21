@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Button from './Button';
 
 describe('Button', () => {
@@ -9,32 +9,38 @@ describe('Button', () => {
   });
 
   it('renders an enabled button by default and not a loading spinner', () => {
-    const { container } = render(<Button i18n="Click Me!" />);
+    const { getByRole, queryByRole } = render(<Button i18n="Click Me!" />);
+    const btn = getByRole('button');
+    const svg = queryByRole('img');
 
-    // TODO validate disabled attribute
-    // TODO validate spinner doesn't exist
-    expect(container).toMatchSnapshot();
+    expect(btn).not.toHaveAttribute('disabled');
+    expect(svg).not.toBeInTheDocument();
   });
 
   it('renders a disabled button', () => {
-    const { container } = render(<Button i18n="No Action" disabled={true} />);
+    const { getByRole } = render(<Button i18n="No Action" disabled={true} />);
+    const btn = getByRole('button');
 
-    // TODO validate disabled attribute
-    expect(container).toMatchSnapshot();
+    expect(btn).toHaveAttribute('disabled');
   });
 
   it('renders a spinner when loading', () => {
-    const { container } = render(<Button i18n="No Action" loading={true} />);
+    const { getByRole } = render(<Button i18n="No Action" loading={true} />);
+    const svg = getByRole('img');
 
-    // TODO validate spinner exists
-    expect(container).toMatchSnapshot();
+    expect(svg).toBeInTheDocument();
   });
 
   it('calls to action when button clicked', () => {
     const clickHandler = jest.fn();
-    const { container } = render(<Button i18n="Click Me!" loading={true} onClick={clickHandler} />);
+    const { getByRole } = render(<Button i18n="Click Me!" loading={true} handleClick={clickHandler} />);
+    const btn = getByRole('button');
+    fireEvent.click(btn);
+    expect(clickHandler).toHaveBeenCalledTimes(1);
+  });
 
-    // TODO clickHandler have been called
+  it('matches snapshot', () => {
+    const { container } = render(<Button i18n="Click Me!" loading={true} handleClick={jest.fn} />);
     expect(container).toMatchSnapshot();
   });
 });
