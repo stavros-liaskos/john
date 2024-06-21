@@ -8,8 +8,14 @@ exports[`Recommendations matches snapshot 1`] = `
     >
       Other artists
     </h3>
-    <div>
-      artists lists todo
+    <div
+      class="overflow-auto w-full"
+    >
+      <p
+        class="rr-text"
+      >
+        You don not track any artists yet
+      </p>
     </div>
   </div>
 </div>
