@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button calls to action when button clicked 1`] = `
+exports[`Button matches snapshot 1`] = `
 <div>
   <button
     class="btn flex undefined"
@@ -9,6 +9,7 @@ exports[`Button calls to action when button clicked 1`] = `
     <svg
       class="animate-spin -ml-1 mr-3 h-5 w-5 text:black dark:text-white"
       fill="none"
+      role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -26,60 +27,6 @@ exports[`Button calls to action when button clicked 1`] = `
         fill="currentColor"
       />
     </svg>
-    Click Me!
-  </button>
-</div>
-`;
-
-exports[`Button renders a disabled button 1`] = `
-<div>
-  <button
-    class="btn flex undefined"
-    disabled=""
-    type="button"
-  >
-    No Action
-  </button>
-</div>
-`;
-
-exports[`Button renders a spinner when loading 1`] = `
-<div>
-  <button
-    class="btn flex undefined"
-    type="button"
-  >
-    <svg
-      class="animate-spin -ml-1 mr-3 h-5 w-5 text:black dark:text-white"
-      fill="none"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle
-        class="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        stroke-width="4"
-      />
-      <path
-        class="opacity-75"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        fill="currentColor"
-      />
-    </svg>
-    No Action
-  </button>
-</div>
-`;
-
-exports[`Button renders an enabled button by default and not a loading spinner 1`] = `
-<div>
-  <button
-    class="btn flex undefined"
-    type="button"
-  >
     Click Me!
   </button>
 </div>
