@@ -9,9 +9,7 @@ type RecommendationsI18n = {
 
 const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const [recommendedArtists, setRecommendedArtists] = useState<components['schemas']['FollowedArtistsResponse']>(
-    [] as components['schemas']['FollowedArtistsResponse'],
-  );
+  const [recommendedArtists, setRecommendedArtists] = useState<components['schemas']['FollowedArtistDto'][]>([]);
 
   useEffect(() => {
     // TODO add Suspense for data fetching
@@ -41,15 +39,15 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
 };
 
 export function fetchRecommendations(
-  setRecommendedArtists: React.Dispatch<React.SetStateAction<components['schemas']['FollowedArtistsResponse']>>,
+  setRecommendedArtists: React.Dispatch<React.SetStateAction<components['schemas']['FollowedArtistDto'][]>>,
 ) {
   fetch(`${process.env.BE_BASE_URL}/artists/recommended?page=0&size=10`, {
     method: 'GET',
     credentials: 'include',
   })
     .then(res => res.json())
-    .then(result => {
-      return setRecommendedArtists(result.artists); // TODO handle no results
+    .then((result: components['schemas']['FollowedArtistsResponse']) => {
+      result?.rows && setRecommendedArtists(result?.rows);
     })
     .catch(console.error);
 }

@@ -2,8 +2,8 @@ import React, { createContext, Dispatch, SetStateAction, useContext } from 'reac
 import { components } from '../../types/schema';
 
 interface ArtistsListContextType {
-  followedArtistList?: components['schemas']['FollowedArtistsResponse'];
-  setFollowedArtistList: Dispatch<SetStateAction<components['schemas']['FollowedArtistsResponse'] | undefined>>;
+  followedArtistList: components['schemas']['FollowedArtistDto'][];
+  setFollowedArtistList: Dispatch<SetStateAction<components['schemas']['FollowedArtistDto'][]>>;
   loading: boolean;
 }
 

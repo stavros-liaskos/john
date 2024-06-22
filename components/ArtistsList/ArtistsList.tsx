@@ -9,7 +9,7 @@ export type ArtistsListI18n = {
 
 export type ArtistsListProp = {
   i18n: ArtistsListI18n;
-  artistsList: components['schemas']['FollowedArtistsResponse'];
+  artistsList: components['schemas']['FollowedArtistDto'][];
   onButtonClick: (artistID: number) => void;
   artistLoading: number;
 };
@@ -21,7 +21,7 @@ const ArtistsList = ({ i18n, artistsList, onButtonClick, artistLoading }: Artist
 
   return (
     <div className="overflow-auto w-full">
-      {!artistsList?.rows?.length ? (
+      {!artistsList?.length ? (
         <p className="rr-text">{i18n.noArtists}</p>
       ) : (
         <List artistsList={artistsList} i18n={i18n} onButtonClick={onButtonClick} artistLoading={artistLoading} />

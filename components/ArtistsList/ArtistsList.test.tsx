@@ -9,7 +9,7 @@ describe('ArtistsList', () => {
     render(<ArtistsList />);
   });
 
-  it.each([{ artistsList: { rows: [] } }, { artistsList: {} }, { artistsList: undefined }])(
+  it.each([{ artistsList: {} }, { artistsList: undefined }])(
     'shows text when no artist is available',
     ({ artistsList }) => {
       const { getByText } = render(
@@ -23,7 +23,7 @@ describe('ArtistsList', () => {
 
   it('renders all elements', () => {
     const { queryAllByRole } = render(
-      <ArtistsList i18n={artistsListI18n} artistsList={artistsList} onButtonClick={jest.fn} artistLoading={0} />,
+      <ArtistsList i18n={artistsListI18n} artistsList={artistsList.rows} onButtonClick={jest.fn} artistLoading={0} />,
     );
     expect(queryAllByRole('button')).toHaveLength(2);
     expect(queryAllByRole('img')).toHaveLength(2);
@@ -31,7 +31,7 @@ describe('ArtistsList', () => {
 
   it('matches snapshot', () => {
     const { container } = render(
-      <ArtistsList i18n={artistsListI18n} artistsList={artistsList} onButtonClick={jest.fn} artistLoading={0} />,
+      <ArtistsList i18n={artistsListI18n} artistsList={artistsList.rows} onButtonClick={jest.fn} artistLoading={0} />,
     );
     expect(container).toMatchSnapshot();
   });
