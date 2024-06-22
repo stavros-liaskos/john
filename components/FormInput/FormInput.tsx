@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+type FormInputProps = {
+  handleAction: (input: string) => void;
+  i18n: {
+    label: string;
+  };
+  actionEventTrigger: 'onChange' | 'onSubmit';
+  children?: React.ReactNode;
+};
+
+const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInputProps) => {
+  const [input, setInput] = useState<string>('');
+
+  if (!i18n?.label || !handleAction || typeof handleAction !== 'function' || !actionEventTrigger) {
+    return null;
+  }
+
+  return (
+    <form
+      className="flex justify-between md:justify-between items-stretch h-10 w-full"
+      noValidate
+      {...(actionEventTrigger === 'onChange' ? { onChange: () => handleAction(input) } : {})}
+      {...(actionEventTrigger === 'onSubmit'
+        ? {
+            onSubmit: e => {
+              e.preventDefault();
+              handleAction(input);
+            },
+          }
+        : {})}
+    >
+      <input
+        className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+        type="text"
+        name="search"
+        placeholder={i18n.label}
+        onChange={e => setInput(e.target.value)}
+      />
+      {children}
+    </form>
+  );
+};
+
+FormInput.whyDidYouRender = true;
+export default FormInput;

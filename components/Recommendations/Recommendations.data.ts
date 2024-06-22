@@ -2,6 +2,6 @@ export const recommendationsI18n = {
   title: 'Other artists',
   artistList: {
     btnTxt: 'Unfollow',
-    noArtists: 'You don not track any artists yet',
+    noArtists: 'There are no recommended artists for you :(',
   },
 };

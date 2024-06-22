@@ -14,7 +14,7 @@ exports[`Recommendations matches snapshot 1`] = `
       <p
         class="rr-text"
       >
-        You don not track any artists yet
+        There are no recommended artists for you :(
       </p>
     </div>
   </div>
