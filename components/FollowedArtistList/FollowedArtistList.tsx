@@ -19,27 +19,22 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       <FormInput handleAction={handleFilter} i18n={i18n.formInput} actionEventTrigger={'onChange'} />
       <ArtistsList
         i18n={i18n.artistList}
-        artistsList={followedArtistList!}
+        artistsList={followedArtistList}
         onButtonClick={unfollowArtist}
         artistLoading={artistLoading}
       />
     </div>
   );
 
-  // TODO handle filter after refactoring followedArtists to be followedArtists.rows and write tests
+  // TODO write tests
   function handleFilter(input: string) {
-    if (!followedArtistList?.rows) {
-      return [];
-    }
-    return followedArtistList.rows.filter(filterArtists);
-
-    function filterArtists(followedArtistList: components['schemas']['FollowedArtistDto']) {
+    return followedArtistList.filter((followedArtistList: components['schemas']['FollowedArtistDto']) => {
       if (!input) {
         return followedArtistList;
       } else {
-        followedArtistList.name.includes(input);
+        return followedArtistList.name.includes(input);
       }
-    }
+    });
   }
 
   function unfollowArtist(artistID: number) {
@@ -50,12 +45,9 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       body: JSON.stringify({ artistID }),
     })
       .then(() => {
-        const newList = followedArtistList?.rows && followedArtistList.rows.filter(artist => artist.id !== artistID);
-        if (newList && newList.length !== followedArtistList?.rows?.length) {
-          setFollowedArtistList({
-            total: newList.length,
-            rows: newList,
-          });
+        const newList = followedArtistList && followedArtistList.filter(artist => artist.id !== artistID);
+        if (newList && newList.length !== followedArtistList?.length) {
+          setFollowedArtistList(newList);
         }
         console.log(`${artistID} successfully unfollowed`);
       })
@@ -69,9 +61,9 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
 FollowedArtistList.whyDidYouRender = true;
 export default FollowedArtistList;
 
-function validateRequiredData(i18n: ListI18n, followedArtistList?: components['schemas']['FollowedArtistsResponse']) {
+function validateRequiredData(i18n: ListI18n, followedArtistList: components['schemas']['FollowedArtistDto'][]) {
   return (
-    !followedArtistList?.rows ||
+    !followedArtistList?.length ||
     !i18n ||
     !i18n?.title ||
     !i18n?.filter ||

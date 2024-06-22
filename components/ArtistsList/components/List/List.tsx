@@ -7,13 +7,13 @@ import { ArtistsListProp } from '../../ArtistsList';
 const ICON_SIZE = 30;
 
 const List = ({ i18n, artistsList, onButtonClick, artistLoading }: ArtistsListProp) => {
-  if (!i18n || !i18n.btnTxt || !i18n.noArtists || !artistsList.rows?.length || !onButtonClick) {
+  if (!i18n || !i18n.btnTxt || !i18n.noArtists || !artistsList?.length || !onButtonClick) {
     return null;
   }
 
   return (
     <>
-      {artistsList.rows.map((artist, index: number) => (
+      {artistsList.map((artist, index: number) => (
         <div
           className="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
           key={artist.id}
