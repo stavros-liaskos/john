@@ -3,10 +3,10 @@
 exports[`Scrapers matches snapshot 1`] = `
 <div>
   <div
-    class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+    class="flex lg:justify-center items-center mb-2 border-b-2 rr-border w-full"
   >
     <div
-      class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+      class="flex justify-center items-center mb-2 w-full"
     >
       <svg
         height="30"
@@ -37,7 +37,7 @@ exports[`Scrapers matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+      class="flex justify-center items-center mb-2 w-full"
     >
       <svg
         height="30"

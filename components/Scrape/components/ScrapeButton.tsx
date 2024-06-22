@@ -23,7 +23,7 @@ const ScrapeButton = ({
   const MusicServiceIcon = getMusicServiceIcon(iconName);
 
   return (
-    <div className="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full">
+    <div className="flex justify-center items-center mb-2 w-full">
       <MusicServiceIcon width={ICON_SIZE} height={ICON_SIZE} />
       <Button i18n={buttonText} handleClick={() => handleScrape(musicService)} />
     </div>

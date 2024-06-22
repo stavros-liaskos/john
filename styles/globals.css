@@ -11,6 +11,9 @@
   .rr-text {
     @apply dark:text-slate-300;
   }
+  .h3 {
+    @apply rr-text mb-4;
+  }
   .btn {
     @apply font-semibold text-sm rounded-sm shadow border-2 rr-border rr-text flex items-center justify-center;
   }
