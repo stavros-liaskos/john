@@ -22,7 +22,7 @@ const ArtistsList = ({ i18n, artistsList, onButtonClick, artistLoading }: Artist
   return (
     <div className="overflow-auto w-full">
       {!artistsList?.rows?.length ? (
-        <p>{i18n.noArtists}</p>
+        <p className="rr-text">{i18n.noArtists}</p>
       ) : (
         <List artistsList={artistsList} i18n={i18n} onButtonClick={onButtonClick} artistLoading={artistLoading} />
       )}

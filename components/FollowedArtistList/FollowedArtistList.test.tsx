@@ -30,8 +30,8 @@ describe('FollowedArtistList', () => {
     const buttons = await component.findAllByText(followedArtistListI18n.btnTxt);
 
     expect(buttons).toHaveLength(2);
-    // expect(mockedFetch).toBeCalledTimes(1); TODO fix
-    expect(mRes.json).toBeCalledTimes(1);
+    // expect(mockedFetch).toHaveBeenCalledTimes(1); // TODO fix
+    expect(mRes.json).toHaveBeenCalledTimes(1);
   });
 
   it('unfollows artist on btn click', async () => {

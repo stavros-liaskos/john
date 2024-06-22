@@ -11,7 +11,15 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     return null;
   }
 
-  // TODO remove from this scope
+  return (
+    <ArtistsList
+      i18n={i18n}
+      artistsList={followedArtistList}
+      onButtonClick={unfollowArtist}
+      artistLoading={artistLoading}
+    />
+  );
+
   function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
     fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
@@ -34,15 +42,6 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       })
       .finally(() => setArtistLoading(0));
   }
-
-  return (
-    <ArtistsList
-      i18n={i18n}
-      artistsList={followedArtistList}
-      onButtonClick={unfollowArtist}
-      artistLoading={artistLoading}
-    />
-  );
 };
 FollowedArtistList.whyDidYouRender = true;
 export default FollowedArtistList;
