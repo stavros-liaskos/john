@@ -14,8 +14,6 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     return null;
   }
 
-  console.warn('filterInput', filterInput)
-
   return (
     <div>
       <h3 className={'rr-text'}>{i18n.title}</h3>
@@ -68,7 +66,7 @@ function validateRequiredData(i18n: ListI18n, followedArtistList: components['sc
 export function filterArtists(
   inputValue: string = '',
   followedArtistList: components['schemas']['FollowedArtistDto'][],
-):components['schemas']['FollowedArtistDto'][] {
+): components['schemas']['FollowedArtistDto'][] {
   return followedArtistList.filter(followedArtistList => {
     if (inputValue === ' ' || inputValue.length === 1) {
       return true;

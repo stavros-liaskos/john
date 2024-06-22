@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "lastfmUri": "https://www.last.fm/music/Future+Islands",
+      "name": "Future Islands"
+    },
+    {
+      "id": 2,
+      "lastfmUri": "https://www.last.fm/music/Roky+Erickson+&+the+Aliens",
+      "name": "Roky Erickson & the Aliens"
+    },
+    {
+      "id": 3,
+      "lastfmUri": "https://www.last.fm/music/Bruce+Langhorne",
+      "name": "Bruce Langhorne"
+    },
+    {
+      "id": 4,
+      "lastfmUri": "https://www.last.fm/music/Nick+Drake",
+      "name": "Nick Drake"
+    }
+  ],
+  "total": 4
+}

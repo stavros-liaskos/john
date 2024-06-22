@@ -34,6 +34,7 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
         className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
         type="text"
         name="search"
+        value={inputValue}
         placeholder={i18n.label}
         onChange={e => setInputValue(e.target.value)}
       />

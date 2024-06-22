@@ -11,6 +11,7 @@ exports[`FormInput matches snapshot 1`] = `
       name="search"
       placeholder="Here goes the artist.."
       type="text"
+      value=""
     />
   </form>
 </div>
