@@ -14,12 +14,12 @@ describe('FormInput', () => {
     const { getByRole } = render(
       <FormInput handleAction={handleAction} i18n={formInputI18n} actionEventTrigger={'onChange'} />,
     );
-    const input = getByRole('textbox');
+    const inputValue = getByRole('textbox');
     act(() => {
-      fireEvent.change(input, { target: { value: artistName } });
+      fireEvent.change(inputValue, { target: { value: artistName } });
     });
 
-    expect(input).toHaveValue(artistName);
+    expect(inputValue).toHaveValue(artistName);
     expect(handleAction).toHaveBeenCalledTimes(1);
   });
 
@@ -31,14 +31,14 @@ describe('FormInput', () => {
         <button>Submit</button>
       </FormInput>,
     );
-    const input = getByRole('textbox');
+    const inputValue = getByRole('textbox');
     const btn = getByRole('button');
     act(() => {
-      fireEvent.change(input, { target: { value: artistName } });
+      fireEvent.change(inputValue, { target: { value: artistName } });
       fireEvent.click(btn);
     });
 
-    expect(input).toHaveValue(artistName);
+    expect(inputValue).toHaveValue(artistName);
     expect(handleAction).toHaveBeenCalledWith(artistName);
   });
 
