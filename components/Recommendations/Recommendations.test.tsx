@@ -1,8 +1,9 @@
-import { render, waitFor } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 import Recommendations from './Recommendations';
 import { recommendationsI18n } from './Recommendations.data';
 import recommendedArtists from '../../mocks/responses/followed-artists.json';
 import { beforeEachTest } from '../../utils/test-utils';
+import followedArtists from '../../mocks/responses/followed-artists.json';
 
 describe('Recommendations', () => {
   let originFetch: {
@@ -37,12 +38,19 @@ describe('Recommendations', () => {
     await waitFor(() => {
       expect(mRes.json).toHaveBeenCalledTimes(1);
     });
-    const buttons = await findAllByText(recommendationsI18n.artistList.btnTxt); // TODO fix
+    const buttons = await findAllByText(recommendationsI18n.artistList.btnTxt);
     expect(buttons).toHaveLength(2);
   });
 
-  it('matches snapshot', () => {
+  it('matches snapshot', async () => {
+    const fakeResponse = followedArtists;
+    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
+    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
+    global.fetch = mockedFetch;
+
     const { container } = render(<Recommendations i18n={recommendationsI18n} />);
+    await act(() => {});
+
     expect(container).toMatchSnapshot();
   });
 });
