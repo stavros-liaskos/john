@@ -1,9 +1,10 @@
 import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
-import FollowedArtistList from './FollowedArtistList';
+import FollowedArtistList, { filterArtists } from './FollowedArtistList';
 import { followedArtistListI18n } from './FollowedArtistList.data';
 import { beforeEachTest, render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/responses/followed-artists.json';
+import { components } from '../../types/schema';
 
 describe('FollowedArtistList', () => {
   let originFetch: {
@@ -72,5 +73,25 @@ describe('FollowedArtistList', () => {
     await act(() => {});
 
     expect(component.container).toMatchSnapshot();
+  });
+
+  describe('filterArtists', () => {
+    it.each<{
+      inputValue: string;
+      followedArtistList: components['schemas']['FollowedArtistDto'][];
+      result: components['schemas']['FollowedArtistDto'][];
+    }>([
+      { inputValue: '', followedArtistList: followedArtists.rows, result: followedArtists.rows },
+      { inputValue: ' ', followedArtistList: followedArtists.rows, result: followedArtists.rows },
+      { inputValue: '1', followedArtistList: followedArtists.rows, result: followedArtists.rows },
+      { inputValue: 'noMatch', followedArtistList: followedArtists.rows, result: [] },
+      {
+        inputValue: 'Ill Considered',
+        followedArtistList: followedArtists.rows,
+        result: followedArtists.rows.slice(-1),
+      },
+    ])('returns filtered artists for input $inputValue', ({ inputValue, followedArtistList, result }) => {
+      expect(filterArtists(inputValue, followedArtistList)).toEqual(result);
+    });
   });
 });

@@ -8,34 +8,26 @@ import { components } from '../../types/schema';
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
   const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
+  const [filterInput, setFilterInput] = useState('');
 
   if (validateRequiredData(i18n, followedArtistList)) {
     return null;
   }
 
+  console.warn('filterInput', filterInput)
+
   return (
     <div>
       <h3 className={'rr-text'}>{i18n.title}</h3>
-      <FormInput handleAction={handleFilter} i18n={i18n.formInput} actionEventTrigger={'onChange'} />
+      <FormInput handleAction={setFilterInput} i18n={i18n.formInput} actionEventTrigger={'onChange'} />
       <ArtistsList
         i18n={i18n.artistList}
-        artistsList={followedArtistList}
+        artistsList={filterArtists(filterInput, followedArtistList)}
         onButtonClick={unfollowArtist}
         artistLoading={artistLoading}
       />
     </div>
   );
-
-  // TODO write tests
-  function handleFilter(input: string) {
-    return followedArtistList.filter((followedArtistList: components['schemas']['FollowedArtistDto']) => {
-      if (!input) {
-        return followedArtistList;
-      } else {
-        return followedArtistList.name.includes(input);
-      }
-    });
-  }
 
   function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
@@ -71,4 +63,17 @@ function validateRequiredData(i18n: ListI18n, followedArtistList: components['sc
     !i18n?.artistList.btnTxt ||
     !i18n?.formInput.label
   );
+}
+
+export function filterArtists(
+  inputValue: string = '',
+  followedArtistList: components['schemas']['FollowedArtistDto'][],
+):components['schemas']['FollowedArtistDto'][] {
+  return followedArtistList.filter(followedArtistList => {
+    if (inputValue === ' ' || inputValue.length === 1) {
+      return true;
+    } else {
+      return followedArtistList.name.includes(inputValue);
+    }
+  });
 }

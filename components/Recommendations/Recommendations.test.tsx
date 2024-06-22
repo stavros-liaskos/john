@@ -27,10 +27,9 @@ describe('Recommendations', () => {
   it('renders title and artists', async () => {
     const mRes = { json: jest.fn().mockResolvedValueOnce(recommendedArtists) };
     const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
-    console.warn(await mRes.json());
     global.fetch = mockedFetch;
 
-    const { getByText } = render(<Recommendations i18n={recommendationsI18n} />);
+    const { getByText, findAllByText } = render(<Recommendations i18n={recommendationsI18n} />);
 
     expect(getByText(recommendationsI18n.title)).toBeInTheDocument();
 
@@ -38,8 +37,8 @@ describe('Recommendations', () => {
     await waitFor(() => {
       expect(mRes.json).toHaveBeenCalledTimes(1);
     });
-    // const buttons = await findAllByText(recommendationsI18n.artistList.btnTxt); // TODO fix
-    // expect(buttons).toHaveLength(2);
+    const buttons = await findAllByText(recommendationsI18n.artistList.btnTxt); // TODO fix
+    expect(buttons).toHaveLength(2);
   });
 
   it('matches snapshot', () => {

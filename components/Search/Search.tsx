@@ -12,8 +12,8 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     return null;
   }
 
-  const handleSearch = (input: string) => {
-    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: input })}`, {
+  const handleSearch = (inputValue: string) => {
+    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
       method: 'GET',
       credentials: 'include',
     })

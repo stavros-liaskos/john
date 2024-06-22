@@ -10,7 +10,7 @@ type FormInputProps = {
 };
 
 const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInputProps) => {
-  const [input, setInput] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   if (!i18n?.label || !handleAction || typeof handleAction !== 'function' || !actionEventTrigger) {
     return null;
@@ -20,12 +20,12 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
     <form
       className="flex justify-between md:justify-between items-stretch h-10 w-full"
       noValidate
-      {...(actionEventTrigger === 'onChange' ? { onChange: () => handleAction(input) } : {})}
+      {...(actionEventTrigger === 'onChange' ? { onChange: () => handleAction(inputValue) } : {})}
       {...(actionEventTrigger === 'onSubmit'
         ? {
             onSubmit: e => {
               e.preventDefault();
-              handleAction(input);
+              handleAction(inputValue);
             },
           }
         : {})}
@@ -35,7 +35,7 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
         type="text"
         name="search"
         placeholder={i18n.label}
-        onChange={e => setInput(e.target.value)}
+        onChange={e => setInputValue(e.target.value)}
       />
       {children}
     </form>
