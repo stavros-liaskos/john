@@ -57,8 +57,8 @@ $ yarn test
 
 ## Mock Data
 
-You can work on the FE by mocking the BE data.  
-Simply set env `MOCK_SERVER_RESPONSE` to `true`.
+You can work with mock server data.  
+Simply set env `BE_BASE_URL` to `http://localhost:3000` and all API calls will be forwarded to NextJS local API and served with mocked data from `/mocks/responses/`
 
 ## Deployments
 

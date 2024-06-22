@@ -14,6 +14,7 @@ exports[`Search should handle the search action of the user 1`] = `
         name="search"
         placeholder="Here goes the artist..."
         type="text"
+        value="Nels Cline"
       />
       <button
         class="btn flex btn-large"

@@ -1,7 +1,5 @@
 const path = require('path');
 
-const MOCK_SERVER_RESPONSE = process.env.MOCK_SERVER_RESPONSE === 'true';
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
@@ -32,5 +30,5 @@ module.exports = {
 };
 
 function createRewritePaths(paths) {
-  return paths.map(path => ({ source: path, destination: `/api${MOCK_SERVER_RESPONSE ? '/mockServer' : ''}${path}` }));
+  return paths.map(path => ({ source: path, destination: `/api${path}` }));
 }

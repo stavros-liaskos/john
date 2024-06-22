@@ -17,6 +17,7 @@ exports[`FollowedArtistList matches snapshot 1`] = `
         name="search"
         placeholder="Filter Followed artists"
         type="text"
+        value=""
       />
     </form>
     <div
