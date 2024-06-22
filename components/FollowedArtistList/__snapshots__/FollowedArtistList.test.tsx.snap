@@ -8,6 +8,17 @@ exports[`FollowedArtistList matches snapshot 1`] = `
     >
       Artists you follow
     </h3>
+    <form
+      class="flex justify-between md:justify-between items-stretch h-10 w-full"
+      novalidate=""
+    >
+      <input
+        class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+        name="search"
+        placeholder="Filter Followed artists"
+        type="text"
+      />
+    </form>
     <div
       class="overflow-auto w-full"
     >
