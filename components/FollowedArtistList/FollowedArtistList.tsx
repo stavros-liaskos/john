@@ -7,17 +7,28 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
   const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
 
-  if (!followedArtistList?.rows || !i18n || !i18n.btnTxt) {
+  if (
+    !followedArtistList?.rows ||
+    !i18n ||
+    !i18n?.title ||
+    !i18n?.filter ||
+    !i18n?.artistList.noArtists ||
+    !i18n?.artistList.btnTxt ||
+    !i18n?.formInput.label
+  ) {
     return null;
   }
 
   return (
-    <ArtistsList
-      i18n={i18n}
-      artistsList={followedArtistList}
-      onButtonClick={unfollowArtist}
-      artistLoading={artistLoading}
-    />
+    <div>
+      <h3 className={'rr-text'}>{i18n.title}</h3>
+      <ArtistsList
+        i18n={i18n.artistList}
+        artistsList={followedArtistList}
+        onButtonClick={unfollowArtist}
+        artistLoading={artistLoading}
+      />
+    </div>
   );
 
   function unfollowArtist(artistID: number) {

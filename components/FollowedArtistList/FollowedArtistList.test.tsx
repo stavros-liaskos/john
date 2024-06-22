@@ -27,7 +27,7 @@ describe('FollowedArtistList', () => {
     global.fetch = mockedFetch;
 
     const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
-    const buttons = await component.findAllByText(followedArtistListI18n.btnTxt);
+    const buttons = await component.findAllByText(followedArtistListI18n.artistList.btnTxt);
 
     expect(buttons).toHaveLength(2);
     // expect(mockedFetch).toHaveBeenCalledTimes(1); // TODO fix
@@ -42,7 +42,7 @@ describe('FollowedArtistList', () => {
 
     const { findAllByText } = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
 
-    const buttons = await findAllByText(followedArtistListI18n.btnTxt);
+    const buttons = await findAllByText(followedArtistListI18n.artistList.btnTxt);
 
     expect(buttons).toHaveLength(2);
     // expect(mockedFetch).toBeCalledTimes(1); TODO fix
@@ -57,7 +57,7 @@ describe('FollowedArtistList', () => {
         fireEvent.click(buttons[0]);
       });
     });
-    const artists = await findAllByText(followedArtistListI18n.btnTxt);
+    const artists = await findAllByText(followedArtistListI18n.artistList.btnTxt);
     expect(logSpy).toBeCalledWith('1700 successfully unfollowed');
     expect(artists).toHaveLength(1);
   });

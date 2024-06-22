@@ -1,10 +1,10 @@
 import { SearchProps } from './Search.types';
-import React, { useState, SyntheticEvent } from 'react';
+import React, { useState } from 'react';
 import Button from '../Button/Button';
 import { components } from '../../types/schema';
+import FormInput from '../FormInput/FormInput';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
-  const [input, setInput] = useState<string>('');
   const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
 
@@ -12,8 +12,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     return null;
   }
 
-  const handleSearch = (e: SyntheticEvent) => {
-    e.preventDefault();
+  const handleSearch = (input: string) => {
     fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: input })}`, {
       method: 'GET',
       credentials: 'include',
@@ -50,20 +49,10 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   return (
     <div className="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full">
-      <form
-        className="flex justify-between md:justify-between items-stretch h-10 w-full"
-        noValidate
-        onSubmit={handleSearch}
-      >
-        <input
-          className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
-          type="text"
-          name="search"
-          placeholder={i18n.label}
-          onChange={e => setInput(e.target.value)}
-        />
+      <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
         <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
-      </form>
+      </FormInput>
+
       {results && (
         <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-16 md:top-32 w-full z-10">
           <ul>

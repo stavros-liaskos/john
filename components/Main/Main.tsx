@@ -9,6 +9,7 @@ import Login from '../Login/Login';
 import Scrapers from '../Scrape/Scrapers';
 import Recommendations from '../Recommendations/Recommendations';
 import { recommendationsI18n } from '../Recommendations/Recommendations.data';
+import { loginI18n } from '../Login/Login.data';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   const { user } = useUser();
@@ -28,15 +29,7 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
             <Recommendations i18n={recommendationsI18n} />
           </>
         ) : (
-          <Login
-            i18n={{
-              welcome: 'Welcome to Release Raccoon!',
-              loginBtn: 'Register',
-              text: "Receive your favorite artists' music in your email every week!",
-              artistsCount: 'Artists',
-              releasesCount: 'Releases',
-            }}
-          />
+          <Login i18n={loginI18n} />
         )}
       </div>
     </main>

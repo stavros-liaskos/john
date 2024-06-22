@@ -1,4 +1,11 @@
 export const followedArtistListI18n = {
-  btnTxt: 'Unfollow',
-  noArtists: 'You don not track any artists yet',
+  title: 'Artists you follow',
+  filter: 'filter followed artists',
+  artistList: {
+    btnTxt: 'Unfollow',
+    noArtists: 'You don not track any artists yet',
+  },
+  formInput: {
+    label: 'Filter Followed artists',
+  },
 };
