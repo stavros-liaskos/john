@@ -3,7 +3,7 @@
 exports[`Scrape component matches snapshot 1`] = `
 <div>
   <div
-    class="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full"
+    class="flex justify-center items-center mb-2 w-full"
   >
     <svg
       height="30"

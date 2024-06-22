@@ -15,8 +15,8 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   }
 
   return (
-    <div>
-      <h3 className={'rr-text'}>{i18n.title}</h3>
+    <div className="flex flex-col lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full">
+      <h3 className={'h3'}>{i18n.title}</h3>
       <FormInput handleAction={setFilterInput} i18n={i18n.formInput} actionEventTrigger={'onChange'} />
       <ArtistsList
         i18n={i18n.artistList}

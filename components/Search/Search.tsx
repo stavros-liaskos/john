@@ -48,7 +48,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   };
 
   return (
-    <div className="relative flex lg:justify-center items-center mb-2 h-20 md:h-40 border-b-2 rr-border w-full">
+    <div className="relative flex lg:justify-center items-center mb-2 h-16 md:h-40 border-b-2 rr-border w-full">
       <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
         <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
       </FormInput>
