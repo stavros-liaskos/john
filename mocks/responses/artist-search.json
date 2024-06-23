@@ -2,15 +2,15 @@
   "artists": [
     {
       "followedByUser": false,
-      "id": 1700,
-      "lastfmUri": "https://www.last.fm/music/Chris+Clark",
-      "name": "Chris Clark"
+      "id": 1600,
+      "lastfmUri": "https://www.last.fm/music/Sam+Gendel",
+      "name": "Sam Gendel"
     },
     {
       "followedByUser": false,
-      "id": 1701,
-      "lastfmUri": "https://www.last.fm/music/Ill+Considered,+Oli+Savill",
-      "name": "Ill Considered, Oli Savill"
+      "id": 1601,
+      "lastfmUri": "https://www.last.fm/music/Jaakko+Eino+Kalevi",
+      "name": "Jaakko Eino Kalevi"
     }
   ],
   "count": 2

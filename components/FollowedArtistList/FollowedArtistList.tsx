@@ -21,7 +21,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       <ArtistsList
         i18n={i18n.artistList}
         artistsList={filterArtists(filterInput, followedArtistList)}
-        onButtonClick={unfollowArtist}
+        onButtonClick={artist => artist?.id && unfollowArtist(artist.id)}
         artistLoading={artistLoading}
       />
     </div>

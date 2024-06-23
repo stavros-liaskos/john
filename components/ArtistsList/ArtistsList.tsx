@@ -9,8 +9,8 @@ export type ArtistsListI18n = {
 
 export type ArtistsListProp = {
   i18n: ArtistsListI18n;
-  artistsList: components['schemas']['FollowedArtistDto'][];
-  onButtonClick: (artistID: number) => void;
+  artistsList: components['schemas']['SearchResultArtistDto'][];
+  onButtonClick: (artist: components['schemas']['SearchResultArtistDto']) => void;
   artistLoading: number;
 };
 
