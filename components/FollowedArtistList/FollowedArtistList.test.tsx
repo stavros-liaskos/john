@@ -78,8 +78,8 @@ describe('FollowedArtistList', () => {
   describe('filterArtists', () => {
     it.each<{
       inputValue: string;
-      followedArtistList: components['schemas']['FollowedArtistDto'][];
-      result: components['schemas']['FollowedArtistDto'][];
+      followedArtistList: components['schemas']['ArtistDto'][];
+      result: components['schemas']['ArtistDto'][];
     }>([
       { inputValue: '', followedArtistList: followedArtists.rows, result: followedArtists.rows },
       { inputValue: ' ', followedArtistList: followedArtists.rows, result: followedArtists.rows },

@@ -5,158 +5,305 @@
 
 export interface paths {
   '/': {
-    get: {
-      responses: {
-        /** @description OK */
-        200: never;
-      };
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-  };
-  '/artist': {
     get: {
-      parameters?: {
-        query?: {
-          page?: number;
-          size?: number;
-          sort?: unknown[];
-        };
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
-          content: {
-            'application/json': components['schemas']['Artist'][];
+          headers: {
+            [name: string]: unknown;
           };
+          content?: never;
         };
       };
     };
-    post: {
-      requestBody?: {
-        content: {
-          'application/json': components['schemas']['Artist'];
-        };
-      };
-      responses: {
-        201: {
-          content: {
-            'application/json': components['schemas']['Artist'];
-          };
-        };
-      };
-    };
-  };
-  '/artist/count': {
-    get: {
-      responses: {
-        /** @description OK */
-        200: {
-          content: {
-            'application/json': number;
-          };
-        };
-      };
-    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/artist/search': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
-      parameters?: {
+      parameters: {
         query?: {
           pattern?: string;
           size?: number;
         };
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['ArtistSearchResponse'];
           };
         };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
-      };
-    };
-  };
-  '/artist/{id}': {
-    get: {
-      parameters: {
-        path: {
-          id: number;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
         };
       };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/artists': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: {
+          page?: number;
+          size?: number;
+        };
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
-          content: {
-            'application/json': components['schemas']['Artist'];
+          headers: {
+            [name: string]: unknown;
           };
+          content?: never;
         };
-      };
-    };
-    put: {
-      parameters: {
-        path: {
-          id: number;
-        };
-      };
-      requestBody?: {
-        content: {
-          'application/json': components['schemas']['Artist'];
-        };
-      };
-      responses: {
-        201: {
-          content: {
-            'application/json': components['schemas']['Artist'];
+        /** @description Not Authorized */
+        401: {
+          headers: {
+            [name: string]: unknown;
           };
+          content?: never;
+        };
+        /** @description Not Allowed */
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
         };
       };
     };
-    delete: {
-      parameters: {
-        path: {
-          id: number;
-        };
-      };
-      responses: {
-        204: never;
-      };
-    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
-  '/me': {
+  '/artists/recommended': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
+      parameters: {
+        query?: {
+          page?: number;
+          size?: number;
+        };
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            'application/json': components['schemas']['FollowedArtistsResponse'];
+          };
+        };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/me': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Authorized */
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Allowed */
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/me/enable-services': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
-      parameters?: {
+      parameters: {
         query?: {
           enableSpotify?: boolean;
           lastfmUsername?: string;
         };
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/me/follow': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     post: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
       requestBody?: {
         content: {
           'application/json': components['schemas']['SearchResultArtistDto'];
@@ -164,78 +311,212 @@ export interface paths {
       };
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/me/followed-artists': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['FollowedArtistsResponse'];
           };
         };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/me/unfollow/{artistId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     delete: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           artistId: number;
         };
+        cookie?: never;
       };
-      responses: {
-        /** @description OK */
-        200: never;
-        /** @description Not Authorized */
-        401: never;
-        /** @description Not Allowed */
-        403: never;
-      };
-    };
-  };
-  '/notify-users': {
-    get: {
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Authorized */
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Allowed */
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+      };
+    };
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/notify-users': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
-            'application/json': boolean;
+            'text/plain': boolean;
           };
         };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/raccoon-user': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
-      parameters?: {
+      parameters: {
         query?: {
+          email?: string;
+          id?: number;
+          lastfmUsername?: string;
+          namedQuery?: string;
           page?: number;
           size?: number;
-          sort?: unknown[];
+          sort?: string[];
+          spotifyEnabled?: boolean;
+          username?: string;
         };
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['RaccoonUser'][];
           };
         };
       };
     };
+    put?: never;
     post: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
       requestBody?: {
         content: {
           'application/json': components['schemas']['RaccoonUser'];
@@ -243,35 +524,79 @@ export interface paths {
       };
       responses: {
         201: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['RaccoonUser'];
           };
         };
       };
     };
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/raccoon-user/count': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': number;
           };
         };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/raccoon-user/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['RaccoonUser'];
           };
@@ -280,9 +605,12 @@ export interface paths {
     };
     put: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
       requestBody?: {
         content: {
@@ -291,42 +619,85 @@ export interface paths {
       };
       responses: {
         201: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['RaccoonUser'];
           };
         };
       };
     };
+    post?: never;
     delete: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
-        204: never;
-      };
-    };
-  };
-  '/release': {
-    get: {
-      parameters?: {
-        query?: {
-          page?: number;
-          size?: number;
-          sort?: unknown[];
+        204: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
         };
       };
+    };
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/release': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: {
+          id?: number;
+          musicbrainzId?: string;
+          name?: string;
+          namedQuery?: string;
+          page?: number;
+          size?: number;
+          sort?: string[];
+          spotifyUri?: string;
+          type?: string;
+        };
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['Release'][];
           };
         };
       };
     };
+    put?: never;
     post: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
       requestBody?: {
         content: {
           'application/json': components['schemas']['Release'];
@@ -334,47 +705,114 @@ export interface paths {
       };
       responses: {
         201: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['Release'];
           };
         };
       };
     };
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/release-scrape': {
-    get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
-            'application/json': components['schemas']['Release'][];
+            'application/json': components['schemas']['ReleaseScrapeResponse'];
           };
         };
       };
     };
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/release/count': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': number;
           };
         };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/release/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['Release'];
           };
@@ -383,9 +821,12 @@ export interface paths {
     };
     put: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
       requestBody?: {
         content: {
@@ -394,76 +835,181 @@ export interface paths {
       };
       responses: {
         201: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'application/json': components['schemas']['Release'];
           };
         };
       };
     };
+    post?: never;
     delete: {
       parameters: {
+        query?: never;
+        header?: never;
         path: {
           id: number;
         };
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
-        204: never;
+        204: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/scrape-taste/lastfm': {
+    parameters: {
+      query?: {
+        email?: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
+      parameters: {
+        query?: {
+          email?: string;
+        };
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
       responses: {
         /** @description OK */
         200: {
+          headers: {
+            [name: string]: unknown;
+          };
           content: {
             'text/plain': components['schemas']['UserArtist'][];
           };
         };
         /** @description Not Authorized */
-        401: never;
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
         /** @description Not Allowed */
-        403: never;
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
-    parameters?: {
-      query?: {
-        email?: string;
-      };
-    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/scrape-taste/spotify': {
-    get: {
-      responses: {
-        /** @description OK */
-        200: never;
-        /** @description Not Authorized */
-        401: never;
-        /** @description Not Allowed */
-        403: never;
-      };
-    };
-    parameters?: {
+    parameters: {
       query?: {
         email?: string;
       };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    get: {
+      parameters: {
+        query?: {
+          email?: string;
+        };
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Authorized */
+        401: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+        /** @description Not Allowed */
+        403: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/spotify-auth-callback': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
-      parameters?: {
+      parameters: {
         query?: {
           code?: string;
           error?: string;
           state?: string;
         };
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    put?: never;
     post: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
       requestBody?: {
         content: {
           'application/json': components['schemas']['RegisterUserRequest'];
@@ -471,27 +1017,57 @@ export interface paths {
       };
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/spotify-auth-callback/user-top-artists': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     get: {
-      parameters?: {
+      parameters: {
         query?: {
           userId?: string;
         };
+        header?: never;
+        path?: never;
+        cookie?: never;
       };
+      requestBody?: never;
       responses: {
         /** @description OK */
-        200: never;
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content?: never;
+        };
       };
     };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
 }
-
 export type webhooks = Record<string, never>;
-
 export interface components {
   schemas: {
     Artist: {
@@ -504,12 +1080,7 @@ export interface components {
       musicbrainzId?: string;
       spotifyUriId?: string;
     };
-    ArtistSearchResponse: {
-      /** Format: int32 */
-      count?: number;
-      artists?: components['schemas']['SearchResultArtistDto'][];
-    };
-    FollowedArtistDto: {
+    ArtistDto: {
       /** Format: int64 */
       id: number;
       name: string;
@@ -517,19 +1088,24 @@ export interface components {
       spotifyUri?: string;
       musicbrainzId?: string;
     };
+    ArtistSearchResponse: {
+      /** Format: int32 */
+      count?: number;
+      artists?: components['schemas']['SearchResultArtistDto'][];
+    };
     FollowedArtistsResponse: {
       /** Format: int32 */
       total?: number;
-      rows?: components['schemas']['FollowedArtistDto'][];
+      rows?: components['schemas']['ArtistDto'][];
     };
     /**
      * Format: date
-     * @example "2022-03-10T00:00:00.000Z"
+     * @example 2022-03-10
      */
     LocalDate: string;
     /**
      * Format: date-time
-     * @example "2022-03-10T12:15:50.000Z"
+     * @example 2022-03-10T12:15:50
      */
     LocalDateTime: string;
     RaccoonUser: {
@@ -559,6 +1135,28 @@ export interface components {
       musicbrainzId?: string;
       releasedOn?: components['schemas']['LocalDate'];
     };
+    ReleaseScrapeResponse: {
+      scrape?: components['schemas']['Scrape'];
+    };
+    Scrape: {
+      /** Format: int64 */
+      id?: number;
+      createDate?: components['schemas']['LocalDateTime'];
+      modifyDate?: components['schemas']['LocalDateTime'];
+      completeDate?: components['schemas']['LocalDateTime'];
+      /** Format: int64 */
+      releasesFromSpotify?: number;
+      /** Format: int64 */
+      releasesFromMusicbrainz?: number;
+      /** Format: int32 */
+      releaseCount?: number;
+      /** Format: int64 */
+      usersNotified?: number;
+      /** Format: int64 */
+      relevantReleases?: number;
+      isComplete?: boolean;
+      releases?: components['schemas']['Release'][];
+    };
     SearchResultArtistDto: {
       /** Format: int64 */
       id?: number;
@@ -572,8 +1170,8 @@ export interface components {
       /** Format: float */
       weight?: number;
       hasNewRelease?: boolean;
-      user?: components['schemas']['RaccoonUser'] & Record<string, never>;
-      artist?: components['schemas']['Artist'] & Record<string, never>;
+      user?: components['schemas']['RaccoonUser'];
+      artist?: components['schemas']['Artist'];
     };
   };
   responses: never;
@@ -582,7 +1180,5 @@ export interface components {
   headers: never;
   pathItems: never;
 }
-
-export type external = Record<string, never>;
-
+export type $defs = Record<string, never>;
 export type operations = Record<string, never>;
