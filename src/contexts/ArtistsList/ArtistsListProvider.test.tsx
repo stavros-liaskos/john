@@ -1,7 +1,7 @@
 import { useArtistsListContext } from './ArtistsListContext';
 import { cleanup } from '@testing-library/react';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
-import followedArtists from '../../mocks/responses/followed-artists.json';
+import followedArtists from '../../../mocks/responses/followed-artists.json';
 
 describe('ArtistsListContext', () => {
   beforeEach(() => {

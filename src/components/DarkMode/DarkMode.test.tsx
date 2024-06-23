@@ -3,7 +3,7 @@ import DarkMode from './DarkMode';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import { act } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
-import followedArtists from '../../mocks/responses/followed-artists.json';
+import followedArtists from '../../../mocks/responses/followed-artists.json';
 
 describe('DarkMode', () => {
   beforeEach(() => {

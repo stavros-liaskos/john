@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { components } from '../../../types/schema';
-import follow from '../../../mocks/responses/follow.json';
+import follow from '../../../../mocks/responses/follow.json';
 
 export default async function handler(
   req: NextApiRequest,
