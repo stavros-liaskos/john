@@ -4,7 +4,7 @@ import Search from './Search';
 import { searchI18n } from './Search.data';
 import { beforeEachTest } from '../../utils/test-utils';
 import fetchMock from 'jest-fetch-mock';
-import artistSearch from '../../mocks/responses/artist-search.json';
+import artistSearch from '../../../mocks/responses/artist-search.json';
 
 const setup = () => {
   const { container, getByRole } = render(<Search i18n={searchI18n} />);

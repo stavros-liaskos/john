@@ -15,7 +15,7 @@ module.exports = {
     if (dev && !isServer) {
       const originalEntry = config.entry;
       config.entry = async () => {
-        const wdrPath = path.resolve(__dirname, './scripts/wdyr.js');
+        const wdrPath = path.resolve(__dirname, './src/scripts/wdyr.js');
         const entries = await originalEntry();
 
         if (entries['main.js'] && !entries['main.js'].includes(wdrPath)) {

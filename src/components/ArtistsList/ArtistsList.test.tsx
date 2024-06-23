@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import ArtistsList from './ArtistsList';
 import { artistsListI18n } from './ArtistsList.data';
-import artistsList from '../../mocks/responses/followed-artists.json';
+import artistsList from '../../../mocks/responses/followed-artists.json';
 
 describe('ArtistsList', () => {
   it('renders without data without crashing', () => {
