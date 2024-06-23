@@ -10,7 +10,7 @@ type RecommendationsI18n = {
 
 const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const [recommendedArtists, setRecommendedArtists] = useState<components['schemas']['FollowedArtistDto'][]>([]);
+  const [recommendedArtists, setRecommendedArtists] = useState<components['schemas']['ArtistDto'][]>([]);
 
   useEffect(() => {
     // TODO add Suspense for data fetching
@@ -44,7 +44,7 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
 };
 
 export function fetchRecommendations(
-  setRecommendedArtists: React.Dispatch<React.SetStateAction<components['schemas']['FollowedArtistDto'][]>>,
+  setRecommendedArtists: React.Dispatch<React.SetStateAction<components['schemas']['ArtistDto'][]>>,
 ) {
   fetch(`${process.env.BE_BASE_URL}/artists/recommended?page=0&size=10`, {
     method: 'GET',

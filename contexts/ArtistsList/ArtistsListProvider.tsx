@@ -7,7 +7,7 @@ interface ChildrenProps {
 }
 
 const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
-  const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['FollowedArtistDto'][]>([]);
+  const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['ArtistDto'][]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

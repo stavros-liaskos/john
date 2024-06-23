@@ -2,9 +2,8 @@
 openapi: 3.0.3
 info:
   title: release-raccoon-app API
-  version: 0.0.1-SNAPSHOT
+  version: 9.9.9-SNAPSHOT
 tags:
-  - name: ArtistResource
   - name: RaccoonUserResource
   - name: ReleaseResource
 paths:
@@ -15,62 +14,6 @@ paths:
       responses:
         '200':
           description: OK
-  /artist:
-    get:
-      tags:
-        - ArtistResource
-      parameters:
-        - name: page
-          in: query
-          schema:
-            format: int32
-            default: 0
-            type: integer
-        - name: size
-          in: query
-          schema:
-            format: int32
-            default: 20
-            type: integer
-        - name: sort
-          in: query
-          schema:
-            type: array
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Artist'
-    post:
-      tags:
-        - ArtistResource
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Artist'
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Artist'
-  /artist/count:
-    get:
-      tags:
-        - ArtistResource
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                format: int64
-                type: integer
   /artist/search:
     get:
       tags:
@@ -99,16 +42,58 @@ paths:
           description: Not Allowed
       security:
         - SecurityScheme: []
-  /artist/{id}:
+  /artists:
     get:
       tags:
-        - ArtistResource
+        - Artist Resource
       parameters:
-        - name: id
-          in: path
-          required: true
+        - name: page
+          in: query
           schema:
-            format: int64
+            format: int32
+            default: 0
+            minimum: 0
+            exclusiveMinimum: true
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 10
+            maximum: 100
+            minimum: 0
+            exclusiveMinimum: true
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
+  /artists/recommended:
+    get:
+      tags:
+        - Artist Resource
+      parameters:
+        - name: page
+          in: query
+          schema:
+            format: int32
+            default: 0
+            minimum: 0
+            exclusiveMinimum: true
+            type: integer
+        - name: size
+          in: query
+          schema:
+            format: int32
+            default: 10
+            maximum: 100
+            minimum: 0
+            exclusiveMinimum: true
             type: integer
       responses:
         '200':
@@ -116,40 +101,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Artist'
-    put:
-      tags:
-        - ArtistResource
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Artist'
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Artist'
-    delete:
-      tags:
-        - ArtistResource
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            format: int64
-            type: integer
-      responses:
-        '204': {}
+                $ref: '#/components/schemas/FollowedArtistsResponse'
+        '401':
+          description: Not Authorized
+        '403':
+          description: Not Allowed
+      security:
+        - SecurityScheme: []
   /me:
     get:
       tags:
@@ -250,7 +208,7 @@ paths:
         '200':
           description: OK
           content:
-            application/json:
+            text/plain:
               schema:
                 type: boolean
   /raccoon-user:
@@ -258,6 +216,23 @@ paths:
       tags:
         - RaccoonUserResource
       parameters:
+        - name: email
+          in: query
+          schema:
+            type: string
+        - name: id
+          in: query
+          schema:
+            format: int64
+            type: integer
+        - name: lastfmUsername
+          in: query
+          schema:
+            type: string
+        - name: namedQuery
+          in: query
+          schema:
+            type: string
         - name: page
           in: query
           schema:
@@ -274,6 +249,16 @@ paths:
           in: query
           schema:
             type: array
+            items:
+              type: string
+        - name: spotifyEnabled
+          in: query
+          schema:
+            type: boolean
+        - name: username
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -365,6 +350,23 @@ paths:
       tags:
         - ReleaseResource
       parameters:
+        - name: id
+          in: query
+          schema:
+            format: int64
+            type: integer
+        - name: musicbrainzId
+          in: query
+          schema:
+            type: string
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: namedQuery
+          in: query
+          schema:
+            type: string
         - name: page
           in: query
           schema:
@@ -381,6 +383,16 @@ paths:
           in: query
           schema:
             type: array
+            items:
+              type: string
+        - name: spotifyUri
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -405,7 +417,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Release'
   /release-scrape:
-    get:
+    put:
       tags:
         - Release Scrape Resource
       responses:
@@ -414,10 +426,7 @@ paths:
           content:
             application/json:
               schema:
-                uniqueItems: true
-                type: array
-                items:
-                  $ref: '#/components/schemas/Release'
+                $ref: '#/components/schemas/ReleaseScrapeResponse'
   /release/count:
     get:
       tags:
@@ -586,17 +595,7 @@ components:
           type: string
         spotifyUriId:
           type: string
-    ArtistSearchResponse:
-      type: object
-      properties:
-        count:
-          format: int32
-          type: integer
-        artists:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchResultArtistDto'
-    FollowedArtistDto:
+    ArtistDto:
       required:
         - id
         - name
@@ -613,6 +612,16 @@ components:
           type: string
         musicbrainzId:
           type: string
+    ArtistSearchResponse:
+      type: object
+      properties:
+        count:
+          format: int32
+          type: integer
+        artists:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultArtistDto'
     FollowedArtistsResponse:
       type: object
       properties:
@@ -622,7 +631,7 @@ components:
         rows:
           type: array
           items:
-            $ref: '#/components/schemas/FollowedArtistDto'
+            $ref: '#/components/schemas/ArtistDto'
     LocalDate:
       format: date
       type: string
@@ -684,6 +693,44 @@ components:
           type: string
         releasedOn:
           $ref: '#/components/schemas/LocalDate'
+    ReleaseScrapeResponse:
+      type: object
+      properties:
+        scrape:
+          $ref: '#/components/schemas/Scrape'
+    Scrape:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        createDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        modifyDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        completeDate:
+          $ref: '#/components/schemas/LocalDateTime'
+        releasesFromSpotify:
+          format: int64
+          type: integer
+        releasesFromMusicbrainz:
+          format: int64
+          type: integer
+        releaseCount:
+          format: int32
+          type: integer
+        usersNotified:
+          format: int64
+          type: integer
+        relevantReleases:
+          format: int64
+          type: integer
+        isComplete:
+          type: boolean
+        releases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Release'
     SearchResultArtistDto:
       required:
         - name
@@ -711,19 +758,17 @@ components:
         hasNewRelease:
           type: boolean
         user:
+          type: object
           allOf:
             - $ref: '#/components/schemas/RaccoonUser'
-            - writeOnly: true
+          writeOnly: true
         artist:
+          type: object
           allOf:
             - $ref: '#/components/schemas/Artist'
-            - writeOnly: true
+          writeOnly: true
   securitySchemes:
     SecurityScheme:
-      type: oauth2
+      type: openIdConnect
       description: Authentication
-      flows:
-        implicit:
-          authorizationUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/auth
-          tokenUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/token/introspect
-          refreshUrl: http://localhost:8181/auth/realms/RaccoonRealm/protocol/openid-connect/token
+      openIdConnectUrl: http://localhost:8181/realms/RaccoonRealm/.well-known/openid-configuration

@@ -51,7 +51,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
 FollowedArtistList.whyDidYouRender = true;
 export default FollowedArtistList;
 
-function validateRequiredData(i18n: ListI18n, followedArtistList: components['schemas']['FollowedArtistDto'][]) {
+function validateRequiredData(i18n: ListI18n, followedArtistList: components['schemas']['ArtistDto'][]) {
   return (
     !followedArtistList?.length ||
     !i18n ||
@@ -65,8 +65,8 @@ function validateRequiredData(i18n: ListI18n, followedArtistList: components['sc
 
 export function filterArtists(
   inputValue: string = '',
-  followedArtistList: components['schemas']['FollowedArtistDto'][],
-): components['schemas']['FollowedArtistDto'][] {
+  followedArtistList: components['schemas']['ArtistDto'][],
+): components['schemas']['ArtistDto'][] {
   return followedArtistList.filter(followedArtistList => {
     if (inputValue === ' ' || inputValue.length === 1) {
       return true;
