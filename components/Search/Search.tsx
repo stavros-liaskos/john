@@ -5,8 +5,10 @@ import { components } from '../../types/schema';
 import FormInput from '../FormInput/FormInput';
 import ArtistsList from '../ArtistsList/ArtistsList';
 import { followArtist } from '../../utils/followArtist';
+import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
+  const { getFollowedArtists } = useArtistsListContext();
   const [artistLoading, setArtistLoading] = useState<number>(0);
   const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
@@ -40,6 +42,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     })
       .then(res => res.json())
       .then(result => {
+        getFollowedArtists();
         return setResults(result.artists);
       })
       .catch(console.error);

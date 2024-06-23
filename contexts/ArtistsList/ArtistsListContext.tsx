@@ -1,10 +1,10 @@
-import React, { createContext, Dispatch, SetStateAction, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { components } from '../../types/schema';
 
 interface ArtistsListContextType {
   followedArtistList: components['schemas']['ArtistDto'][];
-  setFollowedArtistList: Dispatch<SetStateAction<components['schemas']['ArtistDto'][]>>;
   loading: boolean;
+  getFollowedArtists: () => void;
 }
 
 export const ArtistsListContext: React.Context<ArtistsListContextType> = createContext<ArtistsListContextType>(

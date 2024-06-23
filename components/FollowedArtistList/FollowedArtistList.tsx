@@ -7,7 +7,7 @@ import { components } from '../../types/schema';
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const { followedArtistList, setFollowedArtistList } = useArtistsListContext();
+  const { followedArtistList, getFollowedArtists } = useArtistsListContext();
   const [filterInput, setFilterInput] = useState('');
 
   if (validateRequiredData(i18n, followedArtistList)) {
@@ -35,10 +35,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
       body: JSON.stringify({ artistID }),
     })
       .then(() => {
-        const newList = followedArtistList && followedArtistList.filter(artist => artist.id !== artistID);
-        if (newList && newList.length !== followedArtistList?.length) {
-          setFollowedArtistList(newList);
-        }
+        getFollowedArtists();
         console.log(`${artistID} successfully unfollowed`);
       })
       .catch(error => {

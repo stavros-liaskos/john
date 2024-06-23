@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import { ArtistsListContext } from './ArtistsListContext';
 import { components } from '../../types/schema';
 
@@ -9,18 +9,7 @@ interface ChildrenProps {
 const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['ArtistDto'][]>([]);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    getFollowedArtists();
-  }, []);
-
-  return (
-    <ArtistsListContext.Provider value={{ followedArtistList, setFollowedArtistList, loading }}>
-      {children}
-    </ArtistsListContext.Provider>
-  );
-
-  function getFollowedArtists() {
+  const getFollowedArtists = useCallback(() => {
     setLoading(true);
     fetchData().catch(console.error);
 
@@ -29,11 +18,23 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
         method: 'GET',
         credentials: 'include',
       });
+      console.warn(`${process.env.BE_BASE_URL}/me/followed-artists`);
       const json: components['schemas']['FollowedArtistsResponse'] = await data.json();
       json?.rows && setFollowedArtistList(json.rows);
       setLoading(false);
     }
-  }
+  }, []);
+
+  useEffect(() => {
+    getFollowedArtists();
+  }, [getFollowedArtists]);
+
+  return (
+    <ArtistsListContext.Provider value={{ followedArtistList, getFollowedArtists, loading }}>
+      {children}
+    </ArtistsListContext.Provider>
+  );
 };
 
+ArtistsListProvider.whyDidYouRender = true;
 export default ArtistsListProvider;

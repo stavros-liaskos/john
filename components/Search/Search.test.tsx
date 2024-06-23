@@ -1,13 +1,14 @@
 import React from 'react';
-import { fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, act } from '@testing-library/react';
 import Search from './Search';
 import { searchI18n } from './Search.data';
-import { beforeEachTest } from '../../utils/test-utils';
+import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import fetchMock from 'jest-fetch-mock';
 import artistSearch from '../../mocks/responses/artist-search.json';
+import followedArtists from '../../mocks/responses/followed-artists.json';
 
-const setup = () => {
-  const { container, getByRole } = render(<Search i18n={searchI18n} />);
+const setup = async () => {
+  const { container, getByRole } = await renderWithAct(<Search i18n={searchI18n} />);
   const searchBtn = getByRole('button');
   const input = getByRole('textbox');
 
@@ -27,13 +28,25 @@ describe('Search', () => {
     jest.restoreAllMocks();
   });
 
-  it('renders without data without crashing', () => {
+  it('renders without data without crashing', async () => {
+    // fetchMock.mockResponseOnce(JSON.stringify(followedArtists));
+
+    fetchMock.mockResponse(req => {
+      if (req.url === 'https://release-raccoon.com/me/followed-artists/') {
+        console.warn()
+        new Promise(() => followedArtists);
+      } else {
+        Promise.reject(new Error('bad url'));
+      }
+    });
+
     // @ts-ignore
-    render(<Search />);
+    await renderWithAct(<Search />);
   });
 
-  it('should have the query that the user types in the input', () => {
-    const { input } = setup();
+  it('should have the query that the user types in the input', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(followedArtists));
+    const { input } = await setup();
 
     fireEvent.change(input, { target: { value: 'Nels Cline' } });
     expect(input).toHaveValue('Nels Cline');
@@ -43,7 +56,7 @@ describe('Search', () => {
     { searchQuery: 'Sam Gendel', searchRes: artistSearch, result: 'should handle the search action of the user' },
     { searchQuery: 'No match', searchRes: { artists: artistSearch }, result: 'handles no search results' },
   ])('$result', async ({ searchQuery, searchRes }) => {
-    const { container, input, searchBtn } = setup();
+    const { container, input, searchBtn } = await setup();
     fetchMock.mockResponseOnce(JSON.stringify(searchRes));
 
     fireEvent.change(input, { target: { value: searchQuery } });
