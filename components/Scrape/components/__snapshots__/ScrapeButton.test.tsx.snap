@@ -27,7 +27,7 @@ exports[`Scrape component matches snapshot 1`] = `
       </g>
     </svg>
     <button
-      class="btn flex undefined"
+      class="btn flex "
       type="button"
     >
       Scrape Spotify

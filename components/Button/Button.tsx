@@ -20,7 +20,12 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   }
 
   return (
-    <button className={`btn flex ${className}`} onClick={handleClickCallback} disabled={disabled} type={type}>
+    <button
+      className={`btn flex ${className ? className : ''}`}
+      onClick={handleClickCallback}
+      disabled={disabled}
+      type={type}
+    >
       {loading && <Spin />}
       {i18n}
     </button>
