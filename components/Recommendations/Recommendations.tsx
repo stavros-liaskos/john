@@ -1,6 +1,7 @@
 import ArtistsList, { ArtistsListI18n } from '../ArtistsList/ArtistsList';
 import React, { useEffect, useState } from 'react';
 import { components } from '../../types/schema';
+import { followArtist } from '../../utils/followArtist';
 
 type RecommendationsI18n = {
   title: string;
@@ -26,15 +27,19 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
       <ArtistsList
         i18n={i18n.artistList}
         artistsList={recommendedArtists}
-        onButtonClick={followArtist}
+        onButtonClick={handleFollow}
         artistLoading={artistLoading}
       />
     </div>
   );
 
-  function followArtist() {
-    setArtistLoading(1);
-    // TODO unite functionality with follow fn from Search
+  async function handleFollow(artist: components['schemas']['SearchResultArtistDto']) {
+    artist?.id && setArtistLoading(artist.id);
+
+    const finallyCb = () => {
+      artistLoading && setArtistLoading(0);
+    };
+    await followArtist(artist, finallyCb);
   }
 };
 

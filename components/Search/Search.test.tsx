@@ -1,16 +1,15 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 import Search from './Search';
 import { searchI18n } from './Search.data';
-import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { beforeEachTest } from '../../utils/test-utils';
 import fetchMock from 'jest-fetch-mock';
-import followedArtists from '../../mocks/responses/followed-artists.json';
 import artistSearch from '../../mocks/responses/artist-search.json';
 
-const setup = async () => {
-  const { container, findByRole } = await renderWithAct(<Search i18n={searchI18n} />);
-  const searchBtn = await findByRole('button');
-  const input = await findByRole('textbox');
+const setup = () => {
+  const { container, getByRole } = render(<Search i18n={searchI18n} />);
+  const searchBtn = getByRole('button');
+  const input = getByRole('textbox');
 
   return {
     container,
@@ -22,14 +21,6 @@ const setup = async () => {
 describe('Search', () => {
   beforeEach(() => {
     beforeEachTest();
-
-    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
-      if (req.url.endsWith('/me/followed-artists')) {
-        return Promise.resolve({ body: JSON.stringify({ json: followedArtists }) });
-      } else {
-        return Promise.reject({ status: 404 });
-      }
-    });
   });
 
   afterEach(() => {
@@ -41,30 +32,28 @@ describe('Search', () => {
     render(<Search />);
   });
 
-  it('should have the query that the user types in the input', async () => {
-    const { input } = await setup();
+  it('should have the query that the user types in the input', () => {
+    const { input } = setup();
 
     fireEvent.change(input, { target: { value: 'Nels Cline' } });
     expect(input).toHaveValue('Nels Cline');
   });
 
-  it('should handle the search action of the user', async () => {
-    const { container, input, searchBtn } = await setup();
+  it.each([
+    { searchQuery: 'Sam Gendel', searchRes: artistSearch, result: 'should handle the search action of the user' },
+    { searchQuery: 'No match', searchRes: { artists: artistSearch }, result: 'handles no search results' },
+  ])('$result', async ({ searchQuery, searchRes }) => {
+    const { container, input, searchBtn } = setup();
+    fetchMock.mockResponseOnce(JSON.stringify(searchRes));
 
-    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
-      if (req.url.endsWith('Nels+Cline')) {
-        return Promise.resolve({ body: JSON.stringify({ json: artistSearch }) });
-      } else {
-        return Promise.reject({ status: 404 });
-      }
-    });
-
-    fireEvent.change(input, { target: { value: 'Nels Cline' } });
+    fireEvent.change(input, { target: { value: searchQuery } });
     await act(() => {
       fireEvent.click(searchBtn);
     });
-    // TODO add nock
-    // expect(handleSearch).toHaveBeenCalledWith('Nels Cline');
+
+    if (searchQuery === 'No match') {
+      expect(container).toHaveTextContent(searchI18n.searchList.noArtists);
+    }
     expect(container).toMatchSnapshot();
   });
 });
