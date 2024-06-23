@@ -19,8 +19,8 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   }
 
   return (
-    <main className={`flex-1 flex flex-col items-center w-full p-3 h-24`}>
-      <div className={`flex flex-col items-center w-full lg:w-9/12`}>
+    <main className={`flex-1 flex flex-col items-center w-full px-3 h-24`}>
+      <div className={`flex-1 flex flex-col justify-stretch items-center w-full lg:w-9/12`}>
         {user ? (
           <>
             <Search i18n={searchI18n} />

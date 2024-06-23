@@ -11,8 +11,34 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   if (!i18n?.button || !i18n?.label) {
     return null;
   }
+  return (
+    <div className="relative flex lg:justify-center items-center mb-2 basis-16 md:basis-20 border-b-2 rr-border w-full">
+      <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
+        <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
+      </FormInput>
 
-  const handleSearch = (inputValue: string) => {
+      {results && (
+        <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-14 md:top-16 w-full z-10">
+          <ul>
+            {results.map((result: components['schemas']['SearchResultArtistDto'], key: number) => (
+              <li className="flex justify-between items-center py-2 rr-text border-b-2 border-gh-dark" key={key}>
+                {result.name}
+                <button
+                  className="btn btn-small !border-gh-dark"
+                  onClick={() => handleFollow(result)}
+                  disabled={disabled}
+                >
+                  Follow
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+
+  function handleSearch(inputValue: string) {
     fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
       method: 'GET',
       credentials: 'include',
@@ -22,9 +48,9 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
         return setResults(result.artists); // TODO handle no results
       })
       .catch(console.error);
-  };
+  }
 
-  const handleFollow = (artistData: components['schemas']['SearchResultArtistDto']) => {
+  function handleFollow(artistData: components['schemas']['SearchResultArtistDto']) {
     setDisabled(true);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     fetch(`${process.env.BE_BASE_URL}/me/follow`, {
@@ -45,34 +71,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
           setDisabled(false);
         }, 1000);
       });
-  };
-
-  return (
-    <div className="relative flex lg:justify-center items-center mb-2 h-16 md:h-40 border-b-2 rr-border w-full">
-      <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
-        <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
-      </FormInput>
-
-      {results && (
-        <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-16 md:top-32 w-full z-10">
-          <ul>
-            {results.map((result: components['schemas']['SearchResultArtistDto'], key: number) => (
-              <li className="flex justify-between items-center py-2 rr-text border-b-2 border-gh-dark" key={key}>
-                {result.name}
-                <button
-                  className="btn btn-small !border-gh-dark"
-                  onClick={() => handleFollow(result)}
-                  disabled={disabled}
-                >
-                  Follow
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+  }
 };
 Search.whyDidYouRender = true;
 export default Search;

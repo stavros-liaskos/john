@@ -91,7 +91,7 @@ Dark mode state is initialized by reading the OS preference or to `light` if tha
 
 ## API Endpoints
 
-API endpoints for the app are documented in [this OpenAPI](./openapi.yml) export and are based on the BE project [here](https://github.com/jaivalis/release-raccoon#readmeTODO).  
+API endpoints for the app are documented in [this OpenAPI](./openAPI.yml) export and are based on the BE project [here](https://github.com/jaivalis/release-raccoon#readme).  
 A [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) is required for each request.  
 To generate a ts schema:
 

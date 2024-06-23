@@ -30,7 +30,7 @@ exports[`Scrapers matches snapshot 1`] = `
         </g>
       </svg>
       <button
-        class="btn flex undefined"
+        class="btn flex "
         type="button"
       >
         Connect Spotify
@@ -56,7 +56,7 @@ exports[`Scrapers matches snapshot 1`] = `
         />
       </svg>
       <button
-        class="btn flex undefined"
+        class="btn flex "
         type="button"
       >
         Connect LastFm
