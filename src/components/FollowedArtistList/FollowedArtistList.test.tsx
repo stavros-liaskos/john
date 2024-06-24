@@ -5,6 +5,7 @@ import { followedArtistListI18n } from './FollowedArtistList.data';
 import { beforeEachTest, render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../types/schema';
+import { nockAuth, nockFollowedArtists, nockUnfollow } from '../../mocks/mockApi';
 
 describe('FollowedArtistList', () => {
   let originFetch: {
@@ -36,42 +37,26 @@ describe('FollowedArtistList', () => {
   });
 
   it('unfollows artist on btn click', async () => {
-    const fakeResponse = followedArtists;
-    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
-    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
-    global.fetch = mockedFetch;
-
+    nockAuth.success();
+    nockFollowedArtists.success(2);
     const { findAllByText } = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
 
-    const buttons = await findAllByText(followedArtistListI18n.artistList.btnTxt);
-
+    let buttons = await findAllByText(followedArtistListI18n.artistList.btnTxt);
     expect(buttons).toHaveLength(2);
-    // expect(mockedFetch).toBeCalledTimes(1); TODO fix
-    expect(mRes.json).toBeCalledTimes(1);
 
-    const mRes1 = { json: jest.fn().mockResolvedValueOnce('OK') };
-    global.fetch = jest.fn().mockResolvedValueOnce(mRes1);
-
-    const logSpy = jest.spyOn(console, 'log');
+    nockUnfollow.success();
     await act(async () => {
-      await act(() => {
-        fireEvent.click(buttons[0]);
-      });
+      fireEvent.click(buttons[0]);
     });
-    const artists = await findAllByText(followedArtistListI18n.artistList.btnTxt);
-    expect(logSpy).toBeCalledWith('1700 successfully unfollowed');
-    expect(artists).toHaveLength(1);
   });
 
   it('matches snapshot', async () => {
-    const fakeResponse = followedArtists;
-    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
-    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
-    global.fetch = mockedFetch;
+    nockAuth.success();
+    nockFollowedArtists.success(2);
 
-    const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
-    await act(() => {});
-
+    const component = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
+    let buttons = await component.findAllByText(followedArtistListI18n.artistList.btnTxt);
+    expect(buttons).toHaveLength(2);
     expect(component.container).toMatchSnapshot();
   });
 

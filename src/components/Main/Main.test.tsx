@@ -9,7 +9,7 @@ describe('Main', () => {
   beforeEach(() => {
     beforeEachTest();
     nockAuth.success();
-    nockFollowedArtists.success();
+    nockFollowedArtists.success(2);
   });
 
   it('renders without data without crashing', async () => {

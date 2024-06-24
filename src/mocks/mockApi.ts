@@ -7,7 +7,10 @@ export const nockAuth = {
 };
 
 export const nockFollowedArtists = {
-  success: () => nockAPI().get('/me/followed-artists').reply(200, followedArtists),
+  success: (artistQuantity: number = 2) => {
+    followedArtists.rows.splice(1, 2 - artistQuantity);
+    nockAPI().get('/me/followed-artists').reply(200, followedArtists);
+  },
 };
 
 export const nockRecommendedArtists = {
@@ -21,6 +24,10 @@ export const nockScrape = {
 
 export const nockFollow = {
   success: () => nockAPI().post('/me/follow').reply(200),
+};
+
+export const nockUnfollow = {
+  success: () => nockAPI().delete('/me/unfollow').reply(200),
 };
 
 export const nockSearch = {

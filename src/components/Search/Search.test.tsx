@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, act } from '@testing-library/react';
 import Search from './Search';
 import { searchI18n } from './Search.data';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
@@ -9,7 +9,7 @@ import { components } from '../../types/schema';
 
 const setup = async () => {
   nockAuth.success();
-  nockFollowedArtists.success();
+  nockFollowedArtists.success(2);
   const { container, getByRole } = await renderWithAct(<Search i18n={searchI18n} />);
   const searchBtn = getByRole('button');
   const input = getByRole('textbox');
@@ -30,9 +30,9 @@ describe('Search', () => {
     jest.restoreAllMocks();
   });
 
-  it('renders without data without crashing', () => {
+  it('renders without data without crashing', async () => {
     // @ts-ignore
-    render(<Search />);
+    await renderWithAct(<Search />);
   });
 
   it('should have the query that the user types in the input', async () => {

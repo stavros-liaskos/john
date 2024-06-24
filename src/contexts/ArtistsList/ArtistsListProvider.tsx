@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import { ArtistsListContext } from './ArtistsListContext';
 import { components } from '../../types/schema';
 
@@ -9,31 +9,35 @@ interface ChildrenProps {
 const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['ArtistDto'][]>([]);
   const [loading, setLoading] = useState(false);
+  const getFollowedArtists = useCallback(() => {
+    setLoading(true);
+
+    fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
+      method: 'GET',
+      credentials: 'include',
+    })
+      .then(res => res.json())
+      .then((followedArtistsResponse: components['schemas']['FollowedArtistsResponse']) => {
+        followedArtistsResponse?.rows &&
+          JSON.stringify(followedArtistsResponse?.rows) !== JSON.stringify(followedArtistList) &&
+          setFollowedArtistList(followedArtistsResponse.rows);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+      .catch(console.error);
+  }, []);
 
   useEffect(() => {
     getFollowedArtists();
   }, []);
 
   return (
-    <ArtistsListContext.Provider value={{ followedArtistList, setFollowedArtistList, loading }}>
+    <ArtistsListContext.Provider value={{ followedArtistList, getFollowedArtists, loading }}>
       {children}
     </ArtistsListContext.Provider>
   );
-
-  async function getFollowedArtists() {
-    setLoading(true);
-    await fetchData().catch(console.error);
-
-    async function fetchData() {
-      const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
-        method: 'GET',
-        // credentials: 'include',
-      });
-      const json: components['schemas']['FollowedArtistsResponse'] = await data.json();
-      json?.rows && setFollowedArtistList(json.rows);
-      setLoading(false);
-    }
-  }
 };
 
+ArtistsListProvider.whyDidYouRender = true;
 export default ArtistsListProvider;

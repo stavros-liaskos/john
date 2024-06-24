@@ -27,7 +27,7 @@ describe('ArtistsListContext', () => {
   };
 
   it('gets/sets followed artists', async () => {
-    nockFollowedArtists.success();
+    nockFollowedArtists.success(2);
     const { findAllByText } = await renderWithAct(<ArtistList />);
 
     const artists = await findAllByText(/Artist/i);
