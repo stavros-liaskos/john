@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import followedArtists from '../../../../mocks/responses/followed-artists.json';
+import followedArtists from '../../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../../types/schema';
 
 export default async function handler(

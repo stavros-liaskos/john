@@ -2,21 +2,14 @@ import React from 'react';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import Main from './Main';
 import props from './Main.data';
-import followedArtists from '../../../mocks/responses/followed-artists.json';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import fetchMock from 'jest-fetch-mock';
+import { nockAuth, nockFollowedArtists, nockRecommendedArtists } from '../../mocks/mockApi';
 
 describe('Main', () => {
   beforeEach(() => {
     beforeEachTest();
-
-    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
-      if (req.url.endsWith('/me/followed-artists')) {
-        return Promise.resolve({ body: JSON.stringify({ json: followedArtists }) });
-      } else {
-        return Promise.reject({ status: 404 });
-      }
-    });
+    nockAuth.success();
+    nockFollowedArtists.success();
   });
 
   it('renders without data without crashing', async () => {
@@ -25,6 +18,7 @@ describe('Main', () => {
   });
 
   it('shows registration button', async () => {
+    nockAuth.success(); // TODO requires two calls for auth. Is it a rerender or expected? Fix
     const { findAllByText } = await renderWithAct(
       <UserProvider>
         <Main {...props} />
@@ -35,6 +29,7 @@ describe('Main', () => {
   });
 
   it('shows artist search for logged in user', async () => {
+    nockRecommendedArtists.success();
     const { findByText } = await renderWithAct(
       <UserProvider user={{ user: 'john.doe' }}>
         <Main {...props} />
