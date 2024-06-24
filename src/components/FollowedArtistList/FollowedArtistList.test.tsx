@@ -3,7 +3,7 @@ import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList, { filterArtists } from './FollowedArtistList';
 import { followedArtistListI18n } from './FollowedArtistList.data';
 import { beforeEachTest, render, renderWithAct } from '../../utils/test-utils';
-import followedArtists from '../../../mocks/responses/followed-artists.json';
+import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../types/schema';
 
 describe('FollowedArtistList', () => {

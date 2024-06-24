@@ -1,10 +1,10 @@
 import ScrapeButton, { getMusicServiceIcon, getMusicServiceUrl, handleScrape, MusicServiceType } from './ScrapeButton';
 import { render } from '@testing-library/react';
-import fetchMock from 'jest-fetch-mock';
 import IconTypes from '../../Icons/iconTypes';
 import Spotify from '../../Icons/spotify';
 import React from 'react';
 import LastFm from '../../Icons/lastfm';
+import { nockScrape } from '../../../mocks/mockApi';
 
 describe('Scrape', () => {
   describe('component', () => {
@@ -42,24 +42,26 @@ describe('Scrape', () => {
   describe('handleScrape', () => {
     const consoleLogSpy = jest.spyOn(global.console, 'log');
     it('triggers success notification', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({ some: 'response' }));
-
+      nockScrape.success();
       await handleScrape('Spotify');
+
       expect(consoleLogSpy).toHaveBeenCalledWith('Scraped successfully. Show notification');
     });
 
     it('triggers error notification', async () => {
+      nockScrape.fail();
       await handleScrape('Spotify');
+
       expect(consoleLogSpy).toHaveBeenCalledWith('Scrape failed. Show notification');
     });
   });
 
   describe('getMusicServicePath', () => {
-    it.each<{ musicService: MusicServiceType; url: string }>([
-      { musicService: 'LastFm', url: 'https://release-raccoon.com/scrape-taste/lastfm' },
-      { musicService: 'Spotify', url: 'https://release-raccoon.com/scrape-taste/spotify' },
-    ])('returns correct path', ({ musicService, url }) => {
-      expect(getMusicServiceUrl(musicService)).toBe(url);
+    it.each<{ musicService: MusicServiceType; path: string }>([
+      { musicService: 'LastFm', path: '/scrape-taste/lastfm' },
+      { musicService: 'Spotify', path: '/scrape-taste/spotify' },
+    ])('returns correct path', ({ musicService, path }) => {
+      expect(getMusicServiceUrl(musicService)).toBe(`${process.env.BE_BASE_URL}${path}`);
     });
 
     it('throws error when music service does not match', () => {

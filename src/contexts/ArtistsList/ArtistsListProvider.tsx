@@ -20,14 +20,14 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
     </ArtistsListContext.Provider>
   );
 
-  function getFollowedArtists() {
+  async function getFollowedArtists() {
     setLoading(true);
-    fetchData().catch(console.error);
+    await fetchData().catch(console.error);
 
     async function fetchData() {
       const data = await fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
         method: 'GET',
-        credentials: 'include',
+        // credentials: 'include',
       });
       const json: components['schemas']['FollowedArtistsResponse'] = await data.json();
       json?.rows && setFollowedArtistList(json.rows);

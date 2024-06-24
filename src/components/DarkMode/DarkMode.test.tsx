@@ -2,20 +2,10 @@ import React from 'react';
 import DarkMode from './DarkMode';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import { act } from '@testing-library/react';
-import fetchMock from 'jest-fetch-mock';
-import followedArtists from '../../../mocks/responses/followed-artists.json';
 
 describe('DarkMode', () => {
   beforeEach(() => {
     beforeEachTest();
-
-    fetchMock.mockIf(/^https?:\/\/release-raccoon.com.*$/, req => {
-      if (req.url.endsWith('/me/followed-artists')) {
-        return Promise.resolve({ body: JSON.stringify({ json: followedArtists }) });
-      } else {
-        return Promise.reject({ status: 404 });
-      }
-    });
   });
 
   afterEach(() => {

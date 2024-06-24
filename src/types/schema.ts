@@ -895,7 +895,7 @@ export interface paths {
             [name: string]: unknown;
           };
           content: {
-            'text/plain': components['schemas']['UserArtist'][];
+            'text/plain': components['schemas']['UserArtist'][]; // TODO implement
           };
         };
         /** @description Not Authorized */

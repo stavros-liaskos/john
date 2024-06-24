@@ -1,9 +1,9 @@
 import { act, render, waitFor } from '@testing-library/react';
 import Recommendations from './Recommendations';
 import { recommendationsI18n } from './Recommendations.data';
-import recommendedArtists from '../../../mocks/responses/followed-artists.json';
+import recommendedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { beforeEachTest } from '../../utils/test-utils';
-import followedArtists from '../../../mocks/responses/followed-artists.json';
+import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 
 describe('Recommendations', () => {
   let originFetch: {

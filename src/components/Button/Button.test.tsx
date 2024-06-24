@@ -35,7 +35,9 @@ describe('Button', () => {
     const clickHandler = jest.fn();
     const { getByRole } = render(<Button i18n="Click Me!" loading={true} handleClick={clickHandler} />);
     const btn = getByRole('button');
+
     fireEvent.click(btn);
+
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
 

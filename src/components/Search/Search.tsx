@@ -33,14 +33,18 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     </div>
   );
 
-  function handleSearch(inputValue: string) {
-    fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
+  async function handleSearch(inputValue: string) {
+    await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
       method: 'GET',
       credentials: 'include',
     })
       .then(res => res.json())
       .then(result => {
-        return setResults(result.artists);
+        let artists = [];
+        if (result?.artists && Array.isArray(result?.artists)) {
+          artists = result.artists;
+        }
+        setResults(artists);
       })
       .catch(console.error);
   }
