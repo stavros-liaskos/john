@@ -10,12 +10,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   loading = false,
   type = 'button',
   handleClickArg,
+  children,
 }) => {
   const handleClickCallback = useCallback(() => {
     handleClickArg ? handleClick(handleClickArg) : handleClick();
   }, [handleClick, handleClickArg]);
 
-  if (!i18n) {
+  if (!i18n && !children) {
     return null;
   }
 
@@ -28,6 +29,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     >
       {loading && <Spin />}
       {i18n}
+      {children}
     </button>
   );
 };

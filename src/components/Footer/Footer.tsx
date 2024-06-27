@@ -1,11 +1,8 @@
 import { FooterProps } from './Footer.types';
-import Image from 'next/image';
 import React from 'react';
-import { useThemeContext } from '../../contexts/Theme/ThemeContext';
+import Github from '../Icons/github';
 
 const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
-  const { dark } = useThemeContext();
-
   if (!i18n || !i18n.powered) {
     return null;
   }
@@ -20,12 +17,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
       >
         {i18n.powered}
         <div className="mx-2">
-          <Image
-            src={dark ? '/GitHub-Mark-Light-32px.png' : '/GitHub-Mark-32px.png'}
-            alt="Github Logo"
-            width={32}
-            height={32}
-          />
+          <Github />
         </div>
       </a>
     </footer>

@@ -30,12 +30,12 @@ describe('Main', () => {
 
   it('shows artist search for logged in user', async () => {
     nockRecommendedArtists.success();
-    const { findByText } = await renderWithAct(
+    const { findByRole } = await renderWithAct(
       <UserProvider user={{ user: 'john.doe' }}>
         <Main {...props} />
       </UserProvider>,
     );
 
-    expect(await findByText('Search')).toBeTruthy();
+    expect(await findByRole('textbox')).toBeTruthy();
   });
 });

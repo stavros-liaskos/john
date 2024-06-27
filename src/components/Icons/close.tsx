@@ -1,17 +1,18 @@
 import React from 'react';
 
-const Moon: React.FunctionComponent = () => (
+const Close: React.FunctionComponent = () => (
   <svg
     fill="none"
     stroke="currentColor"
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="1.5"
-    className="h-8 w-8 text-gh-dark"
+    className="h-8 w-8 text-gh-dark dark:text-slate-300"
     viewBox="0 0 24 24"
   >
-    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+    <path d="M18 6L6 18"></path>
+    <path d="M6 6L18 18"></path>
   </svg>
 );
 
-export default Moon;
+export default Close;
