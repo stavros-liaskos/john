@@ -3,22 +3,36 @@ import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import Main from './Main';
 import props from './Main.data';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { nockAuth, nockFollowedArtists, nockRecommendedArtists } from '../../mocks/mockApi';
+import { mswAuth, mswFollowedArtists, mswRecommendedArtists } from '../../mocks/mockApi';
+import { setupServer } from 'msw/node';
 
 describe('Main', () => {
+  const server = setupServer();
+
+  beforeAll(() => {
+    server.listen();
+    server.listen({
+      onUnhandledRequest: 'error',
+    });
+  });
+  afterEach(() => {
+    jest.restoreAllMocks();
+    server.resetHandlers();
+  });
+  afterAll(() => server.close());
+
   beforeEach(() => {
     beforeEachTest();
-    nockAuth.success();
-    nockFollowedArtists.success(2);
+    server.use(mswFollowedArtists.success(2));
   });
 
   it('renders without data without crashing', async () => {
-    // @ts-ignore
+    server.use(mswAuth.success());
     await renderWithAct(<Main />);
   });
 
   it('shows registration button', async () => {
-    nockAuth.success(); // TODO requires two calls for auth. Is it a rerender or expected? Fix
+    server.use(mswAuth.fail());
     const { findAllByText } = await renderWithAct(
       <UserProvider>
         <Main {...props} />
@@ -29,13 +43,14 @@ describe('Main', () => {
   });
 
   it('shows artist search for logged in user', async () => {
-    nockRecommendedArtists.success();
-    const { findByRole } = await renderWithAct(
+    server.use(mswAuth.success(), mswRecommendedArtists.success());
+
+    const { findAllByRole } = await renderWithAct(
       <UserProvider user={{ user: 'john.doe' }}>
         <Main {...props} />
       </UserProvider>,
     );
 
-    expect(await findByRole('textbox')).toBeTruthy();
+    expect(await findAllByRole('textbox')).toHaveLength(2); // Search, Filter (Recommendations)
   });
 });

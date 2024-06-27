@@ -2,57 +2,47 @@ import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList, { filterArtists } from './FollowedArtistList';
 import { followedArtistListI18n } from './FollowedArtistList.data';
-import { beforeEachTest, render, renderWithAct } from '../../utils/test-utils';
+import { render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../types/schema';
-import { nockAuth, nockFollowedArtists, nockUnfollow } from '../../mocks/mockApi';
+import { mswAuth, mswFollowedArtists, mswUnfollow } from '../../mocks/mockApi';
+import { setupServer } from 'msw/node';
 
 describe('FollowedArtistList', () => {
-  let originFetch: {
-    (input: RequestInfo | URL, init?: RequestInit | undefined): Promise<Response>;
-  };
-  beforeEach(() => {
-    originFetch = global.fetch;
-
-    beforeEachTest();
+  const server = setupServer();
+  beforeAll(() => {
+    server.listen();
+    server.listen({
+      onUnhandledRequest: 'error',
+    });
   });
-
-  afterEach(() => {
-    global.fetch = originFetch;
-    jest.restoreAllMocks();
-  });
+  afterEach(() => server.resetHandlers());
+  afterAll(() => server.close());
 
   it('renders artists with "unfollow" btn', async () => {
-    const fakeResponse = followedArtists;
-    const mRes = { json: jest.fn().mockResolvedValueOnce(fakeResponse) };
-    const mockedFetch = jest.fn().mockResolvedValueOnce(mRes);
-    global.fetch = mockedFetch;
-
+    server.use(mswFollowedArtists.success(), mswAuth.success());
+    const fetchSpy = jest.spyOn(window, 'fetch');
     const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
     const buttons = await component.findAllByText(followedArtistListI18n.artistList.btnTxt);
 
     expect(buttons).toHaveLength(2);
-    // expect(mockedFetch).toHaveBeenCalledTimes(1); // TODO fix
-    expect(mRes.json).toHaveBeenCalledTimes(1);
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
   });
 
   it('unfollows artist on btn click', async () => {
-    nockAuth.success();
-    nockFollowedArtists.success(2);
+    server.use(mswAuth.success(), mswFollowedArtists.success(2), mswUnfollow.success());
     const { findAllByText } = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
 
     let buttons = await findAllByText(followedArtistListI18n.artistList.btnTxt);
     expect(buttons).toHaveLength(2);
 
-    nockUnfollow.success();
     await act(async () => {
       fireEvent.click(buttons[0]);
     });
   });
 
   it('matches snapshot', async () => {
-    nockAuth.success();
-    nockFollowedArtists.success(2);
+    server.use(mswAuth.success(), mswFollowedArtists.success(2));
 
     const component = await renderWithAct(<FollowedArtistList i18n={followedArtistListI18n} />);
     let buttons = await component.findAllByText(followedArtistListI18n.artistList.btnTxt);

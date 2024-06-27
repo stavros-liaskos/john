@@ -5,7 +5,6 @@ import artistsList from '../../../../mocks/fixtures/responses/followed-artists.j
 
 describe('List', () => {
   it('renders without data without crashing', () => {
-    // @ts-ignore
     render(<List />);
   });
 

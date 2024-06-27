@@ -4,7 +4,6 @@ import Button from './Button';
 
 describe('Button', () => {
   it('renders without data without crashing', () => {
-    // @ts-ignore
     render(<Button />);
   });
 

@@ -1,17 +1,26 @@
 import { useArtistsListContext } from './ArtistsListContext';
-import { cleanup } from '@testing-library/react';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
-import { nockAuth, nockFollowedArtists } from '../../mocks/mockApi';
+import { mswAuth, mswFollowedArtists } from '../../mocks/mockApi';
+import { setupServer } from 'msw/node';
 
 describe('ArtistsListContext', () => {
+  const server = setupServer();
+
+  beforeAll(() => {
+    server.listen();
+    server.listen({
+      onUnhandledRequest: 'error',
+    });
+  });
+  afterEach(() => server.resetHandlers());
+  afterAll(() => server.close());
+
   beforeEach(() => {
-    nockAuth.success();
     beforeEachTest();
   });
 
   afterEach(() => {
     jest.restoreAllMocks();
-    cleanup();
   });
 
   const ArtistList = () => {
@@ -27,7 +36,7 @@ describe('ArtistsListContext', () => {
   };
 
   it('gets/sets followed artists', async () => {
-    nockFollowedArtists.success(2);
+    server.use(mswFollowedArtists.success(2), mswAuth.success());
     const { findAllByText } = await renderWithAct(<ArtistList />);
 
     const artists = await findAllByText(/Artist/i);
