@@ -5,7 +5,7 @@ module.exports = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'ts'],
   async rewrites() {
-    return createRewritePaths(['/me/:path*', '/artist/:path*']);
+    return createRewritePaths(['/me/:path*', '/artist/:path*', '/artists/:path*', '/auth/:path*']);
   },
   env: {
     BE_BASE_URL: process.env.BE_BASE_URL,

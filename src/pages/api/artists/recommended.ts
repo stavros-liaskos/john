@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import followedArtists from '../../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../../types/schema';
 
-// TODO 404 for some reason
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<components['schemas']['FollowedArtistsResponse']>,
