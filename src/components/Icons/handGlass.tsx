@@ -4,7 +4,7 @@ const HandGlass: React.FunctionComponent = () => (
   <svg
     fill="none"
     stroke="currentColor"
-    className="h-8 w-8 text-gh-dark dark:text-slate-300"
+    className="h-8 w-8 icon-colour"
     viewBox="0 0 24 24"
     role="img"
   >

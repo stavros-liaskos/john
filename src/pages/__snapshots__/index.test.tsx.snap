@@ -70,12 +70,12 @@ exports[`Home renders a heading 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Powered by  
+          Powered by
           <div
             class="mx-2"
           >
             <svg
-              class="h-8 w-8 text-gh-dark dark:text-slate-300"
+              class="h-8 w-8 icon-colour"
               fill="none"
               height="24"
               stroke="currentColor"
