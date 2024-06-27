@@ -3,9 +3,9 @@ import React from 'react';
 
 const Scrapers = () => {
   return (
-    <div className="flex lg:justify-center items-center mb-2 border-b-2 rr-border w-full">
-      <ScrapeButton buttonText={'Connect Spotify'} musicService={'Spotify'} iconName={'Spotify'} />
-      <ScrapeButton buttonText={'Connect LastFm'} musicService={'LastFm'} iconName={'LastFm'} />
+    <div className="flex lg:justify-center gap-2 mb-2 w-full">
+      <ScrapeButton buttonText={'Connect'} musicService={'Spotify'} iconName={'Spotify'} />
+      <ScrapeButton buttonText={'Connect'} musicService={'LastFm'} iconName={'LastFm'} />
     </div>
   );
 };

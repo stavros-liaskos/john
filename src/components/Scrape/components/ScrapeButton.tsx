@@ -24,8 +24,13 @@ const ScrapeButton = ({
 
   return (
     <div className="flex justify-center items-center mb-2 w-full">
-      <MusicServiceIcon width={ICON_SIZE} height={ICON_SIZE} />
-      <Button i18n={buttonText} handleClick={() => handleScrape(musicService)} />
+      <Button
+        className="flex justify-between py-2 px-3 w-full md:w-48"
+        i18n={buttonText}
+        handleClick={() => handleScrape(musicService)}
+      >
+        <MusicServiceIcon width={ICON_SIZE} height={ICON_SIZE} />
+      </Button>
     </div>
   );
 };
