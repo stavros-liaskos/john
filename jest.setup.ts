@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import 'jest-localstorage-mock';
 
-import './src/mocks/matchMedia.ts'; // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
+import './src/mocks/matchMedia'; // https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
 import 'whatwg-fetch'; // https://github.com/jestjs/jest/issues/13834#issuecomment-1407375787
 import nock from 'nock';
 
