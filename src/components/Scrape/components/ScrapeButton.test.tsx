@@ -4,12 +4,22 @@ import IconTypes from '../../Icons/iconTypes';
 import Spotify from '../../Icons/spotify';
 import React from 'react';
 import LastFm from '../../Icons/lastfm';
-import { nockScrape } from '../../../mocks/mockApi';
+import { mswScrape } from '../../../mocks/mockApi';
+import { setupServer } from 'msw/node';
 
 describe('Scrape', () => {
+  const server = setupServer();
+  beforeAll(() => {
+    server.listen();
+    server.listen({
+      onUnhandledRequest: 'error',
+    });
+  });
+  afterEach(() => server.resetHandlers());
+  afterAll(() => server.close());
+
   describe('component', () => {
     it('renders without data without crashing', () => {
-      // @ts-ignore
       render(<ScrapeButton />);
     });
 
@@ -42,14 +52,14 @@ describe('Scrape', () => {
   describe('handleScrape', () => {
     const consoleLogSpy = jest.spyOn(global.console, 'log');
     it('triggers success notification', async () => {
-      nockScrape.success();
+      server.use(mswScrape.success());
       await handleScrape('Spotify');
 
       expect(consoleLogSpy).toHaveBeenCalledWith('Scraped successfully. Show notification');
     });
 
     it('triggers error notification', async () => {
-      nockScrape.fail();
+      server.use(mswScrape.fail());
       await handleScrape('Spotify');
 
       expect(consoleLogSpy).toHaveBeenCalledWith('Scrape failed. Show notification');

@@ -4,7 +4,6 @@ import { formInputI18n } from './FormInput.data';
 
 describe('FormInput', () => {
   it('renders without data without crashing', () => {
-    // @ts-ignore
     render(<FormInput />);
   });
 

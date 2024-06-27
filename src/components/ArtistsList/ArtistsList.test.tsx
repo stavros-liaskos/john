@@ -5,7 +5,6 @@ import artistsList from '../../mocks/fixtures/responses/followed-artists.json';
 
 describe('ArtistsList', () => {
   it('renders without data without crashing', () => {
-    // @ts-ignore
     render(<ArtistsList />);
   });
 
@@ -13,7 +12,6 @@ describe('ArtistsList', () => {
     'shows text when no artist is available',
     ({ artistsList }) => {
       const { getByText } = render(
-        // @ts-ignore
         <ArtistsList i18n={artistsListI18n} artistsList={artistsList} onButtonClick={jest.fn} artistLoading={0} />,
       );
 

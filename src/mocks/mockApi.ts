@@ -1,40 +1,66 @@
-import nock from 'nock';
 import followedArtists from './fixtures/responses/followed-artists.json';
 import { components } from '../types/schema';
+import { http, HttpResponse } from 'msw';
 
-export const nockAuth = {
-  success: () => nockAPI().get(`/api/auth/me`).reply(200),
+export const mswAuth = {
+  success: () =>
+    http.get('/api/auth/me', () => {
+      return HttpResponse.json('OK', { status: 200 });
+    }),
+  fail: () =>
+    http.get('/api/auth/me', () => {
+      return HttpResponse.error();
+    }),
 };
 
-export const nockFollowedArtists = {
+export const mswFollowedArtists = {
   success: (artistQuantity: number = 2) => {
     followedArtists.rows.splice(1, 2 - artistQuantity);
-    nockAPI().get('/me/followed-artists').reply(200, followedArtists);
+    return http.get('/me/followed-artists', () => {
+      return HttpResponse.json(followedArtists, { status: 200 });
+    });
   },
 };
 
-export const nockRecommendedArtists = {
-  success: () => nockAPI().get('/artists/recommended').query({ page: 0, size: 10 }).reply(200, followedArtists),
+export const mswRecommendedArtists = {
+  success: () =>
+    http.get('/artists/recommended', () => {
+      return HttpResponse.json(followedArtists, { status: 200 });
+    }),
 };
 
-export const nockScrape = {
-  success: () => nockAPI().get('/scrape-taste/spotify').reply(200, {}),
-  fail: () => nockAPI().get('/scrape-taste/spotify').reply(200),
+export const mswScrape = {
+  success: () =>
+    http.get('/scrape-taste/spotify', () => {
+      return HttpResponse.json({}, { status: 200 });
+    }),
+  fail: () =>
+    http.get('/scrape-taste/spotify', () => {
+      return HttpResponse.error();
+    }),
 };
 
-export const nockFollow = {
-  success: () => nockAPI().post('/me/follow').reply(200),
+export const mswFollow = {
+  success: () =>
+    http.post('/me/follow', () => {
+      return HttpResponse.json('OK', { status: 200 });
+    }),
+  fail: () =>
+    http.post('/me/follow', () => {
+      return HttpResponse.error();
+    }),
 };
 
-export const nockUnfollow = {
-  success: () => nockAPI().delete('/me/unfollow').reply(200),
+export const mswUnfollow = {
+  success: () =>
+    http.delete('/me/unfollow', () => {
+      return HttpResponse.json('OK', { status: 200 });
+    }),
 };
 
-export const nockSearch = {
-  success: (res: components['schemas']['ArtistSearchResponse'], searchQuery: string) =>
-    nockAPI().get('/artist/search').query({ pattern: searchQuery }).reply(200, res),
+export const mswSearch = {
+  success: (res: components['schemas']['ArtistSearchResponse']) =>
+    http.get('/artist/search', () => {
+      return HttpResponse.json(res, { status: 200 });
+    }),
 };
-
-function nockAPI() {
-  return nock(process.env.BE_BASE_URL!);
-}

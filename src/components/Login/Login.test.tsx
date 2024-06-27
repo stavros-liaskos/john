@@ -14,7 +14,6 @@ const props = {
 
 describe('Login', () => {
   it('renders without data without crashing', () => {
-    // @ts-ignore
     render(<Login />);
   });
 
