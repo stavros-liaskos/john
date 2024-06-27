@@ -14,4 +14,5 @@ global.afterEach(() => {
     console.error('pending mocks: %j', nock.pendingMocks());
   }
   expect(nock.isDone()).toBeTruthy();
+  nock.cleanAll();
 });

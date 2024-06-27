@@ -52,7 +52,7 @@ export function fetchRecommendations(
   })
     .then(res => res.json())
     .then((result: components['schemas']['FollowedArtistsResponse']) => {
-      result?.rows && setRecommendedArtists(result?.rows);
+      result?.rows && setRecommendedArtists(result.rows);
     })
     .catch(console.error);
 }
