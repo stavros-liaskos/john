@@ -10,7 +10,7 @@ const Github: React.FunctionComponent<IconTypes> = ({ width = 24, height = 24, c
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="1.5"
-    className="h-8 w-8 text-gh-dark dark:text-slate-300"
+    className="h-8 w-8 icon-colour"
     viewBox="0 0 24 24"
   >
     <path stroke="none" d="M0 0h24v24H0z"></path>

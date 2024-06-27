@@ -23,4 +23,7 @@
   .btn-small {
     @apply py-1 px-3;
   }
+  .icon-colour {
+    @apply text-gh-dark dark:text-slate-300;
+  }
 }

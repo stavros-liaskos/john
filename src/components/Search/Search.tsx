@@ -19,7 +19,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     return null;
   }
   return (
-    <div className="relative flex lg:justify-center items-center mb-2 basis-16 md:basis-20 border-b-2 rr-border w-full">
+    <div className="relative flex lg:justify-center items-center mb-2 md:mb-5 basis-16 md:basis-20 border-b-2 rr-border w-full">
       <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
         {results && (
           <button onClick={() => setResults(null)}>
@@ -32,7 +32,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
       </FormInput>
 
       {results && (
-        <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 border-gh-dark top-14 md:top-16 w-full z-10">
+        <div className="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 rr-border top-14 md:top-16 w-full z-10">
           <ArtistsList
             i18n={i18n.searchList}
             artistsList={results}
