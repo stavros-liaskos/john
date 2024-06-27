@@ -6,6 +6,8 @@ import FormInput from '../FormInput/FormInput';
 import ArtistsList from '../ArtistsList/ArtistsList';
 import { followArtist } from '../../utils/followArtist';
 import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
+import Close from '../Icons/close';
+import HandGlass from '../Icons/handGlass';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const { getFollowedArtists } = useArtistsListContext();
@@ -13,13 +15,20 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
 
-  if (!i18n?.button || !i18n?.label) {
+  if (!i18n?.label) {
     return null;
   }
   return (
     <div className="relative flex lg:justify-center items-center mb-2 basis-16 md:basis-20 border-b-2 rr-border w-full">
       <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
-        <Button i18n={i18n.button} className="btn-large" type="submit" disabled={disabled} loading={disabled} />
+        {results && (
+          <button onClick={() => setResults(null)}>
+            <Close />
+          </button>
+        )}
+        <Button className="btn-large" type="submit" disabled={disabled} loading={disabled}>
+          <HandGlass />
+        </Button>
       </FormInput>
 
       {results && (

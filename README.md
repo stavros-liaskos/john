@@ -99,6 +99,10 @@ To generate a ts schema:
 $ npx openapi-typescript openapi.yml --output types/schema.ts
 ```
 
+## Icons
+
+Icons are generated using [Tailwind Toolbox](https://www.tailwindtoolbox.com/icons) and transformed with [svg2gsx](https://svg2jsx.com/).
+
 ## Supported browsers
 
 List supported browsers:

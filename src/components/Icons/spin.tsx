@@ -1,7 +1,6 @@
 import React from 'react';
-import IconTypes from './iconTypes';
 
-const Spin: React.FunctionComponent<IconTypes> = () => (
+const Spin: React.FunctionComponent = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
