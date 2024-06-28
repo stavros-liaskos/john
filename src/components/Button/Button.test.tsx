@@ -16,10 +16,13 @@ describe('Button', () => {
     expect(svg).not.toBeInTheDocument();
   });
 
-  it('renders a disabled button', () => {
-    const { getByRole } = render(<Button i18n="No Action" disabled={true} />);
+  it('disabled button does not call cta on click', () => {
+    const clickHandler = jest.fn();
+
+    const { getByRole } = render(<Button i18n="No Action" disabled={true} handleClick={clickHandler} />);
     const btn = getByRole('button');
 
+    expect(clickHandler).not.toHaveBeenCalled();
     expect(btn).toHaveAttribute('disabled');
   });
 

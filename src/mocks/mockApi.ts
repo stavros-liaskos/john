@@ -1,5 +1,6 @@
 import followedArtists from './fixtures/responses/followed-artists.json';
 import auth from './fixtures/responses/auth.json';
+import raccoonUser from './fixtures/responses/raccoon-user.json';
 import { components } from '../types/schema';
 import { http, HttpResponse } from 'msw';
 
@@ -63,5 +64,12 @@ export const mswSearch = {
   success: (res: components['schemas']['ArtistSearchResponse']) =>
     http.get('/artist/search', () => {
       return HttpResponse.json(res, { status: 200 });
+    }),
+};
+
+export const mswRaccoonUser = {
+  success: () =>
+    http.get('/raccoon-user', () => {
+      return HttpResponse.json(raccoonUser, { status: 200 });
     }),
 };

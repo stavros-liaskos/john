@@ -11,6 +11,9 @@
   .rr-text {
     @apply dark:text-slate-300;
   }
+  .rr-text-confirm {
+    @apply text-green-700 dark:text-green-400 !important;
+  }
   .h3 {
     @apply rr-text mb-4;
   }

@@ -26,9 +26,11 @@ describe('Scrape', () => {
     it('scrape button exists', async () => {
       const btnName = 'Scrape Spotify';
       const { findByRole } = render(
-        <ScrapeButton iconName={'Spotify'} buttonText={btnName} musicService={'Spotify'} />,
+        <ScrapeButton iconName={'Spotify'} buttonText={btnName} musicService={'Spotify'} connected={true} />,
       );
       const scrapeBtn = await findByRole('button');
+
+      expect(scrapeBtn).toHaveAttribute('disabled');
       expect(scrapeBtn).toHaveTextContent(btnName);
     });
 

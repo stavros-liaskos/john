@@ -1,0 +1,11 @@
+[
+  {
+    "createDate": "2024-06-23T10:05:44.56098",
+    "email": "john.doe@gmail.com",
+    "id": 2,
+    "lastLastFmScrape": "2023-06-23T10:05:44.560601",
+    "lastSpotifyScrape": "2023-06-23T10:05:44.560588",
+    "modifyDate": "2024-06-24T19:38:53.817535",
+    "spotifyEnabled": true
+  }
+]
