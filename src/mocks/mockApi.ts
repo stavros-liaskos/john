@@ -1,11 +1,12 @@
 import followedArtists from './fixtures/responses/followed-artists.json';
+import auth from './fixtures/responses/auth.json';
 import { components } from '../types/schema';
 import { http, HttpResponse } from 'msw';
 
 export const mswAuth = {
   success: () =>
     http.get('/api/auth/me', () => {
-      return HttpResponse.json('OK', { status: 200 });
+      return HttpResponse.json(auth, { status: 200 });
     }),
   fail: () =>
     http.get('/api/auth/me', () => {

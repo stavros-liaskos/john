@@ -15,9 +15,6 @@ export async function followArtist(artist: components['schemas']['SearchResultAr
       console.error('Error:', JSON.stringify(error));
     })
     .finally(() => {
-      // TODO remove timeout after development
-      setTimeout(() => {
-        cb();
-      }, 1000);
+      cb();
     });
 }
