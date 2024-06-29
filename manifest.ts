@@ -6,8 +6,9 @@ export default function manifest(): MetadataRoute.Manifest {
     name: metaI18n.title,
     short_name: metaI18n.shortName,
     description: metaI18n.description,
-    start_url: metaI18n.startUrl,
-    display: 'standalone',
+    start_url: "https://www.releaseraccoon.online",
+    display: 'fullscreen',
+    prefer_related_applications: false,
     background_color: '#000000',
     theme_color: '#000000',
     icons: [
