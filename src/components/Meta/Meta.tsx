@@ -9,6 +9,8 @@ const Meta: React.FunctionComponent = () => {
       <meta name="description" content={metaI18n.description} />
       <meta name="theme-color" content="#000000" />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="manifest" crossOrigin="use-credentials" href="/manifest.json" /> {/* TODO review when cors issue fixed */}
+
 
       {/* next-pwa START */}
       <meta name="application-name" content={metaI18n.title} />
