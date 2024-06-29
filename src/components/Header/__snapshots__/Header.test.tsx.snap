@@ -6,6 +6,7 @@ exports[`Header shows Logout btn when user is logged in 1`] = `
     class="flex justify-between basis-14 rr-border border-b-2"
   >
     <button
+      aria-label="toggleDarkMode"
       class="m-3"
       data-testid="moon"
     >

@@ -145,6 +145,7 @@ exports[`Search should handle the search action of the user 1`] = `
             class="flex basis-2 mx-4 md:mx-8"
           >
             <a
+              aria-label="Sam Gendel"
               class="inline"
               href="https://www.last.fm/music/Sam+Gendel"
             >
@@ -185,6 +186,7 @@ exports[`Search should handle the search action of the user 1`] = `
             class="flex basis-2 mx-4 md:mx-8"
           >
             <a
+              aria-label="Jaakko Eino Kalevi"
               class="inline"
               href="https://www.last.fm/music/Jaakko+Eino+Kalevi"
             >

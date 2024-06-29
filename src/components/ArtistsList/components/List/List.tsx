@@ -21,12 +21,12 @@ const List = ({ i18n, artistsList, onButtonClick, artistLoading }: ArtistsListPr
           <p className="grow text-clip rr-text">{artist.name}</p>
           <div className="flex basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
-              <a className="inline" href={artist.lastfmUri}>
+              <a className="inline" href={artist.lastfmUri} aria-label={artist.name}>
                 <LastFm width={ICON_SIZE} />
               </a>
             )}
             {artist.spotifyUri && (
-              <a className="inline" href={artist.spotifyUri}>
+              <a className="inline" href={artist.spotifyUri} aria-label={artist.name}>
                 <Spotify width={ICON_SIZE} />
               </a>
             )}

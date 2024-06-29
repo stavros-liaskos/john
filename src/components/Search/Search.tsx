@@ -26,7 +26,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
             <Close />
           </button>
         )}
-        <Button className="btn-large" type="submit" disabled={disabled} loading={disabled}>
+        <Button className="btn-large" type="submit" disabled={disabled} loading={disabled} aria-label="search">
           <HandGlass />
         </Button>
       </FormInput>
