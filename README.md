@@ -117,6 +117,11 @@ mv apple-* manifest-icon-* favicon-196.png public/app_icons/
 Then follow the instructions of the cli.  
 Read more about `pwa-asset-generator` [here](https://www.npmjs.com/package/pwa-asset-generator).
 
+## i18n
+
+At the moment only one language is supported.  
+All translations can be found [here](./src/i18n.ts)
+
 ## Supported browsers
 
 List supported browsers:

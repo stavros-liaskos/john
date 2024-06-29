@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { components } from '../../types/schema';
 import Endpoints from '../../types/endpoints';
+import { scrapersI18n } from '../../i18n';
 
 const Scrapers = () => {
   const { user } = useUser();
@@ -28,13 +29,13 @@ const Scrapers = () => {
   return (
     <div className="flex lg:justify-center gap-2 mb-2 w-full">
       <ScrapeButton
-        buttonText={scrapers.spotify ? 'Connected' : 'Connect'}
+        buttonText={scrapers.spotify ? scrapersI18n.connected : scrapersI18n.connect}
         musicService={'Spotify'}
         iconName={'Spotify'}
         connected={scrapers.spotify}
       />
       <ScrapeButton
-        buttonText={scrapers.lastfm ? 'Connected' : 'Connect'}
+        buttonText={scrapers.lastfm ? scrapersI18n.connected : scrapersI18n.connect}
         musicService={'LastFm'}
         iconName={'LastFm'}
         connected={scrapers.lastfm}

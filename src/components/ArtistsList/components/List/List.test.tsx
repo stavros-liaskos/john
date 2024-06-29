@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import List from './List';
-import { artistsListI18n } from '../../ArtistsList.data';
 import artistsList from '../../../../mocks/fixtures/responses/followed-artists.json';
+import { artistsListI18n } from '../../../../i18n';
 
 describe('List', () => {
   it('renders without data without crashing', () => {

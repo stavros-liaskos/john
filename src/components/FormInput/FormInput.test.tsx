@@ -1,6 +1,6 @@
 import { act, fireEvent, render } from '@testing-library/react';
 import FormInput from './FormInput';
-import { formInputI18n } from './FormInput.data';
+import { formInputI18n } from '../../i18n';
 
 describe('FormInput', () => {
   it('renders without data without crashing', () => {

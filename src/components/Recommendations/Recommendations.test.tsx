@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import Recommendations from './Recommendations';
-import { recommendationsI18n } from './Recommendations.data';
 import { renderWithAct } from '../../utils/test-utils';
 import { setupServer } from 'msw/node';
 import { mswAuth, mswFollowedArtists, mswRecommendedArtists } from '../../mocks/mockApi';
+import { recommendationsI18n } from '../../i18n';
 
 describe('Recommendations', () => {
   const server = setupServer();
