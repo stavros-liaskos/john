@@ -1,12 +1,12 @@
 import React from 'react';
 import { fireEvent, act } from '@testing-library/react';
 import Search from './Search';
-import { searchI18n } from './Search.data';
 import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
 import artistSearch from '../../mocks/fixtures/responses/artist-search.json';
 import { mswAuth, mswFollowedArtists, mswSearch } from '../../mocks/mockApi';
 import { components } from '../../types/schema';
 import { setupServer } from 'msw/node';
+import { searchI18n } from '../../i18n';
 
 describe('Search', () => {
   const server = setupServer();

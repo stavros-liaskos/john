@@ -1,12 +1,12 @@
 import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList, { filterArtists } from './FollowedArtistList';
-import { followedArtistListI18n } from './FollowedArtistList.data';
 import { render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../types/schema';
 import { mswAuth, mswFollowedArtists, mswUnfollow } from '../../mocks/mockApi';
 import { setupServer } from 'msw/node';
+import { followedArtistListI18n } from '../../i18n';
 
 describe('FollowedArtistList', () => {
   const server = setupServer();

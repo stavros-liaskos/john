@@ -1,7 +1,7 @@
 import React from 'react';
 import { getByText, render } from '@testing-library/react';
 import Footer from './Footer';
-import { footerI18n } from './Footer.data';
+import { footerI18n } from '../../i18n';
 
 describe('Footer', () => {
   it('renders without data without crashing', () => {

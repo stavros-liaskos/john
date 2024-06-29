@@ -9,10 +9,8 @@ const Meta: React.FunctionComponent = () => {
       <meta name="description" content={metaI18n.description} />
       <meta name="theme-color" content="#000000" />
       <link rel="icon" href="/favicon.ico" />
-      <link rel="manifest" crossOrigin="use-credentials" href="/manifest.json" /> {/* TODO review when cors issue fixed */}
-
-
-      {/* next-pwa START */}
+      {/* TODO review when cors issue fixed */}
+      <link rel="manifest" crossOrigin="use-credentials" href="/manifest.json" /> {/* next-pwa START */}
       <meta name="application-name" content={metaI18n.title} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -24,14 +22,12 @@ const Meta: React.FunctionComponent = () => {
       <meta name="msapplication-TileColor" content="#2B5797" />
       <meta name="msapplication-tap-highlight" content="no" />
       <meta name="theme-color" content="#000000" />
-
       <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
       <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=optional" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={metaI18n.url} />
       <meta name="twitter:title" content={metaI18n.title} />
@@ -49,14 +45,10 @@ const Meta: React.FunctionComponent = () => {
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
       />
       {/* next-pwa END */}
-
       {/* pwa-asset-generated START */}
       <link rel="icon" type="image/png" sizes="196x196" href="./app_icons/favicon-196.png" />
-
       <link rel="apple-touch-icon" href="./app_icons/apple-icon-180.png" />
-
       <meta name="apple-mobile-web-app-capable" content="yes" />
-
       <link
         rel="apple-touch-startup-image"
         href="./app_icons/apple-splash-2048-2732.jpg"

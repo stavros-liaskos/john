@@ -2,15 +2,12 @@ import { MainProps } from './Main.types';
 import FollowedArtistList from '../FollowedArtistList/FollowedArtistList';
 import React, { Suspense } from 'react';
 import Search from '../Search/Search';
-import { searchI18n } from '../Search/Search.data';
-import { followedArtistListI18n } from '../FollowedArtistList/FollowedArtistList.data';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Login from '../Login/Login';
 import Scrapers from '../Scrape/Scrapers';
 import Recommendations from '../Recommendations/Recommendations';
-import { recommendationsI18n } from '../Recommendations/Recommendations.data';
-import { loginI18n } from '../Login/Login.data';
 import Loading from '../Loading/Loading';
+import { searchI18n, followedArtistListI18n, loginI18n, recommendationsI18n } from '../../i18n';
 
 const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   const { user } = useUser();
