@@ -1,18 +1,17 @@
 import { components } from '../types/schema';
 
 interface IResources {
-  cacheMap: Record<string, unknown>;
   fetch: (url: string) => void;
 }
 
 class Resources implements IResources {
-  private cacheMap;
+  private cacheMap: Map<string, unknown>;
 
   constructor() {
     this.cacheMap = new Map();
   }
 
-  fetch(url) {
+  fetch(url: string) {
     if (this.cacheMap.has(url)) {
       return this.cacheMap.get(url);
     }
