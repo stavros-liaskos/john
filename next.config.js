@@ -1,7 +1,9 @@
-const path = require('path');
+const withPWA = require('next-pwa')({
+  dest: 'public',
+});
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+module.exports = withPWA({
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'ts'],
   async rewrites() {
@@ -33,7 +35,7 @@ module.exports = {
 
     return config;
   },
-};
+});
 
 function createRewritePaths(paths) {
   return paths.map(path => ({ source: path, destination: `/api${path}` }));

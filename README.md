@@ -101,7 +101,21 @@ $ npx openapi-typescript openapi.yml --output types/schema.ts
 
 ## Icons
 
-Icons are generated using [Tailwind Toolbox](https://www.tailwindtoolbox.com/icons) and transformed with [svg2gsx](https://svg2jsx.com/).
+#### In-app icons
+
+Icons used in the application are generated using [Tailwind Toolbox](https://www.tailwindtoolbox.com/icons) and transformed with [svg2gsx](https://svg2jsx.com/).
+
+#### App Icons
+
+Meta data, app and `manifest.json` icons are generated using:
+
+```shell
+npx pwa-asset-generator raccoon_main.jpg -v './app_icons' -f -m ./public/manifest.json
+mv apple-* manifest-icon-* favicon-196.png public/app_icons/
+```
+
+Then follow the instructions of the cli.  
+Read more about `pwa-asset-generator` [here](https://www.npmjs.com/package/pwa-asset-generator).
 
 ## Supported browsers
 
