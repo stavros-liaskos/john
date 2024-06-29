@@ -11,10 +11,12 @@ const ScrapeButton = ({
   buttonText,
   musicService,
   iconName,
+  connected,
 }: {
   buttonText: string;
   musicService: MusicServiceType;
   iconName: MusicServiceType;
+  connected: boolean;
 }) => {
   if (!musicService || !buttonText || !iconName) {
     return null;
@@ -25,9 +27,10 @@ const ScrapeButton = ({
   return (
     <div className="flex justify-center items-center mb-2 w-full">
       <Button
-        className="flex justify-between py-2 px-3 w-full md:w-48"
+        className={`flex justify-between py-2 px-3 w-full md:w-48${connected ? ' !rr-text-confirm' : ''}`}
         i18n={buttonText}
         handleClick={() => handleScrape(musicService)}
+        disabled={connected}
       >
         <MusicServiceIcon width={ICON_SIZE} height={ICON_SIZE} />
       </Button>

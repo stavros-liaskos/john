@@ -13,8 +13,10 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   children,
 }) => {
   const handleClickCallback = useCallback(() => {
-    handleClickArg ? handleClick(handleClickArg) : handleClick();
-  }, [handleClick, handleClickArg]);
+    if (!disabled) {
+      handleClickArg ? handleClick(handleClickArg) : handleClick();
+    }
+  }, [handleClick, handleClickArg, disabled]);
 
   if (!i18n && !children) {
     return null;
