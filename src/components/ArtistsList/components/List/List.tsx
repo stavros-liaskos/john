@@ -22,12 +22,12 @@ const List = ({ i18n, artistsList, onButtonClick, artistLoading }: ArtistsListPr
           <div className="flex basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
               <a className="inline" href={artist.lastfmUri}>
-                <LastFm width={ICON_SIZE} height={ICON_SIZE} />
+                <LastFm width={ICON_SIZE} />
               </a>
             )}
             {artist.spotifyUri && (
               <a className="inline" href={artist.spotifyUri}>
-                <Spotify width={ICON_SIZE} height={ICON_SIZE} />
+                <Spotify width={ICON_SIZE} />
               </a>
             )}
           </div>

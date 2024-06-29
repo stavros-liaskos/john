@@ -6,7 +6,6 @@ import Button from '../../Button/Button';
 import Endpoints from '../../../types/endpoints';
 
 export type MusicServiceType = 'Spotify' | 'LastFm';
-const ICON_SIZE = 30;
 
 const ScrapeButton = ({
   buttonText,
@@ -33,7 +32,7 @@ const ScrapeButton = ({
         handleClick={() => handleScrape(musicService)}
         disabled={connected}
       >
-        <MusicServiceIcon width={ICON_SIZE} height={ICON_SIZE} />
+        <MusicServiceIcon width={30} />
       </Button>
     </div>
   );

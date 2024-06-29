@@ -45,16 +45,17 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   );
 
   async function handleSearch(inputValue: string) {
-    await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
-      method: 'GET',
-      credentials: 'include',
-    })
-      .then(res => res.json())
-      .then(result => {
-        getFollowedArtists();
-        return setResults(result.artists);
+    inputValue &&
+      (await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
+        method: 'GET',
+        credentials: 'include',
       })
-      .catch(console.error);
+        .then(res => res.json())
+        .then(result => {
+          getFollowedArtists();
+          return setResults(result.artists);
+        })
+        .catch(console.error));
   }
 
   async function handleFollow(artist: components['schemas']['SearchResultArtistDto']) {

@@ -1,5 +1,11 @@
+import Spin from '../Icons/spin';
+
 const Loading = () => {
-  return <h1 className="rr-text">🌀Loading...</h1>;
+  return (
+    <div className="m-6">
+      <Spin width={50} />
+    </div>
+  );
 };
 
 export default Loading;

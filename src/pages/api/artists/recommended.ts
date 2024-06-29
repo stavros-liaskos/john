@@ -9,5 +9,5 @@ export default async function handler(
 ) {
   withDelay(() => {
     res.status(200).json(followedArtists);
-  });
+  }, 5000);
 }
