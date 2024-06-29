@@ -6,5 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<components['schemas']['FollowedArtistsResponse']>,
 ) {
-  res.status(200).json(followedArtists);
+  setTimeout(() => {
+    res.status(200).json(followedArtists);
+  }, 2000);
 }

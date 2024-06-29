@@ -1,4 +1,4 @@
-import { render, waitForElementToBeRemoved } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Recommendations from './Recommendations';
 import { recommendationsI18n } from './Recommendations.data';
 import { renderWithAct } from '../../utils/test-utils';
@@ -24,7 +24,7 @@ describe('Recommendations', () => {
 
   it('renders title and artists', async () => {
     server.use(mswAuth.success(), mswFollowedArtists.success(), mswRecommendedArtists.success());
-    const { getByText, findAllByText } = render(<Recommendations i18n={recommendationsI18n} />);
+    const { getByText, findAllByText } = await renderWithAct(<Recommendations i18n={recommendationsI18n} />);
 
     expect(getByText(recommendationsI18n.title)).toBeInTheDocument();
 
@@ -34,8 +34,7 @@ describe('Recommendations', () => {
 
   it('matches snapshot', async () => {
     server.use(mswRecommendedArtists.success());
-    const { container, getByText } = render(<Recommendations i18n={recommendationsI18n} />);
-    await waitForElementToBeRemoved(getByText('There are no recommended artists for you :('));
+    const { container } = render(<Recommendations i18n={recommendationsI18n} />);
     expect(container).toMatchSnapshot();
   });
 });

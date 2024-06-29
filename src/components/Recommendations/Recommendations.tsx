@@ -1,7 +1,8 @@
 import ArtistsList, { ArtistsListI18n } from '../ArtistsList/ArtistsList';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { components } from '../../types/schema';
 import { followArtist } from '../../utils/followArtist';
+import resources from '../../utils/Resources';
 
 type RecommendationsI18n = {
   title: string;
@@ -10,12 +11,9 @@ type RecommendationsI18n = {
 
 const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const [recommendedArtists, setRecommendedArtists] = useState<components['schemas']['ArtistDto'][]>([]);
+  const url = `${process.env.BE_BASE_URL}/artists/recommended?page=0&size=10`;
 
-  useEffect(() => {
-    // TODO add Suspense for data fetching
-    fetchRecommendations(setRecommendedArtists);
-  }, []);
+  const recommendedArtists = resources.fetch(url);
 
   if (!i18n || !i18n.title) {
     return null;
@@ -26,7 +24,7 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
       <h3 className={'h3'}>{i18n.title}</h3>
       <ArtistsList
         i18n={i18n.artistList}
-        artistsList={recommendedArtists}
+        artistsList={recommendedArtists.rows}
         onButtonClick={handleFollow}
         artistLoading={artistLoading}
       />
@@ -43,18 +41,5 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   }
 };
 
-export function fetchRecommendations(
-  setRecommendedArtists: React.Dispatch<React.SetStateAction<components['schemas']['ArtistDto'][]>>,
-) {
-  fetch(`${process.env.BE_BASE_URL}/artists/recommended?page=0&size=10`, {
-    method: 'GET',
-    credentials: 'include',
-  })
-    .then(res => res.json())
-    .then((result: components['schemas']['FollowedArtistsResponse']) => {
-      result?.rows && setRecommendedArtists(result.rows);
-    })
-    .catch(console.error);
-}
-
+Recommendations.whyDidYouRender = true;
 export default Recommendations;
