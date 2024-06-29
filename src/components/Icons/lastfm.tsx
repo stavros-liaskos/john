@@ -1,8 +1,14 @@
 import React from 'react';
 import IconTypes from './iconTypes';
 
-const LastFm: React.FunctionComponent<IconTypes> = ({ width = 40, height = 40 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.195 112.195" width={width} height={height} role={'img'}>
+const LastFm: React.FunctionComponent<IconTypes> = ({ width = 40, height }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 112.195 112.195"
+    width={width}
+    height={height ?? width}
+    role={'img'}
+  >
     <path
       fill="#d31f27"
       d="M112.195 56.097c0 30.983-25.114 56.099-56.097 56.099C25.115 112.195 0 87.08 0 56.097 0 25.117 25.115 0 56.099 0c30.982 0 56.096 25.117 56.096 56.097z"

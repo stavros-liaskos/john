@@ -29,7 +29,11 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       disabled={disabled}
       type={type}
     >
-      {loading && <Spin />}
+      {loading && (
+        <span className="flex justify-center items-center -ml-1 mr-3 h-5 w-5">
+          <Spin width={20} />
+        </span>
+      )}
       {i18n}
       {children}
     </button>

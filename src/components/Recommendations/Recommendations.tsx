@@ -35,10 +35,10 @@ const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   async function handleFollow(artist: components['schemas']['SearchResultArtistDto']) {
     artist?.id && setArtistLoading(artist.id);
 
-    const finallyCb = () => {
+    const resetArtistLoadingSpinner = () => {
       artistLoading && setArtistLoading(0);
     };
-    await followArtist(artist, finallyCb);
+    await followArtist(artist, resetArtistLoadingSpinner);
   }
 };
 

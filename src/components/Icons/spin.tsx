@@ -1,10 +1,13 @@
 import React from 'react';
+import IconTypes from './iconTypes';
 
-const Spin: React.FunctionComponent = () => (
+const Spin: React.FunctionComponent<IconTypes> = ({ width = 15, height }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
-    className="animate-spin -ml-1 mr-3 h-5 w-5 text:black dark:text-white"
+    className="animate-spin text:black dark:text-white"
+    width={width}
+    height={height ?? width}
     viewBox="0 0 24 24"
     role="img"
   >
@@ -16,5 +19,4 @@ const Spin: React.FunctionComponent = () => (
     />
   </svg>
 );
-
 export default Spin;

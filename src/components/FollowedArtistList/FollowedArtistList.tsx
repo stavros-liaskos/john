@@ -5,10 +5,11 @@ import ArtistsList from '../ArtistsList/ArtistsList';
 import FormInput from '../FormInput/FormInput';
 import { components } from '../../types/schema';
 import Endpoints from '../../types/endpoints';
+import Loading from '../Loading/Loading';
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
-  const { followedArtistList, getFollowedArtists } = useArtistsListContext();
+  const { followedArtistList, loading, getFollowedArtists } = useArtistsListContext();
   const [filterInput, setFilterInput] = useState('');
 
   if (validateRequiredData(i18n, followedArtistList)) {
@@ -19,12 +20,16 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
     <div className="flex flex-col flex-1 flex-shrink-2 lg:justify-center items-center mb-2 border-b-2 rr-border w-full">
       <h3 className={'h3'}>{i18n.title}</h3>
       <FormInput handleAction={setFilterInput} i18n={i18n.formInput} actionEventTrigger={'onChange'} />
-      <ArtistsList
-        i18n={i18n.artistList}
-        artistsList={filterArtists(filterInput, followedArtistList)}
-        onButtonClick={artist => artist?.id && unfollowArtist(artist.id)}
-        artistLoading={artistLoading}
-      />
+      {loading ? (
+        <Loading />
+      ) : (
+        <ArtistsList
+          i18n={i18n.artistList}
+          artistsList={filterArtists(filterInput, followedArtistList)}
+          onButtonClick={artist => artist?.id && unfollowArtist(artist.id)}
+          artistLoading={artistLoading}
+        />
+      )}
     </div>
   );
 
