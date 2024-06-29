@@ -8,7 +8,7 @@ interface ThemeContextType {
 
 export const ThemeContext = createContext<ThemeContextType>({
   loaded: true,
-  setDark: () => {}, // TODO check default
+  setDark: () => {},
 });
 ThemeContext.displayName = 'ThemeContext';
 
