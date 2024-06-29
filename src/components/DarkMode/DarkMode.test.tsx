@@ -12,8 +12,7 @@ describe('DarkMode', () => {
     jest.restoreAllMocks();
   });
 
-  xit('shows Sun icon on dark mode', async () => {
-    // TODO fix this
+  it('shows Sun icon on dark mode', async () => {
     localStorage.setItem('theme', 'dark');
     const component = await renderWithAct(<DarkMode />);
     const { container } = component;
