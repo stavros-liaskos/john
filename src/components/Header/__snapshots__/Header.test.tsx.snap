@@ -12,6 +12,7 @@ exports[`Header shows Logout btn when user is logged in 1`] = `
       <svg
         class="h-8 w-8 text-gh-dark"
         fill="none"
+        role="img"
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"

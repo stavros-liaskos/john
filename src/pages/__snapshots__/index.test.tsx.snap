@@ -18,6 +18,7 @@ exports[`Home renders a heading 1`] = `
           <svg
             class="h-8 w-8 text-gh-dark"
             fill="none"
+            role="img"
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -358,6 +359,7 @@ exports[`Home renders a heading 1`] = `
               class="h-8 w-8 icon-colour"
               fill="none"
               height="24"
+              role="img"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"

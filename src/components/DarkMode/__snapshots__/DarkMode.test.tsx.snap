@@ -9,6 +9,7 @@ exports[`DarkMode shows Moon icon on light mode 1`] = `
     <svg
       class="h-8 w-8 text-gh-dark"
       fill="none"
+      role="img"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -32,6 +33,7 @@ exports[`DarkMode shows Sun icon on dark mode 1`] = `
     <svg
       class="h-8 w-8 text-slate-300"
       fill="none"
+      role="img"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
