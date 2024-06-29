@@ -3,6 +3,7 @@
 exports[`DarkMode shows Moon icon on light mode 1`] = `
 <div>
   <button
+    aria-label="toggleDarkMode"
     class="m-3"
     data-testid="moon"
   >
@@ -27,6 +28,7 @@ exports[`DarkMode shows Moon icon on light mode 1`] = `
 exports[`DarkMode shows Sun icon on dark mode 1`] = `
 <div>
   <button
+    aria-label="toggleDarkMode"
     class="m-3"
     data-testid="sun"
   >

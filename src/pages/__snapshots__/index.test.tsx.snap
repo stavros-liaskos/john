@@ -12,6 +12,7 @@ exports[`Home renders a heading 1`] = `
         class="flex justify-between basis-14 rr-border border-b-2"
       >
         <button
+          aria-label="toggleDarkMode"
           class="m-3"
           data-testid="moon"
         >
@@ -177,6 +178,7 @@ exports[`Home renders a heading 1`] = `
                   class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
+                    aria-label="Chris Clark"
                     class="inline"
                     href="https://www.last.fm/music/Chris+Clark"
                   >
@@ -217,6 +219,7 @@ exports[`Home renders a heading 1`] = `
                   class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
+                    aria-label="Ill Considered, Oli Savill"
                     class="inline"
                     href="https://www.last.fm/music/Ill+Considered,+Oli+Savill"
                   >
@@ -270,6 +273,7 @@ exports[`Home renders a heading 1`] = `
                   class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
+                    aria-label="Chris Clark"
                     class="inline"
                     href="https://www.last.fm/music/Chris+Clark"
                   >
@@ -310,6 +314,7 @@ exports[`Home renders a heading 1`] = `
                   class="flex basis-2 mx-4 md:mx-8"
                 >
                   <a
+                    aria-label="Ill Considered, Oli Savill"
                     class="inline"
                     href="https://www.last.fm/music/Ill+Considered,+Oli+Savill"
                   >

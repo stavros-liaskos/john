@@ -14,6 +14,7 @@ exports[`List matches snapshot 1`] = `
       class="flex basis-2 mx-4 md:mx-8"
     >
       <a
+        aria-label="Chris Clark"
         class="inline"
         href="https://www.last.fm/music/Chris+Clark"
       >
@@ -54,6 +55,7 @@ exports[`List matches snapshot 1`] = `
       class="flex basis-2 mx-4 md:mx-8"
     >
       <a
+        aria-label="Ill Considered, Oli Savill"
         class="inline"
         href="https://www.last.fm/music/Ill+Considered,+Oli+Savill"
       >
