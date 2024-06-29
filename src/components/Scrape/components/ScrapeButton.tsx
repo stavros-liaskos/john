@@ -3,6 +3,7 @@ import Spotify from '../../Icons/spotify';
 import LastFm from '../../Icons/lastfm';
 import IconTypes from '../../Icons/iconTypes';
 import Button from '../../Button/Button';
+import Endpoints from '../../../types/endpoints';
 
 export type MusicServiceType = 'Spotify' | 'LastFm';
 const ICON_SIZE = 30;
@@ -61,12 +62,11 @@ export async function handleScrape(musicService: MusicServiceType) {
 }
 
 export function getMusicServiceUrl(musicService: MusicServiceType): string {
-  let path = process.env.BE_BASE_URL!;
   switch (musicService) {
     case 'LastFm':
-      return path.concat('/scrape-taste/lastfm');
+      return Endpoints.ScrapeLastFM;
     case 'Spotify':
-      return path.concat('/scrape-taste/spotify');
+      return Endpoints.ScrapeSpotify;
     default:
       throw new Error(`Failed to getMusicServicePath for: ${musicService}`);
   }

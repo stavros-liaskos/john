@@ -1,8 +1,9 @@
 import { components } from '../types/schema';
+import Endpoints from '../types/endpoints';
 
 export async function followArtist(artist: components['schemas']['SearchResultArtistDto'], cb: () => void) {
   const headers = new Headers({ 'Content-Type': 'application/json' });
-  await fetch(`${process.env.BE_BASE_URL}/me/follow`, {
+  await fetch(Endpoints.Follow, {
     method: 'POST',
     credentials: 'include',
     headers,

@@ -1,6 +1,7 @@
 import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import { ArtistsListContext } from './ArtistsListContext';
 import { components } from '../../types/schema';
+import Endpoints from '../../types/endpoints';
 
 interface ChildrenProps {
   children: ReactNode;
@@ -12,7 +13,7 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const getFollowedArtists = useCallback(() => {
     setLoading(true);
 
-    fetch(`${process.env.BE_BASE_URL}/me/followed-artists`, {
+    fetch(Endpoints.FollowedArtists, {
       method: 'GET',
       credentials: 'include',
     })

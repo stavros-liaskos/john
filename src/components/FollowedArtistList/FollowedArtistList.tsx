@@ -4,6 +4,7 @@ import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListCon
 import ArtistsList from '../ArtistsList/ArtistsList';
 import FormInput from '../FormInput/FormInput';
 import { components } from '../../types/schema';
+import Endpoints from '../../types/endpoints';
 
 const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const [artistLoading, setArtistLoading] = useState<number>(0);
@@ -29,10 +30,9 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
 
   function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
-    fetch(`${process.env.BE_BASE_URL}/me/unfollow`, {
+    fetch(`${Endpoints.UnfollowArtist}?${artistID}`, {
       method: 'DELETE',
       credentials: 'include',
-      body: JSON.stringify({ artistID }),
     })
       .then(() => {
         console.log(`${artistID} successfully unfollowed`);
