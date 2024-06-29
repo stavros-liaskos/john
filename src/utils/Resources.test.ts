@@ -1,6 +1,7 @@
 import { setupServer } from 'msw/node';
 import { mswRecommendedArtists } from '../mocks/mockApi';
 import resources from './Resources';
+import Endpoints from '../types/endpoints';
 
 xdescribe('Resources', () => {
   const server = setupServer();
@@ -15,7 +16,7 @@ xdescribe('Resources', () => {
 
   it('fetches resource', async () => {
     server.use(mswRecommendedArtists.success());
-    const fetchedResources = resources.fetch(`${process.env.BE_BASE_URL}/artists/recommended?page=0&size=10`);
+    const fetchedResources = resources.fetch(`${Endpoints.Recommended}?page=0&size=10`);
     await expect(fetchedResources).resolves.toBe(1);
   });
 });

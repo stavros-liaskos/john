@@ -2,6 +2,7 @@ import ScrapeButton from './components/ScrapeButton';
 import React, { useEffect, useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { components } from '../../types/schema';
+import Endpoints from '../../types/endpoints';
 
 const Scrapers = () => {
   const { user } = useUser();
@@ -9,7 +10,7 @@ const Scrapers = () => {
 
   useEffect(() => {
     user?.email &&
-      fetch(`${process.env.BE_BASE_URL}/raccoon-user?email=${user.email}`, {
+      fetch(`${Endpoints.RaccoonUser}?email=${user.email}`, {
         method: 'GET',
         credentials: 'include',
       })
