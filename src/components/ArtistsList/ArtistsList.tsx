@@ -10,7 +10,7 @@ export type ArtistsListI18n = {
 export type ArtistsListProp = {
   i18n: ArtistsListI18n;
   artistsList: components['schemas']['SearchResultArtistDto'][];
-  onButtonClick: (artist: components['schemas']['SearchResultArtistDto']) => void;
+  onButtonClick: (artist: components['schemas']['SearchResultArtistDto'] | components['schemas']['ArtistDto']) => void;
   artistLoading: number;
 };
 
