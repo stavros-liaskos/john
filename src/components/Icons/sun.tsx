@@ -9,6 +9,7 @@ const Sun: React.FunctionComponent = () => (
     strokeWidth="1.5"
     className="h-8 w-8 text-slate-300"
     viewBox="0 0 24 24"
+    role="img"
   >
     <circle cx="12" cy="12" r="5"></circle>
     <path d="M12 1L12 3"></path>

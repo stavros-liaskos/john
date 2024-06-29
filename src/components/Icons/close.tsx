@@ -9,6 +9,7 @@ const Close: React.FunctionComponent = () => (
     strokeWidth="1.5"
     className="h-8 w-8 icon-colour"
     viewBox="0 0 24 24"
+    role="img"
   >
     <path d="M18 6L6 18"></path>
     <path d="M6 6L18 18"></path>

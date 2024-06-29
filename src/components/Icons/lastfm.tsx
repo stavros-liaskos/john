@@ -7,7 +7,7 @@ const LastFm: React.FunctionComponent<IconTypes> = ({ width = 40, height }) => (
     viewBox="0 0 112.195 112.195"
     width={width}
     height={height ?? width}
-    role={'img'}
+    role="img"
   >
     <path
       fill="#d31f27"
