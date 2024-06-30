@@ -1,15 +1,14 @@
 import React from 'react';
 import { fireEvent, act } from '@testing-library/react';
 import Search from './Search';
-import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { resetMocks, renderWithAct, initServer } from '../../utils/test-utils';
 import artistSearch from '../../mocks/fixtures/responses/artist-search.json';
 import { mswAuth, mswFollowedArtists, mswSearch } from '../../mocks/mockApi';
 import { components } from '../../types/schema';
-import { setupServer } from 'msw/node';
 import { searchI18n } from '../../i18n';
 
 describe('Search', () => {
-  const server = setupServer();
+  const server = initServer();
 
   const setup = async () => {
     const { container, getByRole } = await renderWithAct(<Search i18n={searchI18n} />);
@@ -23,20 +22,12 @@ describe('Search', () => {
     };
   };
 
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
-  });
   afterEach(() => {
     jest.restoreAllMocks();
-    server.resetHandlers();
   });
-  afterAll(() => server.close());
 
   beforeEach(() => {
-    beforeEachTest();
+    resetMocks();
     server.use(mswAuth.success(), mswFollowedArtists.success(2));
   });
 

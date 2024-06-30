@@ -1,7 +1,7 @@
 import ArtistsList, { ArtistsListI18n } from '../ArtistsList/ArtistsList';
-import React, { useState } from 'react';
+import React from 'react';
 import { components } from '../../types/schema';
-import { followArtist } from '../../utils/followArtist';
+import followArtist from '../../utils/followArtist';
 import resources from '../../utils/Resources';
 import Endpoints from '../../types/endpoints';
 
@@ -11,7 +11,7 @@ type RecommendationsI18n = {
 };
 
 const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
-  const [artistLoading, setArtistLoading] = useState<number>(0);
+  const [artistLoading, setArtistLoading] = React.useState<number>(0);
   const url = `${Endpoints.Recommended}?page=0&size=10`;
 
   const { rows: recommendedArtists } = resources.fetch(url) as components['schemas']['FollowedArtistsResponse'];

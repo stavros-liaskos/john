@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import { components } from '../../types/schema';
 import FormInput from '../FormInput/FormInput';
 import ArtistsList from '../ArtistsList/ArtistsList';
-import { followArtist } from '../../utils/followArtist';
+import followArtist from '../../utils/followArtist';
 import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
 import Close from '../Icons/close';
 import HandGlass from '../Icons/handGlass';

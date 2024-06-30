@@ -1,22 +1,12 @@
 import { useArtistsListContext } from './ArtistsListContext';
-import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { resetMocks, renderWithAct, initServer } from '../../utils/test-utils';
 import { mswAuth, mswFollowedArtists } from '../../mocks/mockApi';
-import { setupServer } from 'msw/node';
 
 describe('ArtistsListContext', () => {
-  const server = setupServer();
-
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
-  });
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+  const server = initServer();
 
   beforeEach(() => {
-    beforeEachTest();
+    resetMocks();
   });
 
   afterEach(() => {
