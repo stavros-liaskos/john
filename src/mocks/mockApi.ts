@@ -23,6 +23,7 @@ export const mswFollowedArtists = {
       return HttpResponse.json(followedArtists, { status: 200 });
     });
   },
+  fail: () => http.get(Paths.FollowedArtists, () => HttpResponse.error()),
 };
 
 export const mswRecommendedArtists = {

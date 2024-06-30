@@ -4,9 +4,43 @@ import artistsList from '../../mocks/fixtures/responses/followed-artists.json';
 import { artistsListI18n } from '../../i18n';
 
 describe('ArtistsList', () => {
-  it('renders without data without crashing', () => {
+  it.each([
+    {
+      props: {},
+    },
+    {
+      props: {
+        i18n: {},
+      },
+    },
+    {
+      props: {
+        i18n: {
+          btnTxt: 'btnTxt',
+        },
+      },
+    },
+    {
+      props: {
+        i18n: {
+          noArtists: 'noArtists',
+          btnTxt: 'btnTxt',
+        },
+      },
+    },
+    {
+      props: {
+        i18n: {
+          noArtists: 'noArtists',
+          btnTxt: 'btnTxt',
+        },
+        onButtonClick: {},
+      },
+    },
+  ])('renders without data without crashing', ({ props }) => {
     // @ts-ignore
-    render(<ArtistsList />);
+    const { queryByText } = render(<ArtistsList {...props} />);
+    expect(queryByText('noArtists')).toBeNull();
   });
 
   it.each([{ artistsList: {} }, { artistsList: undefined }])(

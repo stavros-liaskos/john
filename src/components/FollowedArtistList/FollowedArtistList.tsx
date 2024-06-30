@@ -12,7 +12,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
   const { followedArtistList, loading, getFollowedArtists } = useArtistsListContext();
   const [filterInput, setFilterInput] = useState('');
 
-  if (validateRequiredData(i18n, followedArtistList)) {
+  if (validateI18n(i18n)) {
     return null;
   }
 
@@ -53,9 +53,8 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
 FollowedArtistList.whyDidYouRender = true;
 export default FollowedArtistList;
 
-function validateRequiredData(i18n: ListI18n, followedArtistList: components['schemas']['ArtistDto'][]) {
+function validateI18n(i18n: ListI18n) {
   return (
-    !followedArtistList?.length ||
     !i18n ||
     !i18n?.title ||
     !i18n?.filter ||

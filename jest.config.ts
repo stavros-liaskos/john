@@ -43,7 +43,14 @@ const config: Config = {
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['/node_modules/', '/.next', '/coverage', '/pages/api', '.*__snapshots__/.*'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/.next',
+    '/coverage',
+    '/pages/api',
+    '.*__snapshots__/.*',
+    '/src/components/Icons/*',
+  ],
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: 'v8',
@@ -59,10 +66,10 @@ const config: Config = {
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      statements: 90.9,
-      branches: 81,
-      functions: 82,
-      lines: 90.56,
+      statements: 97,
+      branches: 91,
+      functions: 90,
+      lines: 97,
     },
   },
 

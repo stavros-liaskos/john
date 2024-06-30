@@ -1,11 +1,11 @@
 import React from 'react';
 import DarkMode from './DarkMode';
-import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { resetMocks, renderWithAct } from '../../utils/test-utils';
 import { act } from '@testing-library/react';
 
 describe('DarkMode', () => {
   beforeEach(() => {
-    beforeEachTest();
+    resetMocks();
   });
 
   afterEach(() => {
