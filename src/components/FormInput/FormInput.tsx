@@ -34,10 +34,9 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
         value={inputValue}
         placeholder={i18n.label}
         onChange={e => {
+          setInputValue(e.target.value);
           if (actionEventTrigger === 'onChange') {
             handleAction(e.target.value);
-          } else {
-            setInputValue(e.target.value);
           }
         }}
       />
