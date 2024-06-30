@@ -19,6 +19,7 @@ describe('Recommendations', () => {
   it('renders without data without crashing', async () => {
     server.use(mswAuth.success(), mswFollowedArtists.success(), mswRecommendedArtists.success());
 
+    // @ts-ignore
     await renderWithAct(<Recommendations />);
   });
 

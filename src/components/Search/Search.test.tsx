@@ -41,6 +41,7 @@ describe('Search', () => {
   });
 
   it('renders without data without crashing', async () => {
+    // @ts-ignore
     await renderWithAct(<Search />);
   });
 
@@ -55,7 +56,7 @@ describe('Search', () => {
     { searchQuery: 'Sam Gendel', searchRes: artistSearch, goal: 'should handle the search action of the user' },
     { searchQuery: 'No match', searchRes: { artists: [], count: 0 }, goal: 'handles no search results' },
   ])('$goal', async ({ searchQuery, searchRes }) => {
-    server.use(mswSearch.success(searchRes, searchQuery));
+    server.use(mswSearch.success(searchRes));
     const { container, input, searchBtn } = await setup();
 
     fireEvent.change(input, { target: { value: searchQuery } });

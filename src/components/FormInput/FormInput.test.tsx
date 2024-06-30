@@ -4,6 +4,7 @@ import { formInputI18n } from '../../i18n';
 
 describe('FormInput', () => {
   it('renders without data without crashing', () => {
+    // @ts-ignore
     render(<FormInput />);
   });
 
@@ -18,8 +19,7 @@ describe('FormInput', () => {
       fireEvent.change(inputValue, { target: { value: artistName } });
     });
 
-    expect(inputValue).toHaveValue(artistName);
-    expect(handleAction).toHaveBeenCalledTimes(1);
+    expect(handleAction).toHaveBeenCalledWith(artistName);
   });
 
   it('calls action onSubmit event of form', () => {

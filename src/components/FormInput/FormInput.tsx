@@ -20,15 +20,12 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
     <form
       className="flex justify-between md:justify-between items-stretch h-10 w-full"
       noValidate
-      {...(actionEventTrigger === 'onChange' ? { onChange: () => handleAction(inputValue) } : {})}
-      {...(actionEventTrigger === 'onSubmit'
-        ? {
-            onSubmit: e => {
-              e.preventDefault();
-              handleAction(inputValue);
-            },
-          }
-        : {})}
+      {...(actionEventTrigger === 'onSubmit' && {
+        onSubmit: e => {
+          e.preventDefault();
+          handleAction(inputValue);
+        },
+      })}
     >
       <input
         className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
@@ -36,7 +33,13 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
         name="search"
         value={inputValue}
         placeholder={i18n.label}
-        onChange={e => setInputValue(e.target.value)}
+        onChange={e => {
+          if (actionEventTrigger === 'onChange') {
+            handleAction(e.target.value);
+          } else {
+            setInputValue(e.target.value);
+          }
+        }}
       />
       {children}
     </form>

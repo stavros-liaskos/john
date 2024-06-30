@@ -10,7 +10,7 @@ const Paths = {
   ScrapeSpotify: `/scrape-taste/spotify`,
 };
 
-const Endpoints = {
+const Endpoints: Record<string, string> = {
   Auth: `${process.env.BE_BASE_URL}${Paths.Auth}`,
   Search: `${process.env.BE_BASE_URL}${Paths.Search}`,
   Recommended: `${process.env.BE_BASE_URL}${Paths.Recommended}`,
