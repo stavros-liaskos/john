@@ -28,6 +28,8 @@ describe('Main', () => {
 
   it('renders without data without crashing', async () => {
     server.use(mswAuth.success());
+
+    // @ts-ignore
     await renderWithAct(<Main />);
   });
 

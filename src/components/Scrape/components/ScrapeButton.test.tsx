@@ -21,6 +21,7 @@ describe('Scrape', () => {
 
   describe('component', () => {
     it('renders without data without crashing', () => {
+      // @ts-ignore
       render(<ScrapeButton />);
     });
 
@@ -37,7 +38,7 @@ describe('Scrape', () => {
 
     it('matches snapshot', () => {
       const { container } = render(
-        <ScrapeButton iconName={'Spotify'} buttonText={'Scrape Spotify'} musicService={'Spotify'} />,
+        <ScrapeButton iconName={'Spotify'} buttonText={'Scrape Spotify'} musicService={'Spotify'} connected={true} />,
       );
       expect(container).toMatchSnapshot();
     });

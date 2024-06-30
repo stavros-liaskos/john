@@ -5,6 +5,7 @@ import { artistsListI18n } from '../../i18n';
 
 describe('ArtistsList', () => {
   it('renders without data without crashing', () => {
+    // @ts-ignore
     render(<ArtistsList />);
   });
 
@@ -12,6 +13,7 @@ describe('ArtistsList', () => {
     'shows text when no artist is available',
     ({ artistsList }) => {
       const { getByText } = render(
+        // @ts-ignore
         <ArtistsList i18n={artistsListI18n} artistsList={artistsList} onButtonClick={jest.fn} artistLoading={0} />,
       );
 

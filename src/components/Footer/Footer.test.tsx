@@ -5,6 +5,7 @@ import { footerI18n } from '../../i18n';
 
 describe('Footer', () => {
   it('renders without data without crashing', () => {
+    // @ts-ignore
     render(<Footer />);
   });
 

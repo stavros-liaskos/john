@@ -5,6 +5,7 @@ import { artistsListI18n } from '../../../../i18n';
 
 describe('List', () => {
   it('renders without data without crashing', () => {
+    // @ts-ignore
     render(<List />);
   });
 
