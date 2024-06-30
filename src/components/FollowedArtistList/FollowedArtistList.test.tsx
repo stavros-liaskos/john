@@ -1,23 +1,27 @@
 import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
 import FollowedArtistList, { filterArtists } from './FollowedArtistList';
-import { render, renderWithAct } from '../../utils/test-utils';
+import { initServer, render, renderWithAct } from '../../utils/test-utils';
 import followedArtists from '../../mocks/fixtures/responses/followed-artists.json';
 import { components } from '../../types/schema';
 import { mswAuth, mswFollowedArtists, mswUnfollow } from '../../mocks/mockApi';
-import { setupServer } from 'msw/node';
 import { followedArtistListI18n } from '../../i18n';
 
 describe('FollowedArtistList', () => {
-  const server = setupServer();
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
+  const server = initServer();
+
+  it.each([
+    {
+      props: {
+        i18n: {},
+      },
+    },
+    { props: {} },
+  ])('renders without data without crashing', async ({ props }) => {
+    server.use(mswFollowedArtists.success(), mswAuth.success());
+    // @ts-ignore
+    await renderWithAct(<FollowedArtistList {...props} />);
   });
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
 
   it('renders artists with "unfollow" btn', async () => {
     server.use(mswFollowedArtists.success(), mswAuth.success());
@@ -26,6 +30,16 @@ describe('FollowedArtistList', () => {
     const buttons = await component.findAllByText(followedArtistListI18n.artistList.btnTxt);
 
     expect(buttons).toHaveLength(2);
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('renders loading state', async () => {
+    server.use(mswFollowedArtists.fail(), mswAuth.success());
+    const fetchSpy = jest.spyOn(window, 'fetch');
+    const component = render(<FollowedArtistList i18n={followedArtistListI18n} />);
+
+    const loadingIcon = await component.findByRole('img');
+    expect(loadingIcon).toBeInTheDocument();
     expect(fetchSpy).toHaveBeenCalledTimes(2);
   });
 

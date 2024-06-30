@@ -5,19 +5,11 @@ import Spotify from '../../Icons/spotify';
 import React from 'react';
 import LastFm from '../../Icons/lastfm';
 import { mswScrape } from '../../../mocks/mockApi';
-import { setupServer } from 'msw/node';
 import Endpoints from '../../../types/endpoints';
+import { initServer } from '../../../utils/test-utils';
 
 describe('Scrape', () => {
-  const server = setupServer();
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
-  });
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+  const server = initServer();
 
   describe('component', () => {
     it('renders without data without crashing', () => {

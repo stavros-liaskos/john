@@ -1,18 +1,10 @@
-import { setupServer } from 'msw/node';
 import { mswRecommendedArtists } from '../mocks/mockApi';
 import resources from './Resources';
 import Endpoints from '../types/endpoints';
+import { initServer } from './test-utils';
 
 xdescribe('Resources', () => {
-  const server = setupServer();
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
-  });
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+  const server = initServer();
 
   it('fetches resource', async () => {
     server.use(mswRecommendedArtists.success());

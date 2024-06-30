@@ -1,25 +1,16 @@
 import Scrapers from './Scrapers';
-import { setupServer } from 'msw/node';
-import { beforeEachTest, renderWithAct } from '../../utils/test-utils';
+import { resetMocks, renderWithAct, initServer } from '../../utils/test-utils';
 import { mswAuth, mswFollowedArtists, mswRaccoonUser } from '../../mocks/mockApi';
 
 describe('Scrapers', () => {
-  const server = setupServer();
+  const server = initServer();
 
-  beforeAll(() => {
-    server.listen();
-    server.listen({
-      onUnhandledRequest: 'error',
-    });
-  });
   afterEach(() => {
     jest.restoreAllMocks();
-    server.resetHandlers();
   });
-  afterAll(() => server.close());
 
   beforeEach(() => {
-    beforeEachTest();
+    resetMocks();
     server.use(mswFollowedArtists.success(2), mswAuth.success(), mswRaccoonUser.success());
   });
 
