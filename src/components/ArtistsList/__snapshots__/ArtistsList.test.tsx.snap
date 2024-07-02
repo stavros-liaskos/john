@@ -3,7 +3,7 @@
 exports[`ArtistsList matches snapshot 1`] = `
 <div>
   <div
-    class="overflow-auto w-full"
+    class="overflow-auto w-full flex-auto h-64"
   >
     <div
       class="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"

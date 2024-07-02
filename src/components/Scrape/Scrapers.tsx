@@ -27,7 +27,7 @@ const Scrapers = () => {
   }, [user?.email]);
 
   return (
-    <div className="flex lg:justify-center gap-2 mb-2 w-full">
+    <div className="flex lg:justify-center flex-none gap-2 my-2 md:my-5 w-full">
       <ScrapeButton
         buttonText={scrapers.spotify ? scrapersI18n.connected : scrapersI18n.connect}
         musicService={'Spotify'}

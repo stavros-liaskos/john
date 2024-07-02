@@ -7,12 +7,7 @@ const DarkMode: React.FunctionComponent = () => {
   const { dark, loaded, setDark } = useThemeContext();
 
   return (
-    <button
-      className="m-3"
-      onClick={() => setDark(!dark)}
-      data-testid={dark && loaded ? 'sun' : 'moon'}
-      aria-label="toggleDarkMode"
-    >
+    <button onClick={() => setDark(!dark)} data-testid={dark && loaded ? 'sun' : 'moon'} aria-label="toggleDarkMode">
       {dark && loaded ? <Sun /> : <Moon />}
     </button>
   );

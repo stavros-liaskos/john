@@ -3,14 +3,14 @@
 exports[`Search handles no search results 1`] = `
 <div>
   <div
-    class="relative flex lg:justify-center items-center mb-2 md:mb-5 basis-16 md:basis-20 border-b-2 rr-border w-full"
+    class="relative flex lg:justify-center items-center flex-none h-16 md:h-20 md:border-b-2 rr-border w-full"
   >
     <form
-      class="flex justify-between md:justify-between items-stretch h-10 w-full"
+      class="flex justify-between md:justify-between items-stretch h-10 w-full my-3"
       novalidate=""
     >
       <input
-        class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+        class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full"
         name="search"
         placeholder="Here goes the artist..."
         type="text"
@@ -36,7 +36,7 @@ exports[`Search handles no search results 1`] = `
         </svg>
       </button>
       <button
-        class="btn flex btn-large"
+        class="btn flex btn-large md:ml-52"
         type="submit"
       >
         <svg
@@ -59,7 +59,7 @@ exports[`Search handles no search results 1`] = `
       class="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 rr-border top-14 md:top-16 w-full z-10"
     >
       <div
-        class="overflow-auto w-full"
+        class="overflow-auto w-full flex-auto h-64"
       >
         <p
           class="rr-text flex justify-center"
@@ -75,14 +75,14 @@ exports[`Search handles no search results 1`] = `
 exports[`Search should handle the search action of the user 1`] = `
 <div>
   <div
-    class="relative flex lg:justify-center items-center mb-2 md:mb-5 basis-16 md:basis-20 border-b-2 rr-border w-full"
+    class="relative flex lg:justify-center items-center flex-none h-16 md:h-20 md:border-b-2 rr-border w-full"
   >
     <form
-      class="flex justify-between md:justify-between items-stretch h-10 w-full"
+      class="flex justify-between md:justify-between items-stretch h-10 w-full my-3"
       novalidate=""
     >
       <input
-        class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+        class="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full"
         name="search"
         placeholder="Here goes the artist..."
         type="text"
@@ -108,7 +108,7 @@ exports[`Search should handle the search action of the user 1`] = `
         </svg>
       </button>
       <button
-        class="btn flex btn-large"
+        class="btn flex btn-large md:ml-52"
         type="submit"
       >
         <svg
@@ -131,7 +131,7 @@ exports[`Search should handle the search action of the user 1`] = `
       class="absolute px-3 bg-slate-100 dark:bg-gh-darkly border-2 rr-border top-14 md:top-16 w-full z-10"
     >
       <div
-        class="overflow-auto w-full"
+        class="overflow-auto w-full flex-auto h-64"
       >
         <div
           class="flex justify-between md:justify-center items-center dark:even:bg-gh-darkly even:bg-gray-100"
