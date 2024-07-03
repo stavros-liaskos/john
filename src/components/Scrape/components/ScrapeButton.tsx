@@ -25,7 +25,7 @@ const ScrapeButton = ({
   const MusicServiceIcon = getMusicServiceIcon(iconName);
 
   return (
-    <div className="flex justify-center items-center mb-2 w-full">
+    <div className="flex justify-center items-center w-full">
       <Button
         className={`flex justify-between py-2 px-3 w-full md:w-48${connected ? ' !rr-text-confirm' : ''}`}
         i18n={buttonText}

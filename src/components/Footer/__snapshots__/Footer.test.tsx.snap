@@ -3,7 +3,7 @@
 exports[`Footer renders with data 1`] = `
 <div>
   <footer
-    class="flex items-center justify-center basis-16 border-t-2 rr-border"
+    class="rr-column flex-none h-16 border-t-2 rr-border justify-center"
   >
     <a
       class="flex items-center rr-text"

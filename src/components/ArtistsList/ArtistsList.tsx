@@ -20,7 +20,7 @@ const ArtistsList = ({ i18n, artistsList, onButtonClick, artistLoading }: Artist
   }
 
   return (
-    <div className="overflow-auto w-full">
+    <div className="overflow-auto w-full flex-auto h-64">
       {!artistsList?.length ? (
         <p className="rr-text flex justify-center">{i18n.noArtists}</p>
       ) : (

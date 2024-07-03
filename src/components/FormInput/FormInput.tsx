@@ -18,7 +18,7 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
 
   return (
     <form
-      className="flex justify-between md:justify-between items-stretch h-10 w-full"
+      className="flex justify-between md:justify-between items-stretch h-10 w-full my-3"
       noValidate
       {...(actionEventTrigger === 'onSubmit' && {
         onSubmit: e => {
@@ -28,7 +28,7 @@ const FormInput = ({ handleAction, i18n, children, actionEventTrigger }: FormInp
       })}
     >
       <input
-        className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full md:w-2/3"
+        className="mr-4 px-2 min-m-lg border-b-2 rr-border dark:bg-gh-darkly rr-text w-full"
         type="text"
         name="search"
         value={inputValue}

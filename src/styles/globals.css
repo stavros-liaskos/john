@@ -15,7 +15,7 @@
     @apply text-green-700 dark:text-green-400 !important;
   }
   .h3 {
-    @apply rr-text mb-4;
+    @apply rr-text my-4;
   }
   .btn {
     @apply font-semibold text-sm rounded-sm shadow border-2 rr-border rr-text flex items-center justify-center;
@@ -28,5 +28,8 @@
   }
   .icon-colour {
     @apply text-gh-dark dark:text-slate-300;
+  }
+  .rr-column {
+    @apply flex flex-col items-center w-full px-3;
   }
 }

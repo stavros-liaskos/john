@@ -8,7 +8,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
   }
 
   return (
-    <footer className={`flex items-center justify-center basis-16 border-t-2 rr-border`}>
+    <footer className="rr-column flex-none h-16 border-t-2 rr-border justify-center">
       <a
         className="flex items-center rr-text"
         href="https://github.com/jaivalis/release-raccoon"

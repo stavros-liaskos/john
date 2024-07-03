@@ -19,14 +19,14 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
     return null;
   }
   return (
-    <div className="relative flex lg:justify-center items-center mb-2 md:mb-5 basis-16 md:basis-20 border-b-2 rr-border w-full">
+    <div className="relative flex lg:justify-center items-center flex-none h-16 md:h-20 md:border-b-2 rr-border w-full">
       <FormInput handleAction={handleSearch} i18n={i18n} actionEventTrigger={'onSubmit'}>
         {results && (
           <button onClick={() => setResults(null)}>
             <Close />
           </button>
         )}
-        <Button className="btn-large" type="submit" disabled={disabled} loading={disabled} aria-label="search">
+        <Button className="btn-large md:ml-52" type="submit" disabled={disabled} loading={disabled} aria-label="search">
           <HandGlass />
         </Button>
       </FormInput>

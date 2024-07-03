@@ -17,16 +17,18 @@ const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
   }
 
   return (
-    <main className={`flex-1 flex flex-col items-center w-full px-3 h-24`}>
-      <div className={`flex-1 flex flex-col justify-stretch items-center w-full lg:w-9/12`}>
+    <main className="rr-column flex-auto">
+      <div className="flex flex-col flex-auto w-full lg:w-9/12">
         {user ? (
           <>
             <Search i18n={searchI18n} />
             <Scrapers />
-            <FollowedArtistList i18n={followedArtistListI18n} />
-            <Suspense fallback={<Loading />}>
-              <Recommendations i18n={recommendationsI18n} />
-            </Suspense>
+            <div className="flex flex-auto flex-col h24">
+              <FollowedArtistList i18n={followedArtistListI18n} />
+              <Suspense fallback={<Loading />}>
+                <Recommendations i18n={recommendationsI18n} />
+              </Suspense>
+            </div>
           </>
         ) : (
           <Login i18n={loginI18n} />
