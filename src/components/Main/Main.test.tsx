@@ -1,9 +1,8 @@
 import React from 'react';
 import { resetMocks, renderWithAct, initServer } from '../../utils/test-utils';
 import Main from './Main';
-import props from './Main.data';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { mswAuth, mswFollowedArtists, mswRecommendedArtists } from '../../mocks/mockApi';
+import { mswAuth, mswFollowedArtists, mswRaccoonUser, mswRecommendedArtists } from '../../mocks/mockApi';
 
 describe('Main', () => {
   const server = initServer();
@@ -18,7 +17,7 @@ describe('Main', () => {
   });
 
   it('renders without data without crashing', async () => {
-    server.use(mswAuth.success());
+    server.use(mswAuth.success(), mswRecommendedArtists.success(), mswRaccoonUser.success());
 
     // @ts-ignore
     await renderWithAct(<Main />);
@@ -28,7 +27,7 @@ describe('Main', () => {
     server.use(mswAuth.fail());
     const { findAllByText } = await renderWithAct(
       <UserProvider>
-        <Main {...props} />
+        <Main />
       </UserProvider>,
     );
 
@@ -40,7 +39,7 @@ describe('Main', () => {
 
     const { findAllByRole } = await renderWithAct(
       <UserProvider user={{ user: 'john.doe' }}>
-        <Main {...props} />
+        <Main />
       </UserProvider>,
     );
 

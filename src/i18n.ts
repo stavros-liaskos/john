@@ -1,5 +1,4 @@
 import { SearchI18n } from './components/Search/Search.types';
-import { FooterI18n } from './components/Footer/Footer.types';
 
 export const metaI18n = {
   title: 'Release Raccoon',
@@ -53,7 +52,7 @@ export const formInputI18n = {
   label: 'Here goes the artist..',
 };
 
-export const footerI18n: FooterI18n = {
+export const footerI18n = {
   powered: 'Powered by',
 };
 export const artistsListI18n = {

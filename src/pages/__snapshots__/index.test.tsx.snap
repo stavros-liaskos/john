@@ -368,7 +368,7 @@ exports[`Home renders a heading 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Powered by  
+          Powered by
           <div
             class="mx-2"
           >
