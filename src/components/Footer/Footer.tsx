@@ -1,9 +1,9 @@
-import { FooterProps } from './Footer.types';
 import React from 'react';
 import Github from '../Icons/github';
+import { footerI18n } from '../../i18n';
 
-const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
-  if (!i18n || !i18n.powered) {
+const Footer: React.FunctionComponent = () => {
+  if (!footerI18n || !footerI18n.powered) {
     return null;
   }
 
@@ -15,7 +15,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ i18n }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {i18n.powered}
+        {footerI18n.powered}
         <div className="mx-2">
           <Github />
         </div>

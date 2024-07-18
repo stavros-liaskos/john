@@ -1,4 +1,3 @@
-import { MainProps } from './Main.types';
 import FollowedArtistList from '../FollowedArtistList/FollowedArtistList';
 import React, { Suspense } from 'react';
 import Search from '../Search/Search';
@@ -9,12 +8,8 @@ import Recommendations from '../Recommendations/Recommendations';
 import Loading from '../Loading/Loading';
 import { searchI18n, followedArtistListI18n, loginI18n, recommendationsI18n } from '../../i18n';
 
-const Main: React.FunctionComponent<MainProps> = ({ i18n }) => {
+const Main: React.FunctionComponent = () => {
   const { user } = useUser();
-
-  if (!i18n || !i18n.todo) {
-    return null;
-  }
 
   return (
     <main className="rr-column flex-auto">

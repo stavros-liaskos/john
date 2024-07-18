@@ -9,9 +9,9 @@ const Home: NextPage = () => {
       <div className="sm:border-x-2 rr-border flex flex-col h-screen">
         <Header />
 
-        <Main i18n={{ todo: 'todo' }} />
+        <Main />
 
-        <Footer i18n={{ powered: 'Powered by  ' }} />
+        <Footer />
       </div>
     </div>
   );
