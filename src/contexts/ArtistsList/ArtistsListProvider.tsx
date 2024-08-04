@@ -15,8 +15,10 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const getFollowedArtists = useCallback(() => {
     setLoading(true);
 
+    const headers = new Headers({ 'Content-Type': 'application/json' });
     fetch(Endpoints.FollowedArtists, {
       method: 'GET',
+      headers,
       credentials: 'include',
     })
       .then(res => res.json())
