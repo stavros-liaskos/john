@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
+import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { ArtistsListContext } from './ArtistsListContext';
 import { components } from '../../types/schema';
 import Endpoints from '../../types/endpoints';
@@ -10,6 +10,7 @@ interface ChildrenProps {
 const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['ArtistDto'][]>([]);
   const [loading, setLoading] = useState(false);
+  const areFollowedArtistsInitiliased = useRef(false);
 
   const getFollowedArtists = useCallback(() => {
     setLoading(true);
@@ -28,11 +29,14 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
         setLoading(false);
       })
       .catch(console.error);
-  }, []);
+  }, [followedArtistList]);
 
   useEffect(() => {
-    getFollowedArtists();
-  }, []);
+    if (!areFollowedArtistsInitiliased.current) {
+      getFollowedArtists();
+      areFollowedArtistsInitiliased.current = true;
+    }
+  }, [getFollowedArtists]);
 
   return (
     <ArtistsListContext.Provider value={{ followedArtistList, getFollowedArtists, loading }}>

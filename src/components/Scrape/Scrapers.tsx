@@ -1,5 +1,5 @@
 import ScrapeButton from './components/ScrapeButton';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { components } from '../../types/schema';
 import Endpoints from '../../types/endpoints';
@@ -8,9 +8,11 @@ import { scrapersI18n } from '../../i18n';
 const Scrapers = () => {
   const { user } = useUser();
   const [scrapers, setScrapers] = useState<{ spotify: boolean; lastfm: boolean }>({ spotify: false, lastfm: false });
+  const areScrapersInitialised = useRef(false);
 
   useEffect(() => {
-    user?.email &&
+    !areScrapersInitialised.current &&
+      user?.email &&
       fetch(`${Endpoints.RaccoonUser}?email=${user.email}`, {
         method: 'GET',
         credentials: 'include',
@@ -21,10 +23,11 @@ const Scrapers = () => {
           const isSpotifyConnected = !!raccoonUser?.[0]?.spotifyEnabled;
           if (scrapers.spotify !== isSpotifyConnected || scrapers.lastfm !== isLastFmConnected) {
             setScrapers({ spotify: isSpotifyConnected, lastfm: isLastFmConnected });
+            areScrapersInitialised.current = true;
           }
         })
         .catch(console.error);
-  }, [user?.email]);
+  }, [scrapers.lastfm, scrapers.spotify, user?.email]);
 
   return (
     <div className="flex lg:justify-center flex-none gap-2 my-2 md:my-5 w-full">
