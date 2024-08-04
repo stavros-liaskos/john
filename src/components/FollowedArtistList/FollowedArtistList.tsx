@@ -37,7 +37,7 @@ const FollowedArtistList: React.FunctionComponent<ListProps> = ({ i18n }) => {
 
   function unfollowArtist(artistID: number) {
     setArtistLoading(artistID);
-    fetch(`${Endpoints.UnfollowArtist}?${artistID}`, {
+    fetch(`${Endpoints.UnfollowArtist}/${artistID}`, {
       method: 'DELETE',
       credentials: 'include',
     })
