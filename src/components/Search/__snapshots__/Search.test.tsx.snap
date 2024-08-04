@@ -142,7 +142,7 @@ exports[`Search should handle the search action of the user 1`] = `
             Sam Gendel
           </p>
           <div
-            class="flex basis-2 mx-4 md:mx-8"
+            class="flex gap-2 basis-2 mx-4 md:mx-8"
           >
             <a
               aria-label="Sam Gendel"
@@ -183,7 +183,7 @@ exports[`Search should handle the search action of the user 1`] = `
             Jaakko Eino Kalevi
           </p>
           <div
-            class="flex basis-2 mx-4 md:mx-8"
+            class="flex gap-2 basis-2 mx-4 md:mx-8"
           >
             <a
               aria-label="Jaakko Eino Kalevi"
