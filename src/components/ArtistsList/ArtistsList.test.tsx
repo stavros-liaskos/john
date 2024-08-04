@@ -60,7 +60,7 @@ describe('ArtistsList', () => {
       <ArtistsList i18n={artistsListI18n} artistsList={artistsList.rows} onButtonClick={jest.fn} artistLoading={0} />,
     );
     expect(queryAllByRole('button')).toHaveLength(2);
-    expect(queryAllByRole('img')).toHaveLength(2);
+    expect(queryAllByRole('img')).toHaveLength(3);
   });
 
   it('matches snapshot', () => {

@@ -19,7 +19,7 @@ const List = ({ i18n, artistsList, onButtonClick, artistLoading }: ArtistsListPr
           key={artist.id}
         >
           <p className="grow text-clip rr-text">{artist.name}</p>
-          <div className="flex basis-2 mx-4 md:mx-8">
+          <div className="flex gap-2 basis-2 mx-4 md:mx-8">
             {artist.lastfmUri && (
               <a className="inline" href={artist.lastfmUri} aria-label={artist.name}>
                 <LastFm width={ICON_SIZE} />

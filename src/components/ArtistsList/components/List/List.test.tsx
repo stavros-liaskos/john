@@ -19,7 +19,7 @@ describe('List', () => {
     fireEvent.click(btn);
 
     expect(queryAllByRole('button')).toHaveLength(2);
-    expect(queryAllByRole('img')).toHaveLength(2);
+    expect(queryAllByRole('img')).toHaveLength(3);
     expect(btnCb).toHaveBeenCalledTimes(1);
   });
 
