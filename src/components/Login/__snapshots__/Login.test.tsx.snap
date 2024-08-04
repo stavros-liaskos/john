@@ -3,15 +3,15 @@
 exports[`Login renders login button 1`] = `
 <div>
   <div
-    class="flex flex-col items-center justify-center lg:w-1/2"
+    class="flex flex-auto flex-col items-center justify-center w-full"
   >
     <h2
-      class="rr-text text-4xl mb-3"
+      class="rr-text text-center text-4xl mb-3"
     >
       Welcome to Release Raccoon!
     </h2>
     <p
-      class="rr-text text-xl mb-3"
+      class="rr-text text-center text-xl mb-3"
     >
       Receive your favorite artists' music in your email every week!
     </p>
@@ -19,7 +19,7 @@ exports[`Login renders login button 1`] = `
       href="/api/auth/login"
     >
       <button
-        class="btn btn-large lg:ml-8 my-8 w-44 h-14"
+        class="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14"
       >
         Register
       </button>
