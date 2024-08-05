@@ -11,10 +11,13 @@ const Scrapers = () => {
   const areScrapersInitialised = useRef(false);
 
   useEffect(() => {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+
     !areScrapersInitialised.current &&
       user?.email &&
       fetch(`${Endpoints.RaccoonUser}?email=${user.email}`, {
         method: 'GET',
+        headers,
         credentials: 'include',
       })
         .then(res => res.json())

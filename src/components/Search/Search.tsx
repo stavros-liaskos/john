@@ -45,9 +45,11 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   );
 
   async function handleSearch(inputValue: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
     inputValue &&
       (await fetch(`/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
         method: 'GET',
+        headers,
         credentials: 'include',
       })
         .then(res => res.json())

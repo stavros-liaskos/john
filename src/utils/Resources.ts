@@ -16,8 +16,10 @@ class Resources implements IResources {
       return this.cacheMap.get(url);
     }
 
+    const headers = new Headers({ 'Content-Type': 'application/json' });
     const promise = fetch(url, {
       method: 'GET',
+      headers,
       credentials: 'include',
     })
       .then(response => {
