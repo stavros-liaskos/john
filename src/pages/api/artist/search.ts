@@ -7,7 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<components['schemas']['ArtistSearchResponse']>,
 ) {
-  console.warn(req.query)
+  console.warn(`query: ${req.query.pattern}`);
   if (process.env.IS_SERVER_MOCKED) {
     withDelay(() => {
       res.status(200).json(artistSearch);
@@ -16,13 +16,10 @@ export default async function handler(
   }
 
   try {
-    const response = await fetch(
-      `${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams(req.query)}`,
-      {
-        method: 'GET',
-        credentials: 'include',
-      },
-    );
+    const response = await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({pattern: req.query.pattern})}`, {
+      method: 'GET',
+      credentials: 'include',
+    });
     const artistsJson = await response.json();
 
     res.status(200).json(artistsJson.artists);
