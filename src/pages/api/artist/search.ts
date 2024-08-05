@@ -7,7 +7,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<components['schemas']['ArtistSearchResponse']>,
 ) {
-  console.warn(`query: ${req.query.pattern}`);
   if (process.env.IS_SERVER_MOCKED) {
     withDelay(() => {
       res.status(200).json(artistSearch);
@@ -16,17 +15,25 @@ export default async function handler(
   }
 
   try {
-    const response = await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({pattern: req.query.pattern})}`, {
-      method: 'GET',
-      credentials: 'include',
-    });
+    const query = req.query.pattern;
+    console.warn(`query: ${query}`);
+
+    if (typeof query !== 'string') {
+      throw new Error('Wrong input type, only string allowed');
+    }
+
+    const response = await fetch(
+      `${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: 'Led Zeppelin' })}`,
+      {
+        method: 'GET',
+        credentials: 'include',
+      },
+    );
     const artistsJson = await response.json();
 
     res.status(200).json(artistsJson.artists);
   } catch (error) {
-    const statusCode = error.statusCode || 500;
-    const message = error.message || 'An unexpected error occurred';
     // @ts-ignore
-    res.status(statusCode).json(message);
+    res.status(400).json(JSON.stringify(error));
   }
 }
