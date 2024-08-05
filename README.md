@@ -57,8 +57,8 @@ $ yarn test
 
 ## Mock Data
 
-You can work with mock server data.  
-Simply set env `BE_BASE_URL` to `http://localhost:3000` and all API calls will be forwarded to NextJS local API and served with mocked data from `/mocks/responses/`
+You can work with mock server data. Simply set env `BE_BASE_URL` to `http://localhost:3000`.  
+All `/api` calls will then be serving mock data from `/mocks/responses/`.
 
 ## Deployments
 

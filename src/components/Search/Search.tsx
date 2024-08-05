@@ -46,7 +46,7 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
 
   async function handleSearch(inputValue: string) {
     inputValue &&
-      (await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
+      (await fetch(`/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
         method: 'GET',
         credentials: 'include',
       })
