@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Footer from '../components/Footer/Footer';
+import Main from '../components/Main/Main';
 import Header from '../components/Header/Header';
 
 const Home: NextPage = () => {
@@ -8,7 +9,7 @@ const Home: NextPage = () => {
       <div className="sm:border-x-2 rr-border flex flex-col h-screen">
         <Header />
 
-        <h1 className="rr-text">welcome to release racoon</h1>
+        <Main />
 
         <Footer />
       </div>

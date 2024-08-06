@@ -10,7 +10,8 @@ const Meta: React.FunctionComponent = () => {
       <meta name="theme-color" content="#000000" />
       <link rel="icon" href="/favicon.ico" />
       {/* TODO review when cors issue fixed */}
-      <link rel="manifest" crossOrigin="use-credentials" href="/manifest.json" /> {/* next-pwa START */}
+      {/* next-pwa START */}
+      <link rel="manifest" crossOrigin="use-credentials" href="/manifest.json" />
       <meta name="application-name" content={metaI18n.title} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />

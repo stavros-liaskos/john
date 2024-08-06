@@ -2,11 +2,10 @@ import FollowedArtistList from '../FollowedArtistList/FollowedArtistList';
 import React, { Suspense } from 'react';
 import Search from '../Search/Search';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Login from '../Login/Login';
 import Scrapers from '../Scrape/Scrapers';
 import Recommendations from '../Recommendations/Recommendations';
 import Loading from '../Loading/Loading';
-import { searchI18n, followedArtistListI18n, loginI18n, recommendationsI18n } from '../../i18n';
+import { searchI18n, followedArtistListI18n, recommendationsI18n } from '../../i18n';
 
 const Main: React.FunctionComponent = () => {
   const { user } = useUser();
@@ -26,7 +25,7 @@ const Main: React.FunctionComponent = () => {
             </div>
           </>
         ) : (
-          <Login i18n={loginI18n} />
+          <h1 className="rr-text">Middleware should have redirected!</h1>
         )}
       </div>
     </main>

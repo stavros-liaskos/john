@@ -2,8 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import artistSearch from '../../../mocks/fixtures/responses/artist-search.json';
 import { components } from '../../../types/schema';
 import withDelay from '../../../utils/withDelay';
+import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
 
-export default async function handler(
+export default withApiAuthRequired(async function handler(
   req: NextApiRequest,
   res: NextApiResponse<components['schemas']['ArtistSearchResponse']>,
 ) {
@@ -13,6 +14,9 @@ export default async function handler(
     });
     return;
   }
+
+  const { accessToken } = await getAccessToken(req, res);
+  console.warn('ACCESS_TOKEN : \n', accessToken);
 
   try {
     const query = req.query.pattern;
@@ -26,15 +30,24 @@ export default async function handler(
       {
         method: 'GET',
         // headers: req.headers,
-        // bearer token
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
         credentials: 'include',
       },
     );
+    // const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    console.log('RESPONSE:\n')
+    console.warn(response);
     const artistsJson = await response.json();
+    console.log('ARTIST JSON:\n')
+    console.warn(artistsJson);
 
-    res.status(200).json(artistsJson.artists);
+    res.status(200).json(artistsJson);
   } catch (err) {
+    console.error('ERROR\n')
+    console.error(err);
     // @ts-ignore
     res.status(500).json(err);
   }
-}
+});

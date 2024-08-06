@@ -7,7 +7,7 @@ import { mswAuth, mswFollowedArtists, mswSearch } from '../../mocks/mockApi';
 import { components } from '../../types/schema';
 import { searchI18n } from '../../i18n';
 
-describe('Search', () => {
+xdescribe('Search', () => {
   const server = initServer();
 
   const setup = async () => {

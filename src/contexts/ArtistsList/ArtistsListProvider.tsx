@@ -10,7 +10,7 @@ interface ChildrenProps {
 const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   const [followedArtistList, setFollowedArtistList] = useState<components['schemas']['ArtistDto'][]>([]);
   const [loading, setLoading] = useState(false);
-  const areFollowedArtistsInitiliased = useRef(false);
+  const areFollowedArtistsInitilised = useRef(false);
 
   const getFollowedArtists = useCallback(() => {
     setLoading(true);
@@ -34,9 +34,9 @@ const ArtistsListProvider: FC<ChildrenProps> = ({ children }) => {
   }, [followedArtistList]);
 
   useEffect(() => {
-    if (!areFollowedArtistsInitiliased.current) {
+    if (!areFollowedArtistsInitilised.current) {
       getFollowedArtists();
-      areFollowedArtistsInitiliased.current = true;
+      areFollowedArtistsInitilised.current = true;
     }
   }, [getFollowedArtists]);
 
