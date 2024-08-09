@@ -15,6 +15,12 @@ const Main: React.FunctionComponent = () => {
     window.location.assign('https://api.releaseraccoon.online/me');
   }
 
+  function fetchy() {
+    fetch('https://api.releaseraccoon.online/me', {
+      headers: { 'X-Requested-With': 'JavaScript' },
+    });
+  }
+
   return (
     <main className="rr-column flex-auto">
       <div className="flex flex-col flex-auto w-full lg:w-9/12">
@@ -22,10 +28,12 @@ const Main: React.FunctionComponent = () => {
           login with assign
         </button>
 
+        <button className={'rr-text btn'} onClick={fetchy}>
+          login with fetch
+        </button>
+
         <a href="https://api.releaseraccoon.online/me">
-          <button className={'rr-text btn'} onClick={loginBE}>
-            login with anchor
-          </button>
+          <button className={'rr-text btn'}>login with anchor</button>
         </a>
 
         {user ? (

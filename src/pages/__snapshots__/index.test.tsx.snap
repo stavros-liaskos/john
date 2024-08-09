@@ -55,6 +55,11 @@ exports[`Home renders a heading 1`] = `
           >
             login with assign
           </button>
+          <button
+            class="rr-text btn"
+          >
+            login with fetch
+          </button>
           <a
             href="https://api.releaseraccoon.online/me"
           >
