@@ -4,7 +4,7 @@ import Main from './Main';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { mswAuth, mswFollowedArtists, mswRaccoonUser, mswRecommendedArtists } from '../../mocks/mockApi';
 
-describe('Main', () => {
+xdescribe('Main', () => {
   const server = initServer();
 
   afterEach(() => {

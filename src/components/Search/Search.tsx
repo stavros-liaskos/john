@@ -5,12 +5,12 @@ import { components } from '../../types/schema';
 import FormInput from '../FormInput/FormInput';
 import ArtistsList from '../ArtistsList/ArtistsList';
 import followArtist from '../../utils/followArtist';
-import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
+// import { useArtistsListContext } from '../../contexts/ArtistsList/ArtistsListContext';
 import Close from '../Icons/close';
 import HandGlass from '../Icons/handGlass';
 
 const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
-  const { getFollowedArtists } = useArtistsListContext();
+  // const { getFollowedArtists } = useArtistsListContext();
   const [artistLoading, setArtistLoading] = useState<number>(0);
   const [results, setResults] = useState<components['schemas']['SearchResultArtistDto'][] | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
@@ -45,17 +45,17 @@ const Search: React.FunctionComponent<SearchProps> = ({ i18n }) => {
   );
 
   async function handleSearch(inputValue: string) {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
     inputValue &&
-      (await fetch(`${process.env.BE_BASE_URL}/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
+      (await fetch(`/artist/search?${new URLSearchParams({ pattern: inputValue })}`, {
         method: 'GET',
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
       })
         .then(res => res.json())
         .then(result => {
-          getFollowedArtists();
-          return setResults(result.artists);
+          // getFollowedArtists();
+          console.warn(result);
+          // return setResults(result.artists);
         })
         .catch(console.error));
   }
