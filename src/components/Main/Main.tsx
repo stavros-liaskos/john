@@ -11,9 +11,16 @@ import { searchI18n, followedArtistListI18n, loginI18n, recommendationsI18n } fr
 const Main: React.FunctionComponent = () => {
   const { user } = useUser();
 
+  function loginBE() {
+    fetch('https://api.releaseraccoon.online/me');
+  }
+
   return (
     <main className="rr-column flex-auto">
       <div className="flex flex-col flex-auto w-full lg:w-9/12">
+        <button className={'rr-text btn'} onClick={loginBE}>
+          login BE
+        </button>
         {user ? (
           <>
             <Search i18n={searchI18n} />

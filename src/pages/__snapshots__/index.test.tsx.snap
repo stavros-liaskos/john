@@ -50,6 +50,11 @@ exports[`Home renders a heading 1`] = `
         <div
           class="flex flex-col flex-auto w-full lg:w-9/12"
         >
+          <button
+            class="rr-text btn"
+          >
+            login BE
+          </button>
           <div
             class="relative flex lg:justify-center items-center flex-none h-16 md:h-20 md:border-b-2 rr-border w-full"
           >
