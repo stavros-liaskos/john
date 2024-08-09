@@ -19,8 +19,15 @@ const Main: React.FunctionComponent = () => {
     <main className="rr-column flex-auto">
       <div className="flex flex-col flex-auto w-full lg:w-9/12">
         <button className={'rr-text btn'} onClick={loginBE}>
-          login BE
+          login with assign
         </button>
+
+        <a href="https://api.releaseraccoon.online/me">
+          <button className={'rr-text btn'} onClick={loginBE}>
+            login with anchor
+          </button>
+        </a>
+
         {user ? (
           <>
             <Search i18n={searchI18n} />

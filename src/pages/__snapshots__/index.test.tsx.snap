@@ -53,8 +53,17 @@ exports[`Home renders a heading 1`] = `
           <button
             class="rr-text btn"
           >
-            login BE
+            login with assign
           </button>
+          <a
+            href="https://api.releaseraccoon.online/me"
+          >
+            <button
+              class="rr-text btn"
+            >
+              login with anchor
+            </button>
+          </a>
           <div
             class="relative flex lg:justify-center items-center flex-none h-16 md:h-20 md:border-b-2 rr-border w-full"
           >
