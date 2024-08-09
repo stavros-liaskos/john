@@ -12,7 +12,7 @@ const Main: React.FunctionComponent = () => {
   const { user } = useUser();
 
   function loginBE() {
-    fetch('https://api.releaseraccoon.online/me');
+    window.location.assign('https://api.releaseraccoon.online/me');
   }
 
   return (
