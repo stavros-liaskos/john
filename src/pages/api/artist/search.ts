@@ -15,6 +15,7 @@ export default withApiAuthRequired(async function handler(
     return;
   }
 
+  console.warn(JSON.stringify(req.headers));
   const { accessToken } = await getAccessToken(req, res);
   console.warn('ACCESS_TOKEN : \n', accessToken);
 
@@ -37,15 +38,15 @@ export default withApiAuthRequired(async function handler(
       },
     );
     // const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-    console.log('RESPONSE:\n')
+    console.log('RESPONSE:\n');
     console.warn(response);
     const artistsJson = await response.json();
-    console.log('ARTIST JSON:\n')
+    console.log('ARTIST JSON:\n');
     console.warn(artistsJson);
 
     res.status(200).json(artistsJson);
   } catch (err) {
-    console.error('ERROR\n')
+    console.error('ERROR\n');
     console.error(err);
     // @ts-ignore
     res.status(500).json(err);
