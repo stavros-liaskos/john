@@ -15,8 +15,8 @@ const Main: React.FunctionComponent = () => {
     window.location.assign('https://api.releaseraccoon.online/me');
   }
 
-  function fetchy() {
-    fetch('https://api.releaseraccoon.online/me', {
+  async function fetchy() {
+    await fetch('https://api.releaseraccoon.online/me', {
       headers: { 'X-Requested-With': 'JavaScript' },
     });
   }
