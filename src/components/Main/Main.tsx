@@ -12,11 +12,11 @@ const Main: React.FunctionComponent = () => {
   const { user } = useUser();
 
   function loginBE() {
-    window.location.assign('https://api.releaseraccoon.online/me');
+    window.location.assign('https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online');
   }
 
   async function fetchy() {
-    await fetch('https://api.releaseraccoon.online/me', {
+    await fetch('https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online', {
       headers: { 'X-Requested-With': 'JavaScript' },
     });
   }
@@ -32,7 +32,7 @@ const Main: React.FunctionComponent = () => {
           login with fetch
         </button>
 
-        <a href="https://api.releaseraccoon.online/me">
+        <a href="https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online">
           <button className={'rr-text btn'}>login with anchor</button>
         </a>
 
