@@ -11,31 +11,9 @@ import { searchI18n, followedArtistListI18n, loginI18n, recommendationsI18n } fr
 const Main: React.FunctionComponent = () => {
   const { user } = useUser();
 
-  function loginBE() {
-    window.location.assign('https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online');
-  }
-
-  async function fetchy() {
-    await fetch('https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online', {
-      headers: { 'X-Requested-With': 'JavaScript' },
-    });
-  }
-
   return (
     <main className="rr-column flex-auto">
       <div className="flex flex-col flex-auto w-full lg:w-9/12">
-        <button className={'rr-text btn'} onClick={loginBE}>
-          login with assign
-        </button>
-
-        <button className={'rr-text btn'} onClick={fetchy}>
-          login with fetch
-        </button>
-
-        <a href="https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online">
-          <button className={'rr-text btn'}>login with anchor</button>
-        </a>
-
         {user ? (
           <>
             <Search i18n={searchI18n} />

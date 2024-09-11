@@ -16,12 +16,21 @@ exports[`Login renders login button 1`] = `
       Receive your favorite artists' music in your email every week!
     </p>
     <a
-      href="/api/auth/login"
+      href="https://api.releaseraccoon.online/me?redirectUrl=https://www.releaseraccoon.online"
     >
       <button
         class="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14"
       >
         Register
+      </button>
+    </a>
+    <a
+      href="/api/auth/login"
+    >
+      <button
+        class="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14"
+      >
+        Take me to my page
       </button>
     </a>
   </div>
