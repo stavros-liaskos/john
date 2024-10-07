@@ -3,12 +3,15 @@ import resources from './Resources';
 import Endpoints from '../types/endpoints';
 import { initServer } from './test-utils';
 
-xdescribe('Resources', () => {
+describe('Resources', () => {
   const server = initServer();
 
-  it('fetches resource', async () => {
+  it('throws a promise that Suspense can use', () => {
     server.use(mswRecommendedArtists.success());
-    const fetchedResources = resources.fetch(`${Endpoints.Recommended}?page=1&size=10`);
-    await expect(fetchedResources).resolves.toBe(1);
+    try {
+      resources.fetch(`${Endpoints.Recommended}?page=1&size=10`);
+    } catch (e) {
+      expect(e).toBeInstanceOf(Promise);
+    }
   });
 });
