@@ -8,7 +8,7 @@ xdescribe('Resources', () => {
 
   it('fetches resource', async () => {
     server.use(mswRecommendedArtists.success());
-    const fetchedResources = resources.fetch(`${Endpoints.Recommended}?page=0&size=10`);
+    const fetchedResources = resources.fetch(`${Endpoints.Recommended}?page=1&size=10`);
     await expect(fetchedResources).resolves.toBe(1);
   });
 });

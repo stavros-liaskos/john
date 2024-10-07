@@ -12,7 +12,7 @@ type RecommendationsI18n = {
 
 const Recommendations = ({ i18n }: { i18n: RecommendationsI18n }) => {
   const [artistLoading, setArtistLoading] = React.useState<number>(0);
-  const url = `${Endpoints.Recommended}?page=0&size=10`;
+  const url = `${Endpoints.Recommended}?page=1&size=10`;
 
   const { rows: recommendedArtists } = resources.fetch(url) as components['schemas']['FollowedArtistsResponse'];
 
