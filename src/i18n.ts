@@ -29,7 +29,7 @@ export const followedArtistListI18n = {
 
 export const loginI18n = {
   welcome: 'Welcome to Release Raccoon!',
-  loginBtn: 'Register',
+  loginBtn: '1. Login',
   text: "Receive your favorite artists' music in your email every week!",
   artistsCount: 'Artists',
   releasesCount: 'Releases',

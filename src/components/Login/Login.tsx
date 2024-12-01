@@ -17,7 +17,7 @@ const Login: React.FunctionComponent<LoginProps> = ({ i18n }) => {
       </Link>
 
       <Link href="/api/auth/login">
-        <button className="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14">Take me to my page</button>
+        <button className="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14">2. Take me to dashboard</button>
       </Link>
     </div>
   );

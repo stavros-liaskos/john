@@ -31,7 +31,7 @@ describe('Main', () => {
       </UserProvider>,
     );
 
-    expect(await findAllByText(/Register/)).toHaveLength(1);
+    expect(await findAllByText(/1. Login/)).toHaveLength(1);
   });
 
   it('shows artist search for logged in user', async () => {

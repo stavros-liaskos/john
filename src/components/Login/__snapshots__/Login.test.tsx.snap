@@ -21,7 +21,7 @@ exports[`Login renders login button 1`] = `
       <button
         class="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14"
       >
-        Register
+        1. Login
       </button>
     </a>
     <a
@@ -30,7 +30,7 @@ exports[`Login renders login button 1`] = `
       <button
         class="btn btn-large lg:ml-8 mt-8 mb-24 w-44 h-14"
       >
-        Take me to my page
+        2. Take me to dashboard
       </button>
     </a>
   </div>
