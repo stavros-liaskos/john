@@ -8,8 +8,7 @@
     "lint": "next lint --fix",
     "test": "jest",
     "prettier": "prettier \"**/*\" --write",
-    "all": "yarn prettier && yarn lint && yarn test -u",
-    "prepare": "husky install"
+    "all": "yarn prettier && yarn lint && yarn test -u"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
